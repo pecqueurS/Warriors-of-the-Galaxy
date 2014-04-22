@@ -1,0 +1,1142 @@
+.cadre h2 {
+	text-decoration: none;
+	margin:0;
+	padding:0;
+
+}
+
+.cadre h2 > span:last-child {
+	font-size:24px;
+}
+
+
+section > header > form {
+	position: fixed;
+	top:90px;
+	right:0;
+}
+
+section > header > form .txt{
+	display:none;
+}
+
+section > header > form:hover .txt{
+	display:inline;
+}
+
+section > header > form button {
+	background-color: red;
+	color:white;
+	border:none;
+	padding:0px 10px 3px 3px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	font-family: "ExoL";
+	font-size:20px;
+}
+
+section > header {
+	font-size:15px;
+	background-color: white;
+}
+
+section > header:after {
+	content :"";
+	display :block;
+	width:100%;
+	height:2px;
+	background-color: rgb(0,153,255);
+	position:absolute;
+	bottom:8px;
+	left:0;
+}
+
+section > header > div {
+	display:inline-block;
+	margin-right:30px;
+}
+
+section > header > div span:nth-last-child(3) {
+	font-family:"ExoSB";
+}
+
+section > header > div span:nth-last-child(2) {
+	font-size:13px;
+}
+
+section > header > div span:last-child {
+	font-size:13px;
+}
+
+
+
+section > header > div > div {
+	display:inline-block;
+}
+
+/*BARRE DE PROGRESSION*/
+.progressBar {
+	position:relative;
+	background: linear-gradient(to bottom, #999999 0%, #cccccc 50%, #999999 100%); 
+	border-radius: 25px;
+	width:80%;
+	min-width: 400px;
+	overflow:hidden;
+	min-height:25px;
+	font-size:17px;
+	margin:0 auto 10px;
+	font-family: "ExoSB";
+	color:white;
+	text-shadow: 1px 1px 1px black;
+}
+
+.progressBar div.progressType {
+	display:inline;
+	position:absolute;
+	top:0;
+	left:0;
+	padding-left: 10px;
+	line-height: 25px;
+	vertical-align: middle;
+	z-index: 99;
+}
+
+.progressBar span.progressTime {
+	position:absolute;
+	top:0;
+	right:0;
+	padding-right:10px;
+	line-height: 25px;
+	vertical-align: middle;
+	z-index: 99;
+}
+
+.progressBar div.text {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	text-align: center;
+	line-height: 25px;
+	vertical-align: middle;
+	z-index: 99;
+}
+
+
+
+.progression {
+	position:absolute;
+	top:0;
+	left:0;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+	height:100%;
+	background: linear-gradient(to bottom, #0066ff 0%, #00ccff 50%, #0066ff 100%);
+}
+
+.progression.red {
+	background-image: linear-gradient(to bottom, #ff0000 0%, #ff6600 50%,#ff0000 100%);
+}
+
+.progression.green {
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-image: linear-gradient(to bottom, #009900 0%, #00ff00 50%, #009900 100%);
+}
+
+.progression.back {
+	left:auto;
+	right:0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.progression.orders {
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background-image: linear-gradient(to bottom, #333333 0%, #999999 50%, #333333 100%);
+	text-align: center;
+}
+
+
+
+/*TimeLeft*/
+#ends {
+	float:left;
+	font-family: "ExoB";
+}
+
+#ends span:last-child {
+	color: rgb(0,153,255);
+}
+
+#game {
+	padding:10px;
+}
+
+/*Menu en haut*/
+#game .menu {
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+
+h3 {
+	font-family: "ExoB";
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+
+
+/*Onglet Planet*/
+/*Visuel planete*/
+#myPlanet {
+	width:400px;
+	padding-bottom: 20px;
+	float:right;
+}
+
+#myPlanet .menu{
+	text-align: left;
+	margin:0;
+}
+
+
+#myPlanet .imgPlanet {
+	position:relative;
+}
+
+
+
+#myPlanet .menu .blockLink {
+	cursor:pointer;
+}
+
+#myPlanet .imgPlanet .blockLink {
+	position:absolute;
+	top:0; left:0;
+	background-color: white;
+	border-radius: 7px;
+	width:34px;
+	height: 34px;
+}
+
+#myPlanet .imgPlanet > :nth-child(2) {
+	top : 80px;
+	left : 120px;
+}
+
+#myPlanet .imgPlanet > :nth-child(3) {
+	top : 140px;
+	left : 190px;
+}
+
+#myPlanet .imgPlanet > :nth-child(4) {
+	top : 115px;
+	left : 50px;
+}
+
+#myPlanet .imgPlanet > :nth-child(5) {
+	top : 200px;
+	left : 30px;
+}
+
+#myPlanet .imgPlanet > :nth-child(6) {
+	top : 250px;
+	left : 100px;
+}
+
+#myPlanet .imgPlanet > :nth-child(7) {
+	top : 210px;
+	left : 180px;
+}
+
+
+
+
+
+#myPlanet .infoPlanet .coords {
+	margin:15px 0 30px 150px;
+	margin-left: 150px;
+	margin-bottom: 30px;
+}
+
+
+
+#myPlanet .infoPlanet .bat {
+	display:table;
+	border-collapse: collapse;
+}
+
+#myPlanet .infoPlanet .bat > div {
+	display:table-row;
+}
+
+#myPlanet .infoPlanet .bat > div > div {
+	display:table-cell;
+	padding: 0 10px;
+}
+
+#myPlanet .infoPlanet .bat > div > div:last-child {
+	font-family: "ExoB";
+}
+
+
+
+/*Visuel Batiments*/
+#batiments {
+	width:calc(100% - 410px);
+	float:right;
+
+}
+
+#batiments h2 > span {
+	display:inline-block;
+	margin-right:10px;
+}
+
+/*boutons Actions*/
+#batiments .actions {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.actions h3 {
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.min, .minB {
+	position:relative;
+	display:inline-block;
+	border:none;
+	background-color: transparent;
+	font-family: "ExoSB";
+	font-size:18px;
+	color:rgb(0,153,255);
+	vertical-align: middle;
+}
+
+.minB {
+	color:white;
+}
+
+.act {
+	position:relative;
+	display:inline-block;
+	font-family: "ExoB";
+	color:rgb(0,153,255);
+	border:none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+
+.infobulle {
+	display:none;
+	position:absolute;
+	top:100%;
+	right:0;
+	padding:4px;
+	border:1px solid rgb(0,153,255);
+	border-radius: 7px;
+	background-color: #eeeeee;
+	font-size: 15px;
+	z-index: 99;
+	white-space: nowrap;
+}
+
+*:hover > .infobulle {
+	display:block;
+}
+
+/*Description du batiment*/
+.description {
+	margin-right: 10px;
+	text-align: justify;
+}
+
+.description .descrpText p,
+.blockDescript > p:nth-of-type(1) {
+	font-family: "ExoSB";
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+
+/*Detail des actions*/
+.detailActions h2 {
+	font-size:28px;
+}
+
+.blockDescript {
+	margin-bottom: 30px;
+}
+
+/*Colonies*/
+#tabColonies {
+	display:inline-block;
+	width : 240px;
+	height:340px;
+	padding:5px;
+	border:1px solid #cccccc;
+}
+
+#tabColonies .tableau td:first-child,
+#tabColonies .tableau td:nth-of-type(2) {
+	width : 32px;
+	text-align: center;
+}
+
+#tabColonTeam {
+	display:inline-block;
+	width:calc(100% - 275px);
+	height:340px;
+	padding:5px;
+	border:1px solid #cccccc;
+
+}
+
+#tabColonTeam .tableau,
+#tabColonies .tableau {
+	font-size:15px;
+}
+
+#tabColonTeam .tableau td {
+	text-align: right;
+}
+
+#tabColonTeam .tableau td:last-child,
+#tabColonies .tableau td:last-child {
+	width : 24px;
+	cursor:pointer;
+}
+
+#tabColonTeam .tableau tfoot th {
+	padding-top:20px;
+}
+
+
+
+
+
+
+
+/*In Progress*/
+#ongletProgress .blockAction > div {
+	margin-bottom:30px;
+}
+
+
+
+
+/*Upgrade*/
+.upgradeOnglet .blockAction > div:first-child h3,
+.upgradeOnglet .blockAction > div:nth-of-type(2) h3 {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.upgradeOnglet .blockAction > div:first-child span:last-child,
+.upgradeOnglet .blockAction > div:nth-of-type(2) span:last-child {
+	font-family: "ExoB";
+	color:rgb(0,153,255);
+}
+
+.upgradeOnglet .blockAction > div:nth-of-type(3) > div,
+.upgradeOnglet .blockAction > div:nth-of-type(4) > div {
+	display:inline-block;
+	margin-right:30px;
+}
+
+.upgradeOnglet .blockAction > div:nth-of-type(3) > div > span {
+	display:table-cell;
+}
+
+.upgradeOnglet .blockAction > div:nth-of-type(3) > div > span:last-child {
+	text-align: right;
+}
+
+.upgradeOnglet .blockAction > div:last-child {
+	margin-top:30px;
+	text-align: right;
+}
+
+/*Spaceport*/
+.infoUnit > div {
+	display:inline-block;
+	margin-right:30px;
+}
+
+
+/*Formatage du range*/
+input[type='range'] {
+	width:300px;
+	-webkit-appearance: none;
+	/*border-radius: 5px;*/
+	/*box-shadow: inset 0 0 5px #333;*/
+	background-color: #0099ff;
+	height: 4px;
+	vertical-align: middle;
+	border:none;
+	cursor:pointer;
+}
+
+input[type='range']::-moz-range-track {
+	-moz-appearance: none;
+	/*border-radius: 5px;*/
+	/*box-shadow: inset 0 0 5px #333;*/
+	background-color: #0099ff;
+	height: 4px;
+	border:none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	border-radius: 18px;
+	background-color: #FFF;
+	box-shadow:inset 0 0 20px rgba(000,000,000,1);
+	border: none;
+	height: 18px;
+	width: 18px;
+}
+
+input[type='range']::-moz-range-thumb {
+	-moz-appearance: none;
+	border-radius: 18px;
+	background-color: #FFF;
+	box-shadow:inset 0 0 20px rgba(000,000,000,1);
+	border: none;
+	height: 18px;
+	width: 18px;
+}
+
+#ongletSP .unitText {
+	width:142px;
+	text-align: right;
+}
+
+#ongletSP .unitRange  + span {
+	display:inline-block;
+	margin-right:30px;
+}
+
+
+
+/*Liste de construction*/
+#ongletSP .listeUnits {
+	
+	height: 100px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	border:1px solid #cccccc;
+	padding:5px 20px 5px 5px;
+}
+
+#ongletSP .listeUnits .progressBar{
+	width:100%;
+}
+
+
+/*stock */
+.stockTotal > * {
+	display: inline-block;
+}
+
+.stockTotal > div span {
+	font-family: "ExoB";
+}
+
+.stockTotal > div span:first-child {
+	color:rgb(0,153,255);
+}
+
+/*cout*/
+.costUnit > div {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.costUnit > div > span {
+	display:table-cell;
+}
+.costUnit > div > span:last-child {
+	text-align: right;
+}
+
+.btnCreatUnit {
+	float:right;
+	text-align: right;
+}
+
+#ongletSP .costUnit {
+	margin-top:-15px;
+}
+
+
+
+/*Ressources*/
+#ongletRes .nextLvl h3 {
+	display:inline-block;
+	margin-right:10px;
+}
+
+#ongletRes .nextLvl span:last-child {
+	font-family: "ExoB";
+	color:rgb(0,153,255);
+}
+
+
+
+
+
+
+#ongletRes .production table {
+	width:100%;
+	margin-bottom:15px;
+	border-collapse:separate;
+	border-spacing: 15px;
+	font-family: "ExoSB";
+}
+
+#ongletRes .production table h3 {
+	margin-bottom :0;
+}
+
+#ongletRes .production table tbody tr:nth-last-child(2) td {
+	padding-bottom: 15px;
+	border-bottom: 4px solid rgb(0,153,255);
+}
+
+#ongletRes .production table td:nth-child(2) {
+	color:rgb(0,153,255);
+	text-align: right;
+}
+
+
+#ongletRes .production table tbody tr:nth-last-child(2) td:last-child {
+	padding-bottom: 15px;
+	border-bottom: 4px solid green;
+}
+
+#ongletRes .production table td:nth-child(3) {
+	color:green;
+	text-align: right;
+}
+
+
+
+
+
+/*MAP*/
+#ongletMap {
+	text-align: center;
+}
+
+#actionMap, #map {
+	display:inline-block;
+	vertical-align:top;
+}
+
+/*Carte*/
+#map {
+	position:relative;
+}
+
+#map .infoMap {
+	display: none;
+	position:absolute;
+	bottom:calc(100% + 10px);
+	left:0;
+	background-color: rgb(0,153,255);
+	padding:10px;
+	min-width:240px;
+	color:white;
+	font-family: "ExoSB";
+}
+
+#map .infoMap span {
+	color:#333333;
+	font-family: "ExoB";
+}
+
+
+
+#map .tabMap{
+	display:table;
+	background:url(../../images/galaxy.png) no-repeat center center; 
+	width:480px;
+	height:480px;
+	border-collapse: collapse;
+
+}
+
+#map .rowMap{
+	display:table-row;
+}
+
+#map .cellMap{
+	display:table-cell;
+	border:1px dashed white;
+	width:15px;
+	height:15px;
+	max-width: 15px;
+	min-width: 15px;
+	max-height: 15px;
+	min-height: 15px;
+	text-align: center;
+	font-size: 15px;
+	color:white;
+	font-family: "ExoSB";
+	vertical-align: middle;
+	padding:0;
+
+}
+
+#map .tabMap .header {
+	color:black;
+	background-color: rgba(255,255,255,.7);
+}
+
+
+#map .colony {
+	width:15px;
+	height:15px;
+	border-radius:15px;
+	margin:0 auto;
+}
+
+#map .planet {
+	width:15px;
+	height:15px;	
+	margin:0 auto;
+}
+
+#map .allied {
+	background-color: rgba(0,255,0,.5);
+	border:1px dashed lime;
+}
+
+#map .ennemy {
+	background-color: rgba(255,0,0,.5);
+	border:1px dashed red;
+}
+
+#map .owned {
+	background-color: rgba(50,155,255,.5);
+	border:1px dashed rgb(50,155,255);
+}
+
+/*Attaques*/
+
+
+#actionAtt > div > div {
+	margin-right:30px;
+	display:inline-block;
+	vertical-align: top;
+}
+
+#actionAtt > div:first-child > div:first-child .input {
+	width:50px;
+}
+
+#actionAtt > div:last-child > div:last-child {
+	margin-top:25px;
+}
+
+#actionAtt > div:last-child  {
+	margin-top:25px;
+}
+
+#currentAct {
+	margin-top:25px;
+}
+
+#currentAct > div{
+	height:180px;
+	border:1px solid #cccccc;
+	padding:10px;
+	padding-right:30px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+
+#teamView {
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align: left;
+}
+
+
+
+#teamView h3:first-child {
+	margin-right:30px;
+}
+
+#teamView h3:first-child,
+#availableUnits {
+	display: inline-block;
+}
+
+#availableUnits {
+	margin-bottom:30px;
+}
+
+#availableUnits > div {
+	display:inline-block;
+	margin-right:30px;
+}
+
+#tabTeam {
+	text-align: center;
+	height:160px;
+	border:1px solid #cccccc;
+	padding:10px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+#tabTeam .tableau {
+	font-size: 15px;
+}
+
+#tabTeam .fighters,
+#tabTeam .bombers,
+#tabTeam .cruisers {
+	display:inline-block;
+}
+
+#tabTeam .tableau .blockInput {
+	margin-bottom: 5px;
+}
+
+#tabTeam .tableau .input {
+	width:60px;
+	font-size: 18px;
+	font-family: "ExoSB";
+}
+
+#tabTeam .tableau .progressBar {
+	margin-bottom: 0;
+}
+
+
+
+
+
+/*ALLIANCE*/
+#ongletAlliance .menu {
+	margin-top:30px;
+}
+
+/*chat*/
+#ongletChat .blockInput {
+	width:80%;
+	height:4em;
+}
+
+#ongletChat .input {
+	height:100%;
+}
+
+#AllianceMessages {
+	height:550px;
+	border:1px solid #cccccc;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+#AllianceMessages .tableau {
+	font-size:15px;
+}
+
+#AllianceMessages td {
+	vertical-align: top;
+}
+
+#AllianceMessages td:first-child {
+	width:10%;
+	text-align: center;
+}
+
+#AllianceMessages td:nth-child(2) {
+	width:20%;
+	text-align: right;
+}
+
+#AllianceMessages td:nth-child(2) div {
+	white-space: nowrap;
+}
+
+#AllianceMessages td:nth-child(2) div:last-child {
+	color:rgb(0,153,255);
+}
+
+#AllianceMessages td:nth-child(3) {
+	width:70%;
+}
+
+
+/*Info Game*/
+#infoJoueursGame {
+	height:497px;
+	border:1px solid #cccccc;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+
+#ongletInfo .tableau td:first-child {
+	width:45%;
+	white-space: nowrap;
+}
+
+#ongletInfo .tableau td:nth-child(2) {
+	width:25%;
+	white-space: nowrap;
+}
+
+#ongletInfo .tableau td:nth-child(3),
+#ongletInfo .tableau td:nth-child(4),
+#ongletInfo .tableau td:nth-child(5) {
+	width:10%;
+	text-align: center;
+}
+
+#descrGame {
+	margin-bottom:30px;
+}
+
+#descrGame > div > div {
+	display:inline-block;
+	vertical-align: top;
+	min-width:30%;
+}
+
+
+#descrGame > div > div > p {
+	display:inline-block;
+	margin-right:30px;
+}
+
+#descrGame > div > div > p span:last-child {
+	font-family: "ExoB";
+	color: rgb(0,153,255);
+}
+
+
+
+
+
+/*Alliance Reports*/
+
+.tabAllReports {
+	height:150px;
+	border:1px solid #cccccc;
+	overflow-x:hidden;
+	overflow-y:auto;
+	margin-bottom:30px;	
+}
+
+.tabAllReports .tableau {
+	font-size: 15px;
+}
+
+.tabAllReports .tableau tr:not(:first-child):hover {
+	color:rgb(0,153,255);
+	font-family: "ExoSB";
+	cursor:pointer;
+}
+
+.tabAllReports .tableau tr:not(:first-child):hover td {
+	background-color: #333333;
+}
+
+.tabAllReports .tableau td {
+	white-space: nowrap;
+}
+
+.tabAllReports .tableau td:nth-child(1),
+.tabAllReports .tableau td:nth-child(3),
+.tabAllReports .tableau td:nth-child(4),
+.tabAllReports .tableau td:nth-child(7),
+.tabAllReports .tableau td:nth-child(8) {
+	text-align: center;
+}
+
+.tabAllReports .tableau .selected {
+	color:white;
+	font-family: "ExoSB";
+}
+
+.tabAllReports .tableau .selected td {
+	background-color: rgb(0,153,255);
+}
+
+
+
+
+.tabReport {
+	text-align:center;
+	/*border-top:4px solid rgb(0,153,255);
+	border-bottom:4px solid rgb(0,153,255);*/
+}
+
+
+.tabReport h4 {
+	margin: 15px auto;
+	color:rgb(0,153,255);
+}
+
+.tabReport p {
+	margin: 15px auto;
+	font-family: "ExoB";
+	font-size: "24px";
+}
+
+
+
+
+.tabReport table {
+	font-size: 15px;
+}
+
+
+.tabReport > div {
+	display:inline-block;
+	width:45%;
+}
+
+.tabReport > div:first-child {
+	margin-right:20px;
+	border-right:2px solid rgb(0,153,255);
+	padding-bottom:20px;
+}
+
+.tabReport > div > table td:first-child {
+	width:20%;
+}
+
+.tabReport > div > table:first-child td:nth-child(2),
+.tabReport > div > table:first-child td:nth-child(3) {
+	width:40%;
+	white-space: nowrap;
+}
+
+
+
+/* REPORTS */
+#ongletReports > div:first-child {
+	text-align: center;
+}
+
+#ongletReports > div > div {
+	display:inline-block;
+	width:45%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer du jeu*/
+#footerGame {
+	clear:both;
+	border-top: 4px solid rgb(0,153,255);
+	padding-top: 20px;
+}
+
+#footerGame .infoJoueur {
+	width:calc(100% - 320px);
+ 	float:right;
+ 	border-bottom: 2px solid rgb(0,153,255);
+ 	margin-right: 10px;
+}
+
+#footerGame .team {
+	float:left;
+}
+
+#footerGame .coords {
+	float:right;
+}
+
+
+
+
+#footerGame ul {
+	display:inline-block;
+	vertical-align: top;
+	width:300px;
+
+	font-size: 18px;
+}
+
+
+
+#footerGame .menu {
+	text-align: left;
+	margin:0;
+}
+
+#footerGame .menu .blockLink {
+	cursor:pointer;
+}
+
+
+
+#footerGame ul.bat {
+	width:calc(100% - 320px);
+	-webkit-column-count:2;
+	-webkit-column-gap : 3rem;
+	   -moz-column-count:2;
+	   -moz-column-gap : 3rem;
+		-ms-column-count:2;
+		-ms-column-gap : 3rem;
+		 -o-column-count:2;
+		 -o-column-gap : 3rem;
+			column-count:2;
+			column-gap : 3rem;
+
+}
+
+
+#footerGame li > div {
+	display:inline-block;
+	margin-right: 15px;
+
+}
+
+.team span:last-child, 
+.coords span:last-child {
+	font-family: "ExoB";
+	color:rgb(0,153,255);
+}

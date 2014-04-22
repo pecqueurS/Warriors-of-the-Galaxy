@@ -1,0 +1,244 @@
+				<!-- ACTION FIGHTER -->
+					<div id="ongletFighter" class="actionsSP">
+						<h2><span><span class="link unit1">{TXT_CREATE_FIGHTER}</span></span></h2>
+						<div class="blockDescript">
+							<div class="infoUnit">
+								<div><span class="min attack">{TXT_ATT}</span> <span>{UNIT1_ATT}</span></div>
+								<div><span class="min defense">{TXT_DEF}</span> <span>{UNIT1_DEF}</span></div>
+								<div><span class="min charge">{TXT_CHARGE}</span> <span>{UNIT1_CHARGE}</span></div>
+								<div><span class="min speed">{TXT_VIT}</span> <span>{UNIT1_VIT}</span></div>
+								<div><span class="min life">{TXT_LIFE}</span> <span>{UNIT1_LIFE}</span></div>
+							</div>
+						</div>
+
+						<div class="blockAction">
+
+							<div class="stockTotal">
+								<h3>{TXT_OWNED} :</h3>
+								<div><span>{UNIT1_OWNED}</span> <span>{TXT_UNIT1}</span></div>
+							</div>
+
+							<div class="ConstruireUnit">
+								<div>
+									<span>1</span> 
+									<input class="rangeUnit unitRange" type="range" id="constructFighter" name="constructFighter" value="{UNIT1_MIN}" min="{UNIT1_MIN}" max="{UNIT1_MAX}" step="1"> 
+									<span>{UNIT1_MAX}</span>
+									<input class="input rangeUnit unitText" type="text" id="constructFighter2" name="constructFighter2" value="{UNIT1_MIN}">
+								</div>
+							</div>
+
+							<div class="btnCreatUnit">
+								<input type="submit" class="btn update" name="constructU1" value="{TXT_CONSTRUCT}">
+							</div>
+
+							<div class="costUnit">
+								<h3>{TXT_COST} :</h3>
+								<div><span class="min ore">{TXT_ORE}</span><span data-cout="{UNIT1_ORE}">{UNIT1_ORE}</span></div>
+								<div><span class="min organic">{TXT_ORGANIC}</span><span data-cout="{UNIT1_ORGANIC}">{UNIT1_ORGANIC}</span></div>
+								<div><span class="min energy">{TXT_ENERGY}</span><span data-cout="{UNIT1_ENERGY}">{UNIT1_ENERGY}</span></div>
+								<div><span class="min time">{TXT_NEC_TIME}</span><span data-cout="{UNIT1_NEC_TIME_REAL}">{UNIT1_NEC_TIME}</span></div>
+							</div>
+
+
+							<div>
+								<h3>{TXT_CUR_CONSTR} : </h3>
+								<ul class="listeUnits">
+<!-- BEGIN listeConstrUnits -->
+									<li class="progressBar" data-info="{LIST_UNITS_PERCENT}"><div class="progressType"><span class="minB update">{LIST_UNITS_STATUS}</span> <span>{LIST_UNITS_NB}</span></div><span class="progressTime">{LIST_UNITS_TIME_LEFT}</span></li>
+
+<!-- END listeConstrUnits -->    
+								</ul>
+							</div>
+
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+				<!-- ACTION BOMBERS -->
+					<div id="ongletBomber" class="actionsSP">
+						<h2><span><span class="link unit2">{TXT_CREATE_BOMBER}</span></span></h2>
+						<div class="blockDescript">
+							<div class="infoUnit">
+								<div><span class="min attack">{TXT_ATT}</span> <span>{UNIT2_ATT}</span></div>
+								<div><span class="min defense">{TXT_DEF}</span> <span>{UNIT2_DEF}</span></div>
+								<div><span class="min charge">{TXT_CHARGE}</span> <span>{UNIT2_CHARGE}</span></div>
+								<div><span class="min speed">{TXT_VIT}</span> <span>{UNIT2_VIT}</span></div>
+								<div><span class="min life">{TXT_LIFE}</span> <span>{UNIT2_LIFE}</span></div>
+							</div>
+						</div>
+
+						<div class="blockAction">
+
+							<div class="stockTotal">
+								<h3>{TXT_OWNED} :</h3>
+								<div><span>{UNIT2_OWNED}</span> <span>{TXT_UNIT2}</span></div>
+							</div>
+
+							<div class="ConstruireUnit">
+								<div>
+									<span>1</span> 
+									<input class="rangeUnit unitRange" type="range" id="constructBomber" name="constructBomber" value="{UNIT2_MIN}" min="{UNIT2_MIN}" max="{UNIT2_MAX}" step="1"> 
+									<span>{UNIT2_MAX}</span>
+									<input class="input rangeUnit unitText" type="text" id="constructBomber2" name="constructBomber2" value="{UNIT2_MIN}">
+								</div>
+							</div>
+
+							<div class="btnCreatUnit">
+								<input type="submit" class="btn update" name="constructU2" value="{TXT_CONSTRUCT}">
+							</div>
+
+							<div class="costUnit">
+								<h3>{TXT_COST} :</h3>
+								<div><span class="min ore">{TXT_ORE}</span><span data-cout="{UNIT2_ORE}">{UNIT2_ORE}</span></div>
+								<div><span class="min organic">{TXT_ORGANIC}</span><span data-cout="{UNIT2_ORGANIC}">{UNIT2_ORGANIC}</span></div>
+								<div><span class="min energy">{TXT_ENERGY}</span><span data-cout="{UNIT2_ENERGY}">{UNIT2_ENERGY}</span></div>
+								<div><span class="min time">{TXT_NEC_TIME}</span><span data-cout="{UNIT2_NEC_TIME_REAL}">{UNIT2_NEC_TIME}</span></div>
+							</div>
+
+
+							<div>
+								<h3>{TXT_CUR_CONSTR} : </h3>
+								<ul class="listeUnits">
+<!-- BEGIN listeConstrUnits -->
+									<li class="progressBar" data-info="{LIST_UNITS_PERCENT}"><div class="progressType"><span class="minB update">{LIST_UNITS_STATUS}</span> <span>{LIST_UNITS_NB}</span></div><span class="progressTime">{LIST_UNITS_TIME_LEFT}</span></li>
+
+<!-- END listeConstrUnits -->    
+								</ul>
+							</div>
+
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+				<!-- ACTION CRUISERS -->
+					<div id="ongletCruiser" class="actionsSP">
+						<h2><span><span class="link unit3">{TXT_CREATE_CRUISER}</span></span></h2>
+						<div class="blockDescript">
+							<div class="infoUnit">
+								<div><span class="min attack">{TXT_ATT}</span> <span>{UNIT3_ATT}</span></div>
+								<div><span class="min defense">{TXT_DEF}</span> <span>{UNIT3_DEF}</span></div>
+								<div><span class="min charge">{TXT_CHARGE}</span> <span>{UNIT3_CHARGE}</span></div>
+								<div><span class="min speed">{TXT_VIT}</span> <span>{UNIT3_VIT}</span></div>
+								<div><span class="min life">{TXT_LIFE}</span> <span>{UNIT3_LIFE}</span></div>
+							</div>
+						</div>
+
+						<div class="blockAction">
+
+							<div class="stockTotal">
+								<h3>{TXT_OWNED} :</h3>
+								<div><span>{UNIT3_OWNED}</span> <span>{TXT_UNIT3}</span></div>
+							</div>
+
+							<div class="ConstruireUnit">
+								<div>
+									<span>1</span> 
+									<input class="rangeUnit unitRange" type="range" id="constructCruiser" name="constructCruiser" value="{UNIT3_MIN}" min="{UNIT3_MIN}" max="{UNIT3_MAX}" step="1"> 
+									<span>{UNIT3_MAX}</span>
+									<input class="input rangeUnit unitText" type="text" id="constructCruiser2" name="constructCruiser2" value="{UNIT3_MIN}">
+								</div>
+							</div>
+
+							<div class="btnCreatUnit">
+								<input type="submit" class="btn update" name="constructU3" value="{TXT_CONSTRUCT}">
+							</div>
+
+							<div class="costUnit">
+								<h3>{TXT_COST} :</h3>
+								<div><span class="min ore">{TXT_ORE}</span><span data-cout="{UNIT3_ORE}">{UNIT3_ORE}</span></div>
+								<div><span class="min organic">{TXT_ORGANIC}</span><span data-cout="{UNIT3_ORGANIC}">{UNIT3_ORGANIC}</span></div>
+								<div><span class="min energy">{TXT_ENERGY}</span><span data-cout="{UNIT3_ENERGY}">{UNIT3_ENERGY}</span></div>
+								<div><span class="min time">{TXT_NEC_TIME}</span><span data-cout="{UNIT3_NEC_TIME_REAL}">{UNIT3_NEC_TIME}</span></div>
+							</div>
+
+
+							<div>
+								<h3>{TXT_CUR_CONSTR} : </h3>
+								<ul class="listeUnits">
+<!-- BEGIN listeConstrUnits -->
+									<li class="progressBar" data-info="{LIST_UNITS_PERCENT}"><div class="progressType"><span class="minB update">{LIST_UNITS_STATUS}</span> <span>{LIST_UNITS_NB}</span></div><span class="progressTime">{LIST_UNITS_TIME_LEFT}</span></li>
+
+<!-- END listeConstrUnits -->    
+								</ul>
+							</div>
+
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- ONGLET UPGRADE SP -->
+					<div id="ongletUpgradeSP" class="actionsSP">
+					<div class="upgradeOnglet">
+						<h2><span><span class="link upgrade">{TXT_UP_BUILD}</span></span></h2>
+						<div class="blockDescript">
+							<h3>Decription : </h3>
+							<p>{TXT_DESCR_BUILD}</p>
+						</div>
+
+						<div class="blockAction">
+							<div><h3>{TXT_NEXT_LVL} :</h3><span>{UPGRADE_SP_NEXT_LVL}</span></div>
+							<div><h3>{TXT_NEC_TIME} :</h3><span>{UPGRADE_SP_NEC_TIME}</span></div>
+							<div>
+								<h3>{TXT_COST_CONSTR} :</h3>
+								<div><span class="min ore">{TXT_ORE}</span><span>{UPGRADE_SP_COST_ORE}</span></div>
+								<div><span class="min organic">{TXT_ORGANIC}</span><span>{UPGRADE_SP_COST_ORGANIC}</span></div>
+								<div><span class="min energy">{TXT_ENERGY}</span><span>{UPGRADE_SP_COST_ENERGY}</span></div>
+							</div>
+
+							<div>
+								<h3>{TXT_BONUS} :</h3>
+								{UPGRADE_SP_BONUS_UNIT}
+								<div><span class="min attack">{TXT_ATT}</span> : <span class="win">{UPGRADE_SP_BONUS_ATT}</span></div>
+								<div><span class="min defense">{TXT_DEF}</span> : <span class="win">{UPGRADE_SP_BONUS_DEF}</span></div>
+								<div><span class="min charge">{TXT_CHARGE}</span> : <span class="win">{UPGRADE_SP_BONUS_CHARGE}</span></div>
+								<div><span class="min speed">{TXT_VIT}</span> : <span class="win">{UPGRADE_SP_BONUS_VIT}</span></div>
+								<div><span class="min life">{TXT_LIFE}</span> : <span class="win">{UPGRADE_SP_BONUS_LIFE}</span></div>
+								<div><span class="min time">{TXT_NEC_TIME}</span> : <span class="loose">{UPGRADE_SP_BONUS_NEC_TIME}</span></div>
+								<div><span class="min cost">{TXT_COST}</span> : <span class="loose">{UPGRADE_SP_BONUS_COST}</span></div>
+							</div>
+
+							<div>
+								<input type="submit" class="btn upgrade" name="upgradeSP" value="{TXT_UPGRADE}">
+							</div>
+
+
+						</div>
+					</div>
+					</div>
+
+
+
+
+
+

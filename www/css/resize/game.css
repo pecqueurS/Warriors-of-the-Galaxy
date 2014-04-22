@@ -1,0 +1,161 @@
+/*+ de 1500 px*/
+
+
+@media screen and (min-width:1500px) {
+
+	#footerGame .infoJoueur {
+		width:calc(100% - 470px);
+	}
+
+	#footerGame ul {
+		width:450px;
+	}
+
+	#footerGame ul.bat {
+		width:calc(100% - 470px);
+
+	}
+
+	#tabTeam .fighters,
+	#tabTeam .bombers,
+	#tabTeam .cruisers {
+		width:150px;
+	}
+
+	#tabTeam .tableau .blockInput {
+		width:calc(100% - 35px);
+	}
+	#tabTeam .tableau .input {
+		width:100%;
+	}
+
+}
+
+/*- de 1000 px*/
+
+
+@media screen and (max-width:1000px) {
+
+	#footerGame ul.bat {
+		width:auto;
+		-webkit-column-count:1;
+		-webkit-column-gap : 0;
+		   -moz-column-count:1;
+		   -moz-column-gap : 0;
+			-ms-column-count:1;
+			-ms-column-gap : 0;
+			 -o-column-count:1;
+			 -o-column-gap : 0;
+				column-count:1;
+				column-gap : 0;
+
+	}
+
+
+
+	#batiments, #myPlanet {
+		width:100%;
+	}
+
+	#batiments {
+		border-bottom:2px solid rgb(0,153,255);
+	}
+
+	#myPlanet {
+		margin-top: 30px;
+		text-align: center;
+	}
+
+	#myPlanet .imgPlanet {
+		width:450px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#myPlanet .infoPlanet {
+		width:auto;
+		display:inline-block;
+		vertical-align: top;
+	}
+
+	#tabTeam .tableau .progressBar {
+		min-width:200px;
+	}
+
+	#tabTeam .fighters,
+	#tabTeam .bombers,
+	#tabTeam .cruisers {
+		display:block;
+	}
+
+	#tabTeam .tableau .input {
+		width:100%;
+	}
+
+	#ongletReports > div:first-child > div {
+		display:block;
+		width:100%;
+	}
+
+}
+
+
+/*- de 550 px*/
+
+
+@media screen and (max-width:550px) {
+
+	body > section {
+		margin-top: 100px;
+	}
+
+	#ongletChat .blockInput {
+		width:70%;
+	}
+
+}
+
+
+
+/*- de 500 px*/
+
+
+@media screen and (max-width:500px) {
+
+	#footerGame .infoJoueur {
+		width:100%;
+		float:none;
+		margin-right: 0;
+		margin-bottom:15px;
+	}
+
+	#footerGame .infoJoueur .team,
+	#footerGame .infoJoueur .coords {
+		float:none;
+	}
+
+
+
+	#myPlanet .imgPlanet {
+		display:none;
+	}
+
+	.tabReport > div {
+		display:block !important;
+		width:100% !important;
+	}
+
+	.tabReport > div:first-child {
+		margin-right:0;
+		border-right:none;
+		border-bottom:2px solid rgb(0,153,255);
+	}
+
+
+
+
+}
+
+
+
+

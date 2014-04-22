@@ -1,0 +1,51 @@
+<section>	
+
+<article id="loginForm" class="cadre">
+	<header>
+		<h2>{TITLE_LOGIN} :</h2>
+	</header>
+<div>
+	<form method="POST" action="{ACT_FORM}">
+		<div id="blockServer">
+			<label for="server">{TITLE_SERVER} :</label><br/>
+			<select id="server" name="server">
+				<option selected>Andromede</option>
+			</select>
+		</div>
+		<div id="blockLogin">
+			<label for="login" class="{CLASS_LOGIN}">{TITLE_USER_NAME} :</label>
+			<input type="text" class="input" id="login" name="login" value="{USER_NAME}" placeholder="Enter your Login" required><br/>
+			<label for="pwd" class="{CLASS_MDP}">{TITLE_PWD} :</label>
+			<input type="password" class="input" id="pwd" name="pwd" value="{PWD}" placeholder="Enter your Password" required>
+		</div>
+		<div id="blockBtn">
+			<input type="submit" class="btn signIn" name="signIn" value="{SIGN_IN}" >
+			<a href="{LIEN_SIGN_UP}" class="btn signUp">{SIGN_UP}</a>
+			<a href="{LIEN_FORGOT_PWD}" class="btn">{FORGOT_PWD} ?</a>
+		</div>
+	</form>
+</div>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+  <article id="explications">
+<!-- BEGIN explications -->
+    <p>{PARAGRAPHE}</p>
+<!-- END explications -->    
+
+ 
+
+  </article>
+</section>
+
+
+

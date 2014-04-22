@@ -1,0 +1,47 @@
+/*EndGame*/
+#endGame h2 {
+	text-align: center;
+	color:rgb(0,153,255);
+	text-decoration: none;
+}
+
+#endGame > div {
+	text-align: center;
+}
+
+#endGame .team {
+	width:45%;
+	display:inline-block;
+	vertical-align: top;
+	margin:0 2% 2%;
+
+}
+
+#endGame .tableau caption {
+	font-family: "ExoB";
+}
+
+#endGame .tableau caption .gauche {
+	float:left;
+}
+#endGame .tableau caption .gauche span:first-child {
+	text-decoration:underline;
+}
+#endGame .tableau caption .gauche span:last-child {
+	color:rgb(0,153,255);
+	text-decoration:none;
+}
+
+#endGame .tableau caption .droite {
+	float:right;
+	color:rgb(0,153,255);
+}
+
+#endGame .tableau thead {
+	clear:both;
+}
+
+#endGame .tableau {
+	text-align: center;
+}
+

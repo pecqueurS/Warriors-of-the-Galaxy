@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WotG | Inscription</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styleProfil.css">
+    <link rel="stylesheet" type="text/css" href="../../css/profil/inscription.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize/inscription.css">
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/style.js"></script>
+  </head>
+  <body>
+<header><h1>Warriors Of The Galaxy</h1></header>
+<section>
+<header>
+	<a class="link home" href="../accueil/accueil.html" >Home</a>
+</header>
+
+
+<article id="InscriptForm" class="cadre">
+	<header>
+		<h2>Inscription :</h2>
+	</header>
+	<form method="POST" action="test">
+<div>
+		<div id="blockServer">
+			<label for="server">Server :</label>
+			<select id="server" name="server">
+				<option selected>Andromède</option>
+			</select>
+		</div>
+
+		<div id="blockLogin">
+			<h3 class="link profil">Login</h3>
+			<label for="login">User Name :</label>
+			<input type="text" class="input" id="login" name="login" value="" placeholder="Enter your Login" required>
+		</div>
+
+
+		<div id="blockMdp">
+			<h3 class="link mdp">Password</h3>
+			<label for="pwd">Password :</label>
+			<input type="password" class="input" id="pwd" name="pwd" value="" placeholder="Enter your Password" required><br/>
+			<label for="confirm">Confirm :</label>
+			<input type="password" class="input" id="confirm" name="confirm" value="" placeholder="Confirm your Password" required>
+			<div id="titreSecu">Security Level : </div>
+			<div id="nivSecu"></div>
+			<div id="levSecu">HIGH</div>
+		</div>
+
+
+		<div id="blockEmail">
+			<h3 class="link email">Email</h3>
+			<label for="email">Email :</label>
+			<input type="email" class="input" id="email" name="email" value="" placeholder="Enter your Email" required>
+		</div>
+
+
+		<div id="blockAvatar">
+			<h3 class="link profil">Avatar</h3>
+			<div><img src="../../images/avatarDefault.png" alt="avatar"></div>
+			<label for="avatar">Change Avatar :</label>
+			<div class="file"><input type="file" id="avatar" name="avatar" value="" placeholder="Choise a image"></div> 
+			<p>* Output Size : 200 200 px</p>
+		</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+		<div id="blockBtn">
+			<input type="submit" class="flashBtn blue" name="createLog" value="Create" >
+		</div>
+	</form>
+
+</article>
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+<footer>
+	<img src="../../images/logo.png" alt="Logo de Stephane Pecqueur">
+	<ul id="infos_liens">
+		<li>About Us</li>
+		<li>Contact</li>
+		<li>Legal Informations</li>
+		<li>Screenshots</li>
+	</ul>
+	
+	<ul id="signal">
+		<li>Signaler un Abus</li>
+		<li>Signaler un Bug</li>
+	</ul>
+	
+	
+</footer>
+
+  </body>
+</html>

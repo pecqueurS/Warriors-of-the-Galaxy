@@ -1,0 +1,94 @@
+#blockServer {
+	position:absolute;
+	top:16px;
+	right:15px;
+	line-height: 1em;
+}
+
+section {
+	margin-top: 50px;
+	width:100%;
+	display:table;
+	border-collapse: separate;
+    border-spacing: 10px;
+}
+
+section > header {
+	position:absolute;
+	bottom: calc(100% - 15px);
+	left:0;
+}
+
+section > header p {
+	font-family: "exoB";
+	font-size: 28px;
+	color:rgb(0,153,255);
+	text-shadow:2px 2px 2px black;
+	margin-bottom: 5px;
+}
+
+#blockAvatar .blockInput {
+	width:66%;
+	margin-bottom:15px;
+	margin-top:20px;
+}
+
+#blockAvatar > div:not(.blockLink), #blockAvatar > p, 
+#ongletAvatar > p {
+	text-align: right;
+}
+
+#ongletAvatar > div:not(.blockLink), #ongletAvatar .file {
+	text-align: center;
+}
+
+#blockAvatar > p,
+#ongletAvatar > p {
+	font-size: 16px;
+	margin-top: 15px;
+}
+
+label[for=avatar] {
+	display: block;
+	margin-top: -30px;
+	margin-bottom:10px;
+}
+
+#blockAvatar .file {
+	text-align: center;
+}
+
+
+.blockInput {
+    margin-bottom: 35px;
+}
+
+
+aside .blockBtn {
+	margin-top:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

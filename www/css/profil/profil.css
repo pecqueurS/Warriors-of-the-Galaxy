@@ -1,0 +1,119 @@
+
+
+
+/*PROFIL*/
+#blockInfoServer {
+	position:absolute;
+	bottom: 100%;
+	right:0;
+	font-family: "ExoSB";
+	color:rgb(0,153,255);
+	padding:5px 15px;
+	width:240px;
+}
+
+#modifProfil, #partie {
+	width:calc((100% - 140px)/2);
+	padding:10px 30px;
+	display:table-cell;
+	min-width:50%;
+}
+
+#modifProfil .menu, #partie .menu {
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+
+#ongletAvatar.OptionProfil {
+	padding-top: 35px;
+}
+
+
+
+#modifProfil label[for=pwdNew],
+#modifProfil label[for=EmailNew] {
+	display:block;
+	margin-top: 40px;
+}
+
+#modifProfil .blockInput{
+	width:100%;
+	margin-bottom:35px;
+}
+
+
+
+
+
+.tableProfil {
+	height:310px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	border: 1px solid #cccccc;
+}
+
+.tableProfil .tableau {
+	margin-left:5px;
+	width: calc(100% - 25px);
+	text-align: center;
+}
+
+.tableProfil .tableau td:first-child {
+	text-align: center;
+}
+
+.tableProfil .tableau td:nth-child(2) {
+	text-align: left;
+}
+
+.tableProfil .tableau td:nth-child(3) {
+	text-align: right;
+}
+
+
+#partie #blockBtn {
+	width:60%;
+	float:left;
+	margin-top:10px;
+}
+
+#partie #blockBtn a {
+	display:block;
+	margin:15px auto 10px;
+}
+
+
+
+
+
+#partie #blockXp p:nth-child(odd) {
+	font-family: "ExoSB";
+	color:black;
+	font-size: 24px;
+	text-decoration: underline;
+	margin:7px auto 3px;
+}
+
+#partie #blockXp p:nth-child(even) {
+	font-family: "ExoB";
+	color:rgb(0,153,255);
+	text-align: right;
+}
+
+#partie #blockXp p:last-child {
+	font-size: 32px;
+	text-align: center;
+}
+
+#blockBtn2 {
+	position:absolute;
+	bottom:10px;
+	right:20px;
+}
+
+
+
+
+

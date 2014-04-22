@@ -1,0 +1,18 @@
+/*- de 1000 px*/
+
+
+@media screen and (max-width:1000px) {
+
+	#choixRace, #partie {
+		display:block;
+		width:calc(100% - 60px);
+		margin-bottom: 20px;
+	}
+
+	#infoGame, #choixRace {
+		padding-bottom: 100px;
+		margin-bottom: 50px;
+	}
+
+
+}

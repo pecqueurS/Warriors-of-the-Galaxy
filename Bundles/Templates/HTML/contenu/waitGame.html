@@ -1,0 +1,208 @@
+<section>
+<header>
+		<p>{TXT_ON_LOAD}</p>
+	<form method="POST" action="{LINK_ACCUEIL}">
+		<input type="submit" class="link logout" name="logout" value="{TXT_LOGOUT}" >
+	</form>
+	
+	<form method="POST" action="{LINK_WAIT}">
+		<input type="submit" class="link back" name="quitGame" value="{TXT_BACK}" >
+	</form>
+	
+</header>
+
+
+<article id="infoGame" class="cadre">
+	<header>
+		<h2>{TXT_GAME_OPTION} :</h2>
+	</header>
+<form>
+<div>
+		<div id="blockName">
+			<div class="link game">{TXT_NAME}</div>
+			<p>{GAME_NAME}</p>
+		</div>
+
+		<div id="blockPwd">
+			<div class="link mdp">{TXT_PWD}</div>
+			<p>{GAME_PWD}</p>
+		</div>
+
+		<div id="blockOpt">
+			<div class="link param">{TXT_OPTION}</div>
+			<p>{GAME_MAX_PLAY}</p>
+			<p>{GAME_END}</p>
+		</div>
+</div>
+
+</form>
+
+</article>
+
+
+
+
+<div>
+
+	<form id="form1" name="form1" method="POST" action="{LINK_WAIT}">
+
+
+<article id="choixRace" class="cadre">
+	<header>
+		<ul class="menu">
+			<li class="btn human" data-info="Humans">{TXT_RACE1}</li>
+			<li class="btn reptil" data-info="Reptilians">{TXT_RACE2}</li>
+			<li class="btn spider" data-info="Arachnids">{TXT_RACE3}</li>
+		</ul>
+	</header>
+	
+		<div>
+			<div id="ongletHumans" class="raceWaitGame">
+				<div><img src="../../images/planete_race1.png" alt="Humans Planet"></div>
+				<label for="humans">{TXT_RACE1} :</label>
+				<input type="checkbox" class="race" id="humans" name="race" value="humans" checked>
+				<p>{DESCRIPTION_RACE1}</p>
+			</div>
+
+
+			<div id="ongletReptilians" class="raceWaitGame">
+				<div><img src="../../images/planete_race2.png" alt="Reptilians Planet"></div>
+				<label for="reptilians">{TXT_RACE2} :</label>
+				<input type="checkbox" class="race" id="reptilians" name="race" value="reptilians">
+				<p>{DESCRIPTION_RACE2}</p>
+			</div>
+
+
+			<div id="ongletArachnids" class="raceWaitGame">
+				<div><img src="../../images/planete_race3.png" alt="Arachnids Planet"></div>
+				<label for="arachnids">{TXT_RACE3} :</label>
+				<input type="checkbox" class="race" id="arachnids" name="race" value="arachnids">
+				<p>{DESCRIPTION_RACE3}</p>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+
+
+	
+
+</article>
+
+
+
+
+<article id="partie" class="cadre">
+	<header>
+		<ul class="menu">
+			<li class="btn currentGames" data-info="CurrentGames">{TXT_CURRENT_GAME}</li>
+			<li class="btn chat" data-info="Chat">Chat</li>
+		</ul>
+	</header>
+		<div>
+
+			<div id="blockBtn">
+				<input type="{BTN_TYPE}" name="ready" class="flashBtn {COLOR}" value="{BTN_READY}">
+			</div>
+
+
+			<div id="ongletCurrentGames" class="joueurs">
+				<table class="tableau">
+					<thead>
+						<tr>
+						<th>{TH_READY}</th>
+						<th>{TH_PLAYERS}</th>
+						<th>{TH_RACE}</th>
+						<th>{TH_TEAM}</th>
+					</tr>
+				</thead>
+				<tbody>
+<!-- BEGIN infos_joueurs -->
+					<tr {CLASS_SELECTED}>
+						<td>{CURRENT_READY}</td>
+						<td>{CURRENT_PLAYERS}</td>
+						<td>{CURRENT_RACE}</td>
+						<td>{CURRENT_TEAM}</td>
+					</tr>
+
+<!-- END infos_joueurs -->    
+				</tbody>
+
+				</table>				
+
+			</div>
+
+			<div id="ongletChat" class="joueurs">
+				<div>
+					<textarea class="input" name="message" placeholder="Enter message"></textarea>
+					<input class="btn sendMail" type="submit" name="sendMess" value="{TXT_SEND}">
+				</div>
+				<div id="messages">
+					<table class="tableau">
+						<thead>
+							<tr>
+								<th>{CHAT_TH_JOUEUR}</th>
+								<th>{CHAT_TH_MESSAGE}</th>
+							</tr>
+						</thead>
+						<tbody>
+<!-- BEGIN chat -->
+							<tr data-info="{ID_CHAT}">
+								<td>{CHAT_JOUEUR}</td>
+								<td>{CHAT_MESSAGE}</td>
+							</tr>
+
+<!-- END chat -->    
+						</tbody>
+					</table>				
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+
+
+	
+
+</article>
+
+
+</form>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+

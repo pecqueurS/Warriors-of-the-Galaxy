@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WotG | Attente de Joueurs</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styleProfil.css">
+    <link rel="stylesheet" type="text/css" href="../../css/profil/waitGame.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize/waitGame.css">
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/style.js"></script>
+    <script type="text/javascript" src="../../js/waitGame.js"></script>
+  </head>
+  <body>
+<header><h1>Warriors Of The Galaxy</h1></header>
+<section>
+<header>
+	<form method="POST" action="test">
+		<p>Game on Load ...</p>
+		<input type="submit" class="link logout" name="signIn" value="Logout" >
+	</form>
+</header>
+
+
+<article id="infoGame" class="cadre">
+	<header>
+		<h2>Options Game :</h2>
+	</header>
+
+	<form method="POST" action="test">
+<div>
+		<div id="blockName">
+			<div class="link game">Name</div>
+			<p>Nom de la Partie</p>
+		</div>
+
+		<div id="blockPwd">
+			<div class="link mdp">Password</div>
+			<p>YES</p>
+		</div>
+
+		<div id="blockOpt">
+			<div class="link param">Options</div>
+			<p>Max Players : 16</p>
+			<p>End : Time Lapse</p>
+		</div>
+</div>
+
+
+	</form>
+
+</article>
+
+
+
+
+<div>
+
+
+
+<article id="choixRace" class="cadre">
+	<header>
+		<ul class="menu">
+			<li class="btn human" data="Humans">Humans</li>
+			<li class="btn reptil" data="Reptilians">Reptilians</li>
+			<li class="btn spider" data="Arachnids">Arachnids</li>
+		</ul>
+	</header>
+	<form method="POST" action="test">
+		<div>
+			<div id="ongletHumans" class="raceWaitGame">
+				<div><img src="../../images/planete_race1.png" alt="Humans Planet"></div>
+				<label for="humans">Humans :</label>
+				<input type="checkbox" class="race" id="humans" name="race" value="humans" checked>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit et dolore magna aliqua quis nostrud exercitation ullamco laboris. </p>
+			</div>
+
+
+			<div id="ongletReptilians" class="raceWaitGame">
+				<div><img src="../../images/planete_race2.png" alt="Reptilians Planet"></div>
+				<label for="reptilians">Reptilians :</label>
+				<input type="checkbox" class="race" id="reptilians" name="race" value="reptilians">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit et dolore magna aliqua quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+			</div>
+
+
+			<div id="ongletArachnids" class="raceWaitGame">
+				<div><img src="../../images/planete_race3.png" alt="Arachnids Planet"></div>
+				<label for="arachnids">Arachnids :</label>
+				<input type="checkbox" class="race" id="arachnids" name="race" value="arachnids">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit et dolore magna aliqua quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+
+
+	</form>
+
+</article>
+
+
+
+
+<article id="partie" class="cadre">
+	<header>
+		<ul class="menu">
+			<li class="btn currentGames" data="CurrentGames">Current Games</li>
+			<li class="btn chat" data="Chat">Chat</li>
+		</ul>
+	</header>
+	<form method="POST" action="test">
+		<div>
+
+			<div id="blockBtn">
+				<a href="createGame.html" class="flashBtn red" >Ready ?</a>
+			</div>
+
+
+			<div id="ongletCurrentGames" class="joueurs">
+				<table class="tableau">
+					<tr>
+						<th>ready</th>
+						<th>Player</th>
+						<th>Race</th>
+						<th>Team</th>
+					</tr>
+					<tr>
+						<td><div class="link valid"></div></td>
+						<td>Joueur 1</td>
+						<td>Reptilians</td>
+						<td>team 2</td>
+					</tr>
+					<tr class="selected">
+						<td><div class="link empty1"></div></td>
+						<td>Joueur 2</td>
+						<td>Reptilians</td>
+						<td><select name="race">
+							<option value="0" selected>No Team</option>
+							<option value="1">Team 1</option>
+							<option value="2">Team 2</option>
+							<option value="3">Team 3</option>
+							<option value="4">Team 4</option>
+							<option value="5">Team 5</option>
+							<option value="6">Team 6</option>
+							<option value="7">Team 7</option>
+							<option value="8">Team 8</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><div class="link valid"></div></td>
+						<td>Joueur 3</td>
+						<td>Reptilians</td>
+						<td>team 1</td>
+					</tr>
+					<tr>
+						<td><div class="link empty1"></div></td>
+						<td>Joueur 4</td>
+						<td>Reptilians</td>
+						<td>team 1</td>
+					</tr>
+				</table>				
+
+			</div>
+
+			<div id="ongletChat" class="joueurs">
+				<div>
+					<textarea class="input" name="message" placeholder="Enter message"></textarea>
+					<input class="btn sendMail" type="submit" name="sendMess" value="Send">
+				</div>
+				<div id="messages">
+					<table class="tableau">
+						<tr>
+							<th>Joueur</th>
+							<th>Message</th>
+						</tr>
+						<tr>
+							<td>Joueur 1</td>
+							<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. bla bla bla à la suite du message pour le faire passer sur 3 lignes...</td>
+						</tr>
+						<tr>
+							<td>Joueur 2</td>
+							<td>Game 2 </td>
+						</tr>
+						<tr>
+							<td>Joueur 1</td>
+							<td>Game 3</td>
+						</tr>
+					</table>				
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+
+
+	</form>
+
+</article>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<aside>
+	<a href="profil.html" class="btn back">Back</a>
+
+</aside>
+
+
+
+
+
+
+
+</section>
+
+
+
+<footer>
+	<img src="../../images/logo.png" alt="Logo de Stephane Pecqueur">
+	<ul id="infos_liens">
+		<li>About Us</li>
+		<li>Contact</li>
+		<li>Legal Informations</li>
+		<li>Screenshots</li>
+	</ul>
+	
+	<ul id="signal">
+		<li>Signaler un Abus</li>
+		<li>Signaler un Bug</li>
+	</ul>
+	
+	
+</footer>
+
+  </body>
+</html>

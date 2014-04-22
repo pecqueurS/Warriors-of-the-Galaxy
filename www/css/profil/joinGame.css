@@ -1,0 +1,58 @@
+#blockSearch {
+	width:70%;
+	margin-left:30px;
+}
+
+#blockSearch, 
+#blockBtn {
+	display:inline-block;
+}
+
+
+#blockSearch .blockInput {
+	width:80%;
+}
+
+#blockBtn {
+	width:20%;
+}
+
+#blockBtn .flashBtn {
+	width:100%;
+}
+
+
+#blockPartieEnAttente .tableau td:first-child .blockLink {
+	width:32px;
+	height:32px;
+	margin:0 auto;
+}
+
+#blockPartieEnAttente .tableau {
+	width:95%;
+	margin:0 auto;
+}
+
+#blockPartieEnAttente {
+	padding-bottom:30px;
+}
+
+#blockPartieEnAttente .tableau .selected {
+	background-color: #333333 !important;
+	color: rgb(0,153,255) !important;
+}
+
+#blockPartieEnAttente .tableau tbody tr:hover td {
+	border-top:1px solid rgb(0,153,255);
+	border-bottom:1px solid rgb(0,153,255);
+	cursor:pointer;
+}
+
+#blockPartieEnAttente .tableau tbody tr:hover td:first-child {
+	border-left:1px solid rgb(0,153,255);
+}
+
+#blockPartieEnAttente .tableau tbody tr:hover td:last-child {
+	border-right:1px solid rgb(0,153,255);
+}
+

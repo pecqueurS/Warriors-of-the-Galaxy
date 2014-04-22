@@ -1,0 +1,95 @@
+section > header > form {
+	display:inline-block;
+	vertical-align: bottom;
+}
+
+#blockName,
+#blockPwd,
+#blockOpt {
+	display:inline-block;
+	vertical-align: top;
+	min-width:30%;
+}
+
+#infoGame > form > div {
+	padding: 0 30px 30px;
+}
+
+#choixRace, #partie {
+	width:calc((100% - 140px)/2);
+	padding:10px 30px;
+	display:table-cell;
+	min-width:50%;
+}
+
+#choixRace .menu, #partie .menu {
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.race {
+	visibility: hidden;
+}
+
+#choixRace label {
+	display:inline-block;
+	margin: 15px auto;
+	font-size:24px;
+	text-decoration: underline;
+}
+
+#choixRace p {
+	font-family: "ExoSB";
+}
+
+select[name=team] {
+	color:rgb(0,153,255);
+	font-family: "ExoSB";
+}
+
+textarea.input {
+	width:100%;
+	height:100%;
+	overflow: auto;
+    resize:none;
+}
+
+
+#blockBtn {
+	margin-bottom:15px;
+}
+
+#blockBtn .flashBtn {
+	margin:0 auto;
+}
+
+#ongletChat .blockInput {
+	width:calc(100% - 120px);
+	height:70px;
+	margin-bottom: 10px;
+}
+
+
+#messages, #ongletCurrentGames {
+	height:310px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	border: 1px solid #cccccc;
+
+}
+
+#ongletCurrentGames {
+	clear:both;
+	height:398px;
+}
+
+#ongletChat .tableau {
+	font-size:18px;
+}
+
+#ongletChat .tableau th:first-child,
+#ongletChat .tableau td:first-child {
+	width:25%;
+	color:rgb(0,153,255);
+}

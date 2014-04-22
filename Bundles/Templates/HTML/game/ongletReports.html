@@ -1,0 +1,166 @@
+			<!-- ONGLET REPORTS -->
+			<div id="ongletReports" class="vues">
+
+				<div>
+					<div>
+						<h3>{TXT_ATT}</h3>
+						<div id="attackRep" class="tabAllReports">
+							<table class="tableau">
+								<tr>
+									<th><span class="blue">{TXT_TIME}</span></th>
+									<th><span class="min profil">{TXT_ENNEMY}</span></th>
+									<th><span class="min alliances">{TXT_TEAM}</span></th>
+									<th><span class="blue">X</span></th>
+									<th><span class="blue">Y</span></th>
+								</tr>
+<!-- BEGIN attackReports -->
+						<tr class="{ATT_REP_VICTORY}" data-info="{ATT_REP_ID}">
+									<td>{ATT_REP_TIME}</td>
+									<td>{ATT_REP_ENNEMY}</td>
+									<td>{ATT_REP_TEAM}</td>
+									<td>{ATT_REP_X}</td>
+									<td>{ATT_REP_Y}</td>
+						</tr>
+
+<!-- END attackReports -->    
+
+							</table>				
+						</div>
+					</div>
+					<div>
+						<h3>{TXT_DEF}</h3>
+						<div id="defenseRep" class="tabAllReports">
+							<table class="tableau">
+								<tr>
+									<th><span class="blue">{TXT_TIME}</span></th>
+									<th><span class="min profil">{TXT_ENNEMY}</span></th>
+									<th><span class="min alliances">{TXT_TEAM}</span></th>
+									<th><span class="blue">X</span></th>
+									<th><span class="blue">Y</span></th>
+								</tr>
+<!-- BEGIN defenseReports -->
+						<tr class="{DEF_REP_VICTORY}" data-info="{DEF_REP_ID}">
+									<td>{DEF_REP_TIME}</td>
+									<td>{DEF_REP_ENNEMY}</td>
+									<td>{DEF_REP_TEAM}</td>
+									<td>{DEF_REP_X}</td>
+									<td>{DEF_REP_Y}</td>
+						</tr>
+
+<!-- END defenseReports -->    
+
+							</table>				
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h3>{TXT_RAPPORT_DE} <span class="blue">{REPORT_TIME}</span> :</h3>
+				</div>
+
+				<div id="PersoReport" class="tabReport">
+					<div>
+						<h4>{REPORT_ATT}</h4>
+							<table class="tableau">
+								<tr>
+									<th><span class="min units">Type</span></th>
+									<th>{TXT_UNITS}</th>
+									<th>{TXT_REST}</th>
+								</tr>
+								<tr>
+									<td><span class="min unit1">{TXT_UNIT1}</span></td>
+									<td>{REPORT_ATT_UNIT1_DEB}</td>
+									<td>{REPORT_ATT_UNIT1_RES}</td>
+								</tr>
+								<tr>
+									<td><span class="min unit2">{TXT_UNIT2}</span></td>
+									<td>{REPORT_ATT_UNIT2_DEB}</td>
+									<td>{REPORT_ATT_UNIT2_RES}</td>
+								</tr>
+								<tr>
+									<td><span class="min unit3">{TXT_UNIT3}</span></td>
+									<td>{REPORT_ATT_UNIT3_DEB}</td>
+									<td>{REPORT_ATT_UNIT3_RES}</td>
+								</tr>
+							</table>
+							<p class="{REPORT_CLASS_ATT_RESULT}">{REPORT_ATT_RESULT}</p>				
+							<table class="tableau">
+								<tr>
+									<th><span class="min resources">Type</span></th>
+									<th>{TXT_RESOURCES}</th>
+								</tr>
+								<tr>
+									<td><span class="min ore">{TXT_ORE}</span></td>
+									<td class="{REPORT_CLASS_ATT_RESULT}">{REPORT_ORE}</td>
+								</tr>
+								<tr>
+									<td><span class="min organic">{TXT_ORGANIC}</span></td>
+									<td class="{REPORT_CLASS_ATT_RESULT}">{REPORT_ORGANIC}</td>
+								</tr>
+								<tr>
+									<td><span class="min energy">{TXT_ENERGY}</span></td>
+									<td class="{REPORT_CLASS_ATT_RESULT}">{REPORT_ENERGY}</td>
+								</tr>
+							</table>
+					</div>
+					<div>
+						<h4>{REPORT_DEF}</h4>
+							<table class="tableau">
+								<tr>
+									<th><span class="min units">Type</span></th>
+									<th>{TXT_UNITS}</th>
+									<th>{TXT_REST}</th>
+								</tr>
+								<tr>
+									<td><span class="min unit1">{TXT_UNIT1}</span></td>
+									<td>{REPORT_DEF_UNIT1_DEB}</td>
+									<td>{REPORT_DEF_UNIT1_RES}</td>
+								</tr>
+								<tr>
+									<td><span class="min unit2">{TXT_UNIT2}</span></td>
+									<td>{REPORT_DEF_UNIT2_DEB}</td>
+									<td>{REPORT_DEF_UNIT2_RES}</td>
+								</tr>
+								<tr>
+									<td><span class="min unit3">{TXT_UNIT3}</span></td>
+									<td>{REPORT_DEF_UNIT3_DEB}</td>
+									<td>{REPORT_DEF_UNIT3_RES}</td>
+								</tr>
+							</table>
+							<p class="{REPORT_CLASS_DEF_RESULT}">{REPORT_DEF_RESULT}</p>				
+							<table class="tableau">
+								<tr>
+									<th><span class="min resources">Type</span></th>
+									<th>{TXT_RESOURCES}</th>
+								</tr>
+								<tr>
+									<td><span class="min ore">{TXT_ORE}</span></td>
+									<td class="{REPORT_CLASS_DEF_RESULT}">{REPORT_ORE}</td>
+								</tr>
+								<tr>
+									<td><span class="min organic">{TXT_ORGANIC}</span></td>
+									<td class="{REPORT_CLASS_DEF_RESULT}">{REPORT_ORGANIC}</td>
+								</tr>
+								<tr>
+									<td><span class="min energy">{TXT_ENERGY}</span></td>
+									<td class="{REPORT_CLASS_DEF_RESULT}">{REPORT_ENERGY}</td>
+								</tr>
+							</table>
+					</div>
+				</div>
+
+
+
+
+
+
+			</div> <!-- Fin onglet REPORTS -->
+
+
+
+
+
+
+
+
+

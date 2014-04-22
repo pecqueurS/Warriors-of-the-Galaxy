@@ -1,0 +1,436 @@
+@import url("reset.css");
+
+@import url("../fonts/stylesheet.css");
+
+
+
+body {
+	background-color: #333333;
+	color:white;
+	font-family: "ExoL";
+	font-size: 22px;
+}
+
+#navigation{
+	position:fixed;
+	top:0;
+	left:0;
+	width:200px;
+	height:100%;
+	background-color: rgb(0,153,255);
+}
+
+#navigation h1 {
+	font-size:36px;
+	font-family: "ExoB";
+	margin:20px 10px;
+	text-align: center;
+	color:#333333;
+	border-bottom:3px solid #333333;
+}
+
+
+
+#content {
+	padding-left:210px;
+	
+}
+
+#content h1 {
+	font-size:40px;
+	font-family: "ExoB";
+	margin:20px;
+}
+
+#content h1 img {
+	width:90%;
+	max-width:600px;
+}
+
+
+#authentification {
+	margin-top: 100px;
+	margin-right:10px;
+}
+
+#authentification > div {
+	text-align: right;
+}
+
+.auth {
+	border:none;
+	margin:10px;
+	padding: 5px 15px;
+	background-color: rgb(0,153,255);
+	color:white;
+	font-family: "ExoSB";
+	text-align: center;
+}
+
+
+#deco > div {
+	text-align: center;
+	margin-bottom:15px;
+}
+
+#logout {
+	border:none;
+	padding: 5px 15px;
+	background-color: red;
+	color:white;
+	font-family: "ExoSB";
+	text-align: center;
+
+}
+
+.menu h2 {
+	margin-left:3px;
+	font-size:28px;
+	font-family: "ExoB";
+}
+
+.menu > ul > li:before {
+	content:"|→ ";
+	font-size:0.8em;
+	font-family: "arial";
+}
+
+.menu > ul > li {
+	margin-left:10px;
+}
+
+
+
+.rond {
+	display:inline-block;
+	width:15px;
+	height:15px;
+	border-radius: 15px;
+}
+
+.rond.red {
+	background-color: red;
+}
+
+.rond.green {
+	background-color: lime;
+}
+
+
+.tableau {
+	font-size: 18px;
+}
+
+.tableau img{
+	width:50px;
+	vertical-align: bottom;
+}
+
+.tableau th {
+	vertical-align: middle;
+	border:1px solid #333333;
+	text-align: center;
+	background-color: rgb(0,153,255);
+}
+
+.tableau td {
+	vertical-align: middle;
+	border:1px solid rgb(0,153,255);
+	text-align: center;
+}
+
+
+
+
+
+
+#joueurs .tableau th,
+#joueurs .tableau td {
+	min-width:50px;
+	max-width:50px;
+}
+
+#joueurs .tableau th:nth-of-type(4),
+#joueurs .tableau td:nth-of-type(4) {
+	min-width:120px;
+	max-width:120px;
+	text-align: left;
+	padding-left:10px;
+}
+
+#joueurs .tableau th:nth-of-type(5),
+#joueurs .tableau td:nth-of-type(5) {
+	min-width:80px;
+	max-width:80px;
+	text-align: right;
+	padding-right:10px;
+}
+
+#joueurs .tableau th:nth-of-type(7),
+#joueurs .tableau th:nth-of-type(8),
+#joueurs .tableau td:nth-of-type(7),
+#joueurs .tableau td:nth-of-type(8) {
+	min-width:180px;
+	max-width:180px;
+	text-align: left;
+	padding-left:10px;
+
+}
+
+#joueurs .tableau th:nth-of-type(13),
+#joueurs .tableau td:nth-of-type(13) {
+	min-width:120px;
+	max-width:120px;
+	text-align: left;
+	padding-left:10px;
+
+}
+
+#joueurs .tableau th:nth-of-type(14),
+#joueurs .tableau td:nth-of-type(14) {
+	min-width:300px;
+	max-width:300px;
+	text-align: left;
+	padding-left:10px;
+
+}
+
+
+
+
+
+#parties .tableau td,
+#parties .tableau th {
+	height:50px;
+}
+
+#parties .tableau td:nth-of-type(1),
+#parties .tableau th:nth-of-type(1),
+#parties .tableau td:nth-of-type(4),
+#parties .tableau th:nth-of-type(4),
+#parties .tableau td:nth-of-type(7),
+#parties .tableau th:nth-of-type(7) {
+	max-width:50px;
+	min-width:50px;
+}
+
+#parties .tableau td:nth-of-type(5),
+#parties .tableau th:nth-of-type(5) {
+	max-width:100px;
+	min-width:100px;
+}
+
+#parties .tableau td:nth-of-type(2),
+#parties .tableau th:nth-of-type(2),
+#parties .tableau td:nth-of-type(3),
+#parties .tableau th:nth-of-type(3),
+#parties .tableau td:nth-of-type(8),
+#parties .tableau th:nth-of-type(8) {
+	max-width:150px;
+	min-width:150px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+#parties .tableau td:nth-of-type(6),
+#parties .tableau th:nth-of-type(6) {
+	max-width:180px;
+	min-width:180px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+
+
+
+.messagesTab  {
+	display: none;
+}
+
+.messagesTab .tableau td,
+.messagesTab .tableau th {
+	height:50px;
+}
+
+.messagesTab .tableau td:nth-of-type(1),
+.messagesTab .tableau th:nth-of-type(1) {
+	max-width:50px;
+	min-width:50px;
+}
+
+.messagesTab .tableau td:nth-of-type(2),
+.messagesTab .tableau th:nth-of-type(2) {
+	max-width:150px;
+	min-width:150px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.messagesTab .tableau td:nth-of-type(3),
+.messagesTab .tableau th:nth-of-type(3),
+.messagesTab .tableau td:nth-of-type(4),
+.messagesTab .tableau th:nth-of-type(4) {
+	max-width:180px;
+	min-width:180px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.messagesTab .tableau td:nth-of-type(5),
+.messagesTab .tableau th:nth-of-type(5) {
+	display:none;
+}
+
+.messagesTab .tableau tr:hover td {
+	background-color: rgb(0,153,255);
+	border:1px solid #333333;
+	cursor:pointer;
+}
+
+
+.auth.btn {
+	display: inline-block;
+	width:30%;
+	max-width: 250px;
+	border:3px solid transparent;
+}
+
+
+
+
+pre {
+	font-size:15px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:1500px) {
+
+	#joueurs .tableau th:nth-of-type(1),
+	#joueurs .tableau th:nth-of-type(2),
+	#joueurs .tableau th:nth-of-type(5),
+	#joueurs .tableau th:nth-of-type(13),
+	#joueurs .tableau th:nth-of-type(14),
+
+	#joueurs .tableau td:nth-of-type(1),
+	#joueurs .tableau td:nth-of-type(2),
+	#joueurs .tableau td:nth-of-type(5),
+	#joueurs .tableau td:nth-of-type(13),
+	#joueurs .tableau td:nth-of-type(14) {
+		display:none;
+
+	}
+
+
+	#parties .tableau td:nth-of-type(3),
+	#parties .tableau th:nth-of-type(3),
+	#parties .tableau td:nth-of-type(5),
+	#parties .tableau th:nth-of-type(5) {
+		display:none;
+	}
+
+
+	
+
+}
+
+
+
+@media screen and (max-width:1000px) {
+
+
+	#joueurs .tableau th:nth-of-type(7),
+	#joueurs .tableau th:nth-of-type(8),
+	#joueurs .tableau th:nth-of-type(10),
+	#joueurs .tableau th:nth-of-type(11),
+
+	#joueurs .tableau td:nth-of-type(7),
+	#joueurs .tableau td:nth-of-type(8),
+	#joueurs .tableau td:nth-of-type(10),
+	#joueurs .tableau td:nth-of-type(11) {
+		display:none;
+
+	}
+
+
+
+	#parties .tableau td:nth-of-type(1),
+	#parties .tableau th:nth-of-type(1),
+	#parties .tableau td:nth-of-type(4),
+	#parties .tableau th:nth-of-type(4),
+	#parties .tableau td:nth-of-type(6),
+	#parties .tableau th:nth-of-type(6) {
+		display:none;
+	}
+
+
+
+	.messagesTab .tableau td:nth-of-type(4),
+	.messagesTab .tableau th:nth-of-type(4) {
+		display: none;
+	}
+
+
+
+}
+
+
+
+@media screen and (max-width:500px) {
+
+	#navigation{
+		position:fixed;
+		top:0;
+		left:-190px;
+	-webkit-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+    	-ms-transition: all 1s ease;
+    	 -o-transition: all 1s ease;
+      		transition: all 1s ease;
+		cursor:pointer;
+	}
+
+	#navigation:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-top: 24px solid transparent;
+		border-bottom: 24px solid transparent;
+		border-left: 24px solid rgb(0,153,255);
+		position: absolute;
+		top: 48%;
+		left: 200px;
+	}
+
+	#navigation:hover{
+		position:fixed;
+		top:0;
+		left:0;
+	}
+
+	#content{
+	padding-left:20px;
+	-webkit-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+    	-ms-transition: all 1s ease;
+    	 -o-transition: all 1s ease;
+      		transition: all 1s ease;
+	}
+
+	#navigation:hover + #content{
+		padding-left:210px;
+	}
+
+
+
+
+
+
+}

@@ -1,0 +1,24 @@
+#blockPartieName {
+	float:left;
+}
+
+#blockPartiePwd {
+	float:right;
+}
+#blockPartieOption {
+	clear:both;
+}
+
+#createGame > form > div {
+	margin: 0 auto;
+	width:90%;
+}
+
+#blockBtn {
+	padding-bottom: 30px;
+}
+
+#endDescr {
+	margin-bottom: 30px;
+}
+

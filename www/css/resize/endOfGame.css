@@ -1,0 +1,14 @@
+/*- de 1000 px*/
+
+
+@media screen and (max-width:1000px) {
+
+	#endGame .team {
+		width:90%;
+		display:block;
+		margin:0 5% 2%;
+
+	}
+
+
+}

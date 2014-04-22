@@ -1,0 +1,149 @@
+				<!-- ACTION COLONIES -->
+					<div id="ongletColon" class="actionsQG">
+						<h2><span><span class="link colon">Colonies</span></span></h2>
+						<div class="blockDescript">
+							<h3>Decription : </h3>
+							<p>{DESCR_ACT}</p>
+						</div>
+
+						<div class="blockAction">
+							<div id="tabColonies">
+
+								<table class="tableau">
+									<tr>
+										<th>X</th>
+										<th>Y</th>
+										<th>Bonus</th>
+										<th><span class="min history">Details</span></th>
+									</tr>
+<!-- BEGIN colonies -->
+									<tr>
+										<td>{COL_X}</td>
+										<td>{COL_Y}</td>
+										<td><span class="min ore">{COL_RES}</span> : <span class="win">{COL_WIN}</span></td>
+										<td><span class="min history">Details</span></td>
+									</tr>
+
+<!-- END colonies -->    
+
+								</table>	
+							</div>	
+
+							<div id="tabColonTeam">
+								<table class="tableau">
+									<thead>
+										<tr>
+											<th colspan="5">{TITRE_DETAILS}</th>
+										</tr>
+										<tr>
+											<th>T.</th>
+											<th><span class="min unit1">{TXT_UNIT1}</span></th>
+											<th><span class="min unit2">{TXT_UNIT2}</span></th>
+											<th><span class="min unit3">{TXT_UNIT3}</span></th>
+											<th>Act.</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th colspan="5"><span class="btn units">{TXT_SEND_NEW_TEAM}</span></th>
+										</tr>
+									</tfoot>
+									<tbody>
+<!-- BEGIN detailsColonie -->
+										<tr>
+											<td>{DET_TEAM}</td>
+											<td>{DET_UNIT1}</td>
+											<td>{DET_UNIT2}</td>
+											<td>{DET_UNIT3}</td>
+											<td><span class="min back">{DET_BACK}</span></td>
+										</tr>
+
+<!-- END detailsColonie -->    
+									</tbody>
+								</table>	
+							</div>			
+						</div>
+					</div>
+
+
+
+
+
+
+
+				<!-- ONGLET EN COURS -->
+					<div id="ongletProgress" class="actionsQG">
+						<h2><span><span class="link update">{TXT_IN_PROGRESS}</span></span></h2>
+						<div class="blockAction">
+							<div class="constructEnCours">
+								<h3>Construction :</h3>
+<!-- BEGIN constructionEnCours -->
+								<div class="progressBar" data-info="{CONSTR_PERCENT_PROGRESS}"><div class="progressType">{CONSTR_BAT}</div><span class="progressTime">{CONSTR_TIME_LEFT}</span></div>
+<!-- END constructionEnCours -->    
+							</div>
+
+							<div class="amelioEnCours">
+								<h3>Actions :</h3>
+<!-- BEGIN actionsEnCours -->
+								<div class="progressBar" data-info="{CONSTR_PERCENT_PROGRESS}"><div class="progressType">{CONSTR_BAT}</div><span class="progressTime">{CONSTR_TIME_LEFT}</span></div>
+<!-- END actionsEnCours -->    
+							</div>
+
+							<div class="unitsEnCours">
+								<h3>{TXT_UNITS} :</h3>
+<!-- BEGIN unitsEnCours -->
+								<div class="progressBar" data-info="{CONSTR_PERCENT_PROGRESS}"><div class="progressType">{CONSTR_BAT}</div><span class="progressTime">{CONSTR_TIME_LEFT}</span></div>
+<!-- END unitsEnCours -->    
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+
+
+				<!-- ONGLET UPGRADE QG -->
+					<div id="ongletUpgradeQG" class="actionsQG">
+					<div class="upgradeOnglet">
+						<h2><span><span class="link upgrade">{TXT_UP_BUILD}</span></span></h2>
+						<div class="blockDescript">
+							<h3>Decription : </h3>
+							<p>{TXT_DESCR_BUILD}</p>
+						</div>
+
+						<div class="blockAction">
+							<div><h3>{TXT_NEXT_LVL} :</h3><span>{UPGRADE_QG_NEXT_LVL}</span></div>
+							<div><h3>{TXT_NEC_TIME} :</h3><span>{UPGRADE_QG_NEC_TIME}</span></div>
+							<div>
+								<h3>{TXT_COST_CONSTR} :</h3>
+								<div><span class="min ore">{TXT_ORE}</span><span>{UPGRADE_QG_COST_ORE}</span></div>
+								<div><span class="min organic">{TXT_ORGANIC}</span><span>{UPGRADE_QG_COST_ORGANIC}</span></div>
+								<div><span class="min energy">{TXT_ENERGY}</span><span>{UPGRADE_QG_COST_ENERGY}</span></div>
+							</div>
+
+							<div>
+								<h3>{TXT_BONUS} :</h3>
+								<div><span class="min units">{TXT_SP}</span> : <span>{UPGRADE_QG_BONUS_SP}</span></div>
+								<div><span class="min resources">{TXT_RES}</span> : <span>{UPGRADE_QG_BONUS_RES}</span></div>
+								<div><span class="min research">{TXT_RC}</span> : <span>{UPGRADE_QG_BONUS_RC}</span></div>
+								<div><span class="min defense">{TXT_DC}</span> : <span>{UPGRADE_QG_BONUS_DC}</span></div>
+								<div><span class="min warehouse">{TXT_WH}</span> : <span>{UPGRADE_QG_BONUS_WH}</span></div>
+							</div>
+
+							<div>
+								<input type="submit" class="btn upgrade" name="upgradeQG" value="{TXT_UPGRADE}">
+							</div>
+
+
+						</div>
+					</div>
+					</div>
+
+
+
+
+
+
+

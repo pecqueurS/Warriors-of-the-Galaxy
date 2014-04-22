@@ -1,0 +1,28 @@
+
+/*- de 1000 px*/
+
+
+@media screen and (max-width:1000px) {
+
+#InscriptForm > form > div:first-child {
+	-moz-column-count:1;
+	-moz-column-rule: 0; 
+	-moz-column-gap : auto;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

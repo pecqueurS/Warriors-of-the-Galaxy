@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WotG | Forgot Pwd</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styleAccueil.css">
+    <link rel="stylesheet" type="text/css" href="../../css/accueil/forgot_pwd.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize.css">
+    <link rel="stylesheet" type="text/css" href="../../css/resize/forgot_pwd.css">
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/style.js"></script>
+  </head>
+  <body>
+<header><h1>Warriors Of The Galaxy</h1></header>
+<section>	
+
+<article id="loginForm" class="cadre">
+	<header>
+		<h2>Forgot your Password ?</h2>
+	</header>
+<div>
+	<form method="POST" action="test">
+		<div id="blockServer">
+			<label for="server">Server :</label><br/>
+			<select id="server" name="server">
+				<option selected>Andromède</option>
+			</select>
+		</div>
+		<div id="blockLogin">
+			<label for="login">User Name :</label>
+			<input type="text" class="input" id="login" name="login" value="" placeholder="Enter your Login" required><br/>
+			<label for="pwd">Email :</label>
+			<input type="email" class="input" id="email" name="email" value="" placeholder="Enter your Email" required>
+		</div>
+		<div id="blockBtn" class="forgot_pwd">
+			<input type="submit" class="btn sendMail" name="sendMail" value="Send me a New Password" >
+			<a class="btn back" href="../accueil/accueil.html" >Back</a>
+		</div>
+	</form>
+</div>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+  <article id="explications">
+
+  <p>
+  	Pour une question de sécurité, nous sommes dans l'incapacité de vous restituer votre mot de passe. Un email avec un nouveau mot de passe vous sera envoyé à l'adresse se trouvant dans votre profil. Vous pourrez le modifier par la suite dans la section dédiée.
+  </p>
+
+
+
+  </article>
+</section>
+
+
+
+<footer>
+	<img src="../../images/logo.png" alt="Logo de Stephane Pecqueur">
+	<ul id="infos_liens">
+		<li>About Us</li>
+		<li>Contact</li>
+		<li>Legal Informations</li>
+		<li>Screenshots</li>
+	</ul>
+	
+	<ul id="signal">
+		<li>Signaler un Abus</li>
+		<li>Signaler un Bug</li>
+	</ul>
+	
+	
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,62 @@
+#InscriptForm {
+	margin: 0 auto 50px;
+	width:(100%-30px);
+	padding:60px 30px 30px;
+}
+
+#InscriptForm header {
+	margin-top:-65px;
+}
+
+#InscriptForm > form > div:first-child {
+	-webkit-column-count:2;
+	-webkit-column-rule: 3px solid rgba(0,153,255,1); 
+	-webkit-column-gap : 3rem;
+	   -moz-column-count:2;
+	   -moz-column-rule: 3px solid rgba(0,153,255,1); 
+	   -moz-column-gap : 3rem;
+		-ms-column-count:2;
+		-ms-column-rule: 3px solid rgba(0,153,255,1); 
+		-ms-column-gap : 3rem;
+		 -o-column-count:2;
+		 -o-column-rule: 3px solid rgba(0,153,255,1); 
+		 -o-column-gap : 3rem;
+			column-count:2;
+			column-rule: 3px solid rgba(0,153,255,1); 
+			column-gap : 3rem;
+	margin-bottom: 30px;
+}
+
+
+#blockLogin label, #blockMdp label, #blockEmail label {
+	display: inline-block;
+	width:24%;
+}
+
+#titreSecu {
+	margin-top:50px;
+}
+
+#nivSecu {
+	width:50%;
+	height:24px;
+	background-color: #cccccc;
+	background-image: linear-gradient(to right, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
+	border-radius: 10px;
+	border:1px solid #333333;
+	margin:3px auto;
+}
+
+#titreSecu,
+#levSecu {
+	text-align: center;
+}
+
+
+#blockLogin,
+#blockMdp,
+#blockEmail {
+	margin-bottom: 20px;
+}
+
+
