@@ -9,21 +9,25 @@
 }
 
 #InscriptForm > form > div:first-child {
-	-webkit-column-count:2;
-	-webkit-column-rule: 3px solid rgba(0,153,255,1); 
-	-webkit-column-gap : 3rem;
-	   -moz-column-count:2;
-	   -moz-column-rule: 3px solid rgba(0,153,255,1); 
-	   -moz-column-gap : 3rem;
-		-ms-column-count:2;
-		-ms-column-rule: 3px solid rgba(0,153,255,1); 
-		-ms-column-gap : 3rem;
-		 -o-column-count:2;
-		 -o-column-rule: 3px solid rgba(0,153,255,1); 
-		 -o-column-gap : 3rem;
-			column-count:2;
-			column-rule: 3px solid rgba(0,153,255,1); 
-			column-gap : 3rem;
+
+            column-count: 2;
+  	-webkit-column-count: 2;
+       -moz-column-count: 2;
+        -ms-column-count: 2;
+         -o-column-count: 2;
+
+            column-rule: 3px solid rgba(0,153,255,1); 
+   	-webkit-column-rule: 3px solid rgba(0,153,255,1); 
+       -moz-column-rule: 3px solid rgba(0,153,255,1); 
+        -ms-column-rule: 3px solid rgba(0,153,255,1); 
+         -o-column-rule: 3px solid rgba(0,153,255,1); 
+
+            column-gap: 3rem;
+ 	-webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+        -ms-column-gap: 3rem;
+       	 -o-column-gap: 3rem;
+
 	margin-bottom: 30px;
 }
 
@@ -42,7 +46,15 @@
 	height:24px;
 	background-color: #cccccc;
 	background-image: linear-gradient(to right, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
-	border-radius: 10px;
+	background-image: -webkit-linear-gradient(left, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
+    background-image:    -moz-linear-gradient(left, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
+    background-image:     -ms-linear-gradient(left, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
+    background-image:      -o-linear-gradient(left, #ff0000 0%, #ffff00 40%, #00ff00 80%, #cccccc 81%);
+			border-radius: 10px;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	    -ms-border-radius: 10px;
+	     -o-border-radius: 10px;
 	border:1px solid #333333;
 	margin:3px auto;
 }

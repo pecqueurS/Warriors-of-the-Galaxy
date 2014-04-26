@@ -19,7 +19,7 @@ require_once (CALCULS."calculs.php");
 
 
 
-// Appel Modele
+// Appel Controleurs
 require_once (CTRL."controlleurs.php");
 
 

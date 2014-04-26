@@ -5,7 +5,12 @@
 
 	#choixRace, #partie {
 		display:block;
-		width:calc(100% - 60px);
+		width:auto;
+		width:			calc(100% - 60px);
+	  	width: -webkit-calc(100% - 60px);
+	  	width:    -moz-calc(100% - 60px);
+	  	width:     -ms-calc(100% - 60px);
+	  	width:      -o-calc(100% - 60px);
 		margin-bottom: 20px;
 	}
 

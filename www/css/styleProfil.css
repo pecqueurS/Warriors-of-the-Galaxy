@@ -15,7 +15,12 @@ section {
 
 section > header {
 	position:absolute;
-	bottom: calc(100% - 15px);
+	bottom:100%;
+	bottom: 		calc(100% - 15px);
+  	bottom: -webkit-calc(100% - 15px);
+  	bottom:    -moz-calc(100% - 15px);
+  	bottom:     -ms-calc(100% - 15px);
+  	bottom:      -o-calc(100% - 15px);
 	left:0;
 }
 

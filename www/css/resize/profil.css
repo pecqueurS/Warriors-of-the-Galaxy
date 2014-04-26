@@ -4,12 +4,22 @@
 @media screen and (max-width:1000px) {
 
 	#blockInfoServer {
-		bottom: calc(100% + 10px);
+		bottom:102%;
+		bottom: 		calc(100% + 10px);
+	  	bottom: -webkit-calc(100% + 10px);
+	  	bottom:    -moz-calc(100% + 10px);
+	  	bottom:     -ms-calc(100% + 10px);
+	  	bottom:      -o-calc(100% + 10px);
 	}
 
 	#modifProfil, #partie {
 		display:block;
-		width:calc(100% - 80px);
+		width:auto;
+		width:			calc(100% - 80px);
+	  	width: -webkit-calc(100% - 80px);
+	  	width:    -moz-calc(100% - 80px);
+	  	width:     -ms-calc(100% - 80px);
+	  	width:      -o-calc(100% - 80px);
 		margin-bottom: 20px;
 	}
 

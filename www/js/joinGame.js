@@ -3,7 +3,7 @@ $( document ).ready(function() {
 $("#blockPartieEnAttente tbody").find("tr").eq(0).find("td").addClass("selected");
 
 
-
+// Choix d'une partie dan sle onclick
 $("#blockPartieEnAttente tbody").on("click","tr",function(){
 	$("#blockPartieEnAttente tbody").find("tr").find("td").removeClass("selected");
 	$(this).find("td").addClass("selected");

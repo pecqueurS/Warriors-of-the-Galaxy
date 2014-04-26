@@ -17,7 +17,12 @@
 	body > header {
 		height:380px;
 		background-size: 980px 380px;
-		margin-bottom: calc((-380px)*2/3);
+		margin-bottom:-250px;
+		margin-bottom: 			calc((-380px)*2/3);
+	  	margin-bottom: -webkit-calc((-380px)*2/3);
+	  	margin-bottom:    -moz-calc((-380px)*2/3);
+	  	margin-bottom:     -ms-calc((-380px)*2/3);
+	  	margin-bottom:      -o-calc((-380px)*2/3);
 	}
 
 
@@ -47,7 +52,12 @@
 		height:380px;
 		background:url(../images/header.png) no-repeat left top; 
 		background-size: 980px 380px;
-		margin-bottom: calc((-380px)*2/3);
+		margin-bottom:-250px;
+		margin-bottom: 			calc((-380px)*2/3);
+	  	margin-bottom: -webkit-calc((-380px)*2/3);
+	  	margin-bottom:    -moz-calc((-380px)*2/3);
+	  	margin-bottom:     -ms-calc((-380px)*2/3);
+	  	margin-bottom:      -o-calc((-380px)*2/3);
 	}
 
 	section {
@@ -56,7 +66,12 @@
 		}
 
 	section > header {
-		bottom: calc(100% - 5px);
+		bottom:100%;
+		bottom: 		calc(100% - 5px);
+	  	bottom: -webkit-calc(100% - 5px);
+	  	bottom:    -moz-calc(100% - 5px);
+	  	bottom:     -ms-calc(100% - 5px);
+	  	bottom:      -o-calc(100% - 5px);
 	}
 
 
@@ -110,7 +125,11 @@
 	}
 
 	#infos_liens >li:hover {
-		box-shadow: inset 2px 2px 4px black;
+				box-shadow: inset 2px 2px 4px black;
+	   	-webkit-box-shadow: inset 2px 2px 4px black;
+		   -moz-box-shadow: inset 2px 2px 4px black;
+			-ms-box-shadow: inset 2px 2px 4px black;
+			 -o-box-shadow: inset 2px 2px 4px black;
 	}
 
 

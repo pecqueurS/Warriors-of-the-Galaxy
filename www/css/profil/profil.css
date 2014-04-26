@@ -13,7 +13,11 @@
 }
 
 #modifProfil, #partie {
-	width:calc((100% - 140px)/2);
+	width:   		calc((100% - 140px)/2);
+  	width: -webkit-calc((100% - 140px)/2);
+  	width:    -moz-calc((100% - 140px)/2);
+  	width:     -ms-calc((100% - 140px)/2);
+  	width:      -o-calc((100% - 140px)/2);
 	padding:10px 30px;
 	display:table-cell;
 	min-width:50%;
@@ -56,7 +60,11 @@
 
 .tableProfil .tableau {
 	margin-left:5px;
-	width: calc(100% - 25px);
+	width: 			calc(100% - 25px);
+  	width: -webkit-calc(100% - 25px);
+  	width:    -moz-calc(100% - 25px);
+  	width:     -ms-calc(100% - 25px);
+  	width:      -o-calc(100% - 25px);
 	text-align: center;
 }
 

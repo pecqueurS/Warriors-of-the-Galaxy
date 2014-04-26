@@ -29,10 +29,21 @@ section > header > form button {
 	color:white;
 	border:none;
 	padding:0px 10px 3px 3px;
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
+			border-top-left-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	    -moz-border-radius-topleft: 7px;
+		-ms-border-top-left-radius: 7px;
+		 -o-border-top-left-radius: 7px;
+
+			border-bottom-left-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	    -moz-border-radius-bottomleft: 7px;
+		-ms-border-bottom-left-radius: 7px;
+		 -o-border-bottom-left-radius: 7px;
+
 	font-family: "ExoL";
 	font-size:20px;
+	z-index: 99;
 }
 
 section > header {
@@ -78,7 +89,16 @@ section > header > div > div {
 .progressBar {
 	position:relative;
 	background: linear-gradient(to bottom, #999999 0%, #cccccc 50%, #999999 100%); 
-	border-radius: 25px;
+	background: -webkit-linear-gradient(top, #999999 0%, #cccccc 50%, #999999 100%); 
+    background:    -moz-linear-gradient(top, #999999 0%, #cccccc 50%, #999999 100%); 
+    background:     -ms-linear-gradient(top, #999999 0%, #cccccc 50%, #999999 100%); 
+    background:      -o-linear-gradient(top, #999999 0%, #cccccc 50%, #999999 100%); 
+
+			border-radius: 25px;
+	-webkit-border-radius: 25px;
+	   -moz-border-radius: 25px;
+	    -ms-border-radius: 25px;
+	     -o-border-radius: 25px;
 	width:80%;
 	min-width: 400px;
 	overflow:hidden;
@@ -128,35 +148,101 @@ section > header > div > div {
 	position:absolute;
 	top:0;
 	left:0;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
+			border-top-left-radius: 25px;
+	-webkit-border-top-left-radius: 25px;
+	    -moz-border-radius-topleft: 25px;
+		-ms-border-top-left-radius: 25px;
+		 -o-border-top-left-radius: 25px;
+
+			border-bottom-left-radius: 25px;
+	-webkit-border-bottom-left-radius: 25px;
+	    -moz-border-radius-bottomleft: 25px;
+		-ms-border-bottom-left-radius: 25px;
+		 -o-border-bottom-left-radius: 25px;
+
 	height:100%;
 	background: linear-gradient(to bottom, #0066ff 0%, #00ccff 50%, #0066ff 100%);
+	background: -webkit-linear-gradient(top, #0066ff 0%, #00ccff 50%, #0066ff 100%);
+    background:    -moz-linear-gradient(top, #0066ff 0%, #00ccff 50%, #0066ff 100%);
+    background:     -ms-linear-gradient(top, #0066ff 0%, #00ccff 50%, #0066ff 100%);
+    background:      -o-linear-gradient(top, #0066ff 0%, #00ccff 50%, #0066ff 100%);
 }
 
 .progression.red {
 	background-image: linear-gradient(to bottom, #ff0000 0%, #ff6600 50%,#ff0000 100%);
+	background-image: -webkit-linear-gradient(top, #ff0000 0%, #ff6600 50%,#ff0000 100%);
+    background-image:    -moz-linear-gradient(top, #ff0000 0%, #ff6600 50%,#ff0000 100%);
+    background-image:     -ms-linear-gradient(top, #ff0000 0%, #ff6600 50%,#ff0000 100%);
+    background-image:      -o-linear-gradient(top, #ff0000 0%, #ff6600 50%,#ff0000 100%);
 }
 
 .progression.green {
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
+			border-top-right-radius: 25px;
+	-webkit-border-top-right-radius:25px;
+	    -moz-border-radius-topright:25px;
+		-ms-border-top-right-radius:25px;
+		 -o-border-top-right-radius:25px;
+
+			border-bottom-right-radius: 25px;
+	-webkit-border-bottom-right-radius: 25px;
+	    -moz-border-radius-bottomright: 25px;
+		-ms-border-bottom-right-radius: 25px;
+		 -o-border-bottom-right-radius: 25px;
+
 	background-image: linear-gradient(to bottom, #009900 0%, #00ff00 50%, #009900 100%);
+	background-image: -webkit-linear-gradient(top, #009900 0%, #00ff00 50%, #009900 100%);
+    background-image:    -moz-linear-gradient(top, #009900 0%, #00ff00 50%, #009900 100%);
+    background-image:     -ms-linear-gradient(top, #009900 0%, #00ff00 50%, #009900 100%);
+    background-image:      -o-linear-gradient(top, #009900 0%, #00ff00 50%, #009900 100%);
 }
 
 .progression.back {
 	left:auto;
 	right:0;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
+			border-top-left-radius: 0;
+	-webkit-border-top-left-radius:0;
+	    -moz-border-radius-topleft:0;
+		-ms-border-top-left-radius:0;
+		 -o-border-top-left-radius:0;
+
+			border-bottom-left-radius: 0;
+	-webkit-border-bottom-left-radius:0;
+	    -moz-border-radius-bottomleft:0;
+		-ms-border-bottom-left-radius:0;
+		 -o-border-bottom-left-radius:0;
+
+			border-top-right-radius: 25px;
+	-webkit-border-top-right-radius:25px;
+	    -moz-border-radius-topright:25px;
+		-ms-border-top-right-radius:25px;
+		 -o-border-top-right-radius:25px;
+
+			border-bottom-right-radius: 25px;
+	-webkit-border-bottom-right-radius:25px;
+	    -moz-border-radius-bottomright:25px;
+		-ms-border-bottom-right-radius:25px;
+		 -o-border-bottom-right-radius:25px;
+
 }
 
 .progression.orders {
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
+			border-top-right-radius: 25px;
+	-webkit-border-top-right-radius:25px;
+	    -moz-border-radius-topright:25px;
+		-ms-border-top-right-radius:25px;
+		 -o-border-top-right-radius:25px;
+
+			border-bottom-right-radius: 25px;
+	-webkit-border-bottom-right-radius:25px;
+	    -moz-border-radius-bottomright:25px;
+		-ms-border-bottom-right-radius:25px;
+		 -o-border-bottom-right-radius:25px;
+
 	background-image: linear-gradient(to bottom, #333333 0%, #999999 50%, #333333 100%);
+	background-image: -webkit-linear-gradient(top, #333333 0%, #999999 50%, #333333 100%);
+    background-image:    -moz-linear-gradient(top, #333333 0%, #999999 50%, #333333 100%);
+    background-image:     -ms-linear-gradient(top, #333333 0%, #999999 50%, #333333 100%);
+    background-image:      -o-linear-gradient(top, #333333 0%, #999999 50%, #333333 100%);
 	text-align: center;
 }
 
@@ -220,7 +306,11 @@ h3 {
 	position:absolute;
 	top:0; left:0;
 	background-color: white;
-	border-radius: 7px;
+			border-radius: 7px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	    -ms-border-radius: 7px;
+	     -o-border-radius: 7px;
 	width:34px;
 	height: 34px;
 }
@@ -289,7 +379,11 @@ h3 {
 
 /*Visuel Batiments*/
 #batiments {
-	width:calc(100% - 410px);
+	width:			calc(100% - 410px);
+  	width: -webkit-calc(100% - 410px);
+  	width:    -moz-calc(100% - 410px);
+  	width:     -ms-calc(100% - 410px);
+  	width:      -o-calc(100% - 410px);
 	float:right;
 
 }
@@ -343,7 +437,11 @@ h3 {
 	right:0;
 	padding:4px;
 	border:1px solid rgb(0,153,255);
-	border-radius: 7px;
+			border-radius: 7px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	    -ms-border-radius: 7px;
+	     -o-border-radius: 7px;
 	background-color: #eeeeee;
 	font-size: 15px;
 	z-index: 99;
@@ -394,7 +492,11 @@ h3 {
 
 #tabColonTeam {
 	display:inline-block;
-	width:calc(100% - 275px);
+	width:			calc(100% - 275px);
+  	width: -webkit-calc(100% - 275px);
+  	width:    -moz-calc(100% - 275px);
+  	width:     -ms-calc(100% - 275px);
+  	width:      -o-calc(100% - 275px);
 	height:340px;
 	padding:5px;
 	border:1px solid #cccccc;
@@ -498,8 +600,10 @@ input[type='range']::-moz-range-track {
 input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none !important;
 	border-radius: 18px;
+	-webkit-border-radius: 18px;
 	background-color: #FFF;
-	box-shadow:inset 0 0 20px rgba(000,000,000,1);
+	box-shadow:inset 0 0 20px rgba(0,0,0,1);
+	-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,1);
 	border: none;
 	height: 18px;
 	width: 18px;
@@ -508,8 +612,10 @@ input[type='range']::-webkit-slider-thumb {
 input[type='range']::-moz-range-thumb {
 	-moz-appearance: none;
 	border-radius: 18px;
+	-moz-border-radius: 18px;
 	background-color: #FFF;
-	box-shadow:inset 0 0 20px rgba(000,000,000,1);
+	box-shadow:inset 0 0 20px rgba(0,0,0,1);
+	-moz-box-shadow: inset 0 0 20px rgba(0,0,0,1);
 	border: none;
 	height: 18px;
 	width: 18px;
@@ -650,7 +756,11 @@ input[type='range']::-moz-range-thumb {
 #map .infoMap {
 	display: none;
 	position:absolute;
-	bottom:calc(100% + 10px);
+	bottom:			calc(100% + 10px);
+  	bottom: -webkit-calc(100% + 10px);
+  	bottom:    -moz-calc(100% + 10px);
+  	bottom:     -ms-calc(100% + 10px);
+  	bottom:      -o-calc(100% + 10px);
 	left:0;
 	background-color: rgb(0,153,255);
 	padding:10px;
@@ -706,7 +816,11 @@ input[type='range']::-moz-range-thumb {
 #map .colony {
 	width:15px;
 	height:15px;
-	border-radius:15px;
+			border-radius:15px;
+	-webkit-border-radius: 15px;
+	   -moz-border-radius: 15px;
+	    -ms-border-radius: 15px;
+	     -o-border-radius: 15px;
 	margin:0 auto;
 }
 
@@ -1075,7 +1189,11 @@ input[type='range']::-moz-range-thumb {
 }
 
 #footerGame .infoJoueur {
-	width:calc(100% - 320px);
+	width:			calc(100% - 320px);
+  	width: -webkit-calc(100% - 320px);
+  	width:    -moz-calc(100% - 320px);
+  	width:     -ms-calc(100% - 320px);
+  	width:      -o-calc(100% - 320px);
  	float:right;
  	border-bottom: 2px solid rgb(0,153,255);
  	margin-right: 10px;
@@ -1114,17 +1232,23 @@ input[type='range']::-moz-range-thumb {
 
 
 #footerGame ul.bat {
-	width:calc(100% - 320px);
-	-webkit-column-count:2;
-	-webkit-column-gap : 3rem;
-	   -moz-column-count:2;
-	   -moz-column-gap : 3rem;
-		-ms-column-count:2;
-		-ms-column-gap : 3rem;
-		 -o-column-count:2;
-		 -o-column-gap : 3rem;
-			column-count:2;
-			column-gap : 3rem;
+	width:			calc(100% - 320px);
+  	width: -webkit-calc(100% - 320px);
+  	width:    -moz-calc(100% - 320px);
+  	width:     -ms-calc(100% - 320px);
+  	width:      -o-calc(100% - 320px);
+
+            column-count: 2;
+  	-webkit-column-count: 2;
+       -moz-column-count: 2;
+        -ms-column-count: 2;
+         -o-column-count: 2;
+
+            column-gap: 3rem;
+ 	-webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+        -ms-column-gap: 3rem;
+       	 -o-column-gap: 3rem;
 
 }
 

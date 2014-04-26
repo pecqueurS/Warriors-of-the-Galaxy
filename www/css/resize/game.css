@@ -4,7 +4,12 @@
 @media screen and (min-width:1500px) {
 
 	#footerGame .infoJoueur {
-		width:calc(100% - 470px);
+		width:auto;
+		width:			calc(100% - 470px);
+	  	width: -webkit-calc(100% - 470px);
+	  	width:    -moz-calc(100% - 470px);
+	  	width:     -ms-calc(100% - 470px);
+	  	width:      -o-calc(100% - 470px);
 	}
 
 	#footerGame ul {
@@ -12,7 +17,11 @@
 	}
 
 	#footerGame ul.bat {
-		width:calc(100% - 470px);
+		width:			calc(100% - 470px);
+	  	width: -webkit-calc(100% - 470px);
+	  	width:    -moz-calc(100% - 470px);
+	  	width:     -ms-calc(100% - 470px);
+	  	width:      -o-calc(100% - 470px);
 
 	}
 
@@ -23,7 +32,11 @@
 	}
 
 	#tabTeam .tableau .blockInput {
-		width:calc(100% - 35px);
+		width:			calc(100% - 35px);
+	  	width: -webkit-calc(100% - 35px);
+	  	width:    -moz-calc(100% - 35px);
+	  	width:     -ms-calc(100% - 35px);
+	  	width:      -o-calc(100% - 35px);
 	}
 	#tabTeam .tableau .input {
 		width:100%;
@@ -38,16 +51,18 @@
 
 	#footerGame ul.bat {
 		width:auto;
-		-webkit-column-count:1;
-		-webkit-column-gap : 0;
-		   -moz-column-count:1;
-		   -moz-column-gap : 0;
-			-ms-column-count:1;
-			-ms-column-gap : 0;
-			 -o-column-count:1;
-			 -o-column-gap : 0;
-				column-count:1;
-				column-gap : 0;
+
+	            column-count: 1; 
+	  	-webkit-column-count: 1; 
+	       -moz-column-count: 1; 
+	        -ms-column-count: 1; 
+	         -o-column-count: 1; 
+
+	            column-gap: 0;
+	 	-webkit-column-gap: 0;
+	       -moz-column-gap: 0;
+	        -ms-column-gap: 0;
+	       	 -o-column-gap: 0;
 
 	}
 

@@ -10,10 +10,19 @@
 	left:0;
 	margin:5px 20%;
 	padding:15px;
-	width:calc(60% - 10px);
+	width:60%;
+	width:			calc(60% - 10px);
+  	width: -webkit-calc(60% - 10px);
+  	width:    -moz-calc(60% - 10px);
+  	width:     -ms-calc(60% - 10px);
+  	width:      -o-calc(60% - 10px);
 	background-color: rgba(255,0,0,.7);
 	border:1px solid rgba(255,0,0,1);
-	border-radius:7px;
+			border-radius:7px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	    -ms-border-radius: 7px;
+	     -o-border-radius: 7px;
 	z-index: 99;
 	color:white;
 	font-family: "ExoSB";
@@ -41,7 +50,12 @@ body {
 body > header {
 	height:557px;
 	background:url(../images/header.png) no-repeat center top; 
-	margin-bottom: calc((-557px)*66/100);
+	margin-bottom: -380px;
+	margin-bottom: 			calc((-557px)*66/100);
+  	margin-bottom: -webkit-calc((-557px)*66/100);
+  	margin-bottom:    -moz-calc((-557px)*66/100);
+  	margin-bottom:     -ms-calc((-557px)*66/100);
+  	margin-bottom:      -o-calc((-557px)*66/100);
 }
 
 
@@ -56,8 +70,17 @@ body > header h1 {
 	right:0;
 	background-color: rgb(0,153,255);
 	padding:3px;
-	border-bottom-left-radius: 7px;
-	border-top-left-radius: 7px;
+		 	border-bottom-left-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	    -moz-border-radius-bottomleft: 7px;
+		-ms-border-bottom-left-radius: 7px;
+		 -o-border-bottom-left-radius: 7px;
+
+			border-top-left-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	    -moz-border-radius-topleft: 7px;
+		-ms-border-top-left-radius: 7px;
+		 -o-border-top-left-radius: 7px;
 
 	-webkit-transition: all 1s ease;
        -moz-transition: all 1s ease;
@@ -65,13 +88,17 @@ body > header h1 {
     	 -o-transition: all 1s ease;
       		transition: all 1s ease;
 	cursor:pointer;
-
+	z-index: 90;
 }
 
 #flag div {
 	padding:3px;
 	border:1px solid transparent;
-	border-radius:7px;
+			border-radius:7px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	    -ms-border-radius: 7px;
+	     -o-border-radius: 7px;
 }
 
 #flag div.selected {
@@ -106,7 +133,11 @@ body > header h1 {
 	width:24px;
 	height:24px;
 	border:none;
-	border-radius:3px;
+			border-radius:3px;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	    -ms-border-radius: 3px;
+	     -o-border-radius: 3px;
 	color:transparent;
 
 }
@@ -138,7 +169,11 @@ body > header h1 {
 body > footer {
 	width:100%;
 	height:40px;
-	background: linear-gradient(to bottom, black, #363636);
+	background: 		linear-gradient(to bottom, black, #363636);
+	background: -webkit-linear-gradient(top, black 0%, #363636 100%);
+    background:    -moz-linear-gradient(top, black 0%, #363636 100%);
+    background:     -ms-linear-gradient(top, black 0%, #363636 100%);
+    background:      -o-linear-gradient(top, black 0%, #363636 100%);	
 	position:fixed;
 	bottom:0;
 	left:0;
@@ -195,8 +230,17 @@ body > section {
 /*ENCADRES*/
 .cadre {
 	background-color: white;
-	border-radius: 7px;
-	box-shadow: inset 3px 3px 6px black;
+			border-radius: 7px;
+	-webkit-border-radius: 7px;
+	   -moz-border-radius: 7px;
+	    -ms-border-radius: 7px;
+	     -o-border-radius: 7px;
+
+			box-shadow: inset 3px 3px 6px black;
+   	-webkit-box-shadow: inset 3px 3px 6px black;
+	   -moz-box-shadow: inset 3px 3px 6px black;
+		-ms-box-shadow: inset 3px 3px 6px black;
+		 -o-box-shadow: inset 3px 3px 6px black;
 	position:relative;
 }
 
@@ -270,7 +314,12 @@ body > section {
 
 .barBtn{
 	position:absolute;
-	bottom: calc(100% + 3px);
+	bottom:101%;
+	bottom: 		calc(100% + 3px);
+  	bottom: -webkit-calc(100% + 3px);
+  	bottom:    -moz-calc(100% + 3px);
+  	bottom:     -ms-calc(100% + 3px);
+  	bottom:      -o-calc(100% + 3px);
 	left:0;
 	width:100%;
 	height:4px;
@@ -319,7 +368,11 @@ body > section {
 	width:205px;
 	height:38px;
 	line-height: 38px;
-	border-radius: 30px;
+			border-radius: 30px;
+	-webkit-border-radius: 30px;
+	   -moz-border-radius: 30px;
+	    -ms-border-radius: 30px;
+	     -o-border-radius: 30px;
 	border:1px solid #666666;
 	font-family: "ExoB";
 	font-size: 28px;
@@ -329,19 +382,31 @@ body > section {
 .flashBtn.blue {
 	background-color: rgb(0,153,255);
 	color: white;
-	background-image: linear-gradient(to bottom, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
+	background-image: 		linear-gradient(to bottom, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
+	background-image: -webkit-linear-gradient(top, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
+    background-image:    -moz-linear-gradient(top, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
+    background-image:     -ms-linear-gradient(top, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
+    background-image:      -o-linear-gradient(top, #0033ff 0%, #0066ff 15%, #0099ff 50%, #0066ff 85%, #0033ff 100%);
 }
 
 .flashBtn.red {
 	background-color: #ff6600;
 	color: white;
 	background-image: linear-gradient(to bottom, #ff0000 0%, #ff3300 15%, #ff6600 50%, #ff3300 85%, #ff0000 100%);
+	background-image: -webkit-linear-gradient(top,  #ff0000 0%, #ff3300 15%, #ff6600 50%, #ff3300 85%, #ff0000 100%);
+    background-image:    -moz-linear-gradient(top,  #ff0000 0%, #ff3300 15%, #ff6600 50%, #ff3300 85%, #ff0000 100%);
+    background-image:     -ms-linear-gradient(top,  #ff0000 0%, #ff3300 15%, #ff6600 50%, #ff3300 85%, #ff0000 100%);
+    background-image:      -o-linear-gradient(top,  #ff0000 0%, #ff3300 15%, #ff6600 50%, #ff3300 85%, #ff0000 100%);
 }
 
 .flashBtn.green {
 	background-color: #00ff00;
 	color: white;
 	background-image: linear-gradient(to bottom, #009900 0%, #00cc00 15%, #00ff00 50%, #00cc00 85%, #009900 100%);
+	background-image: -webkit-linear-gradient(top, #009900 0%, #00cc00 15%, #00ff00 50%, #00cc00 85%, #009900 100%);
+    background-image:    -moz-linear-gradient(top, #009900 0%, #00cc00 15%, #00ff00 50%, #00cc00 85%, #009900 100%);
+    background-image:     -ms-linear-gradient(top, #009900 0%, #00cc00 15%, #00ff00 50%, #00cc00 85%, #009900 100%);
+    background-image:      -o-linear-gradient(top, #009900 0%, #00cc00 15%, #00ff00 50%, #00cc00 85%, #009900 100%);
 }
 
 
@@ -350,7 +415,12 @@ body > section {
 
 /*TABLEAU*/
 .tableau {
-	width: calc(100% - 20px);
+	width:auto;
+	width: 			calc(100% - 20px);
+  	width: -webkit-calc(100% - 20px);
+  	width:    -moz-calc(100% - 20px);
+  	width:     -ms-calc(100% - 20px);
+  	width:      -o-calc(100% - 20px);
 }
 
 .tableau th {

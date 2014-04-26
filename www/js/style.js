@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	// Declaration du json comprenant les informations sur les icones
 	json = JSON.parse($.ajax({
 				type: "GET",
 				dataType : "json",

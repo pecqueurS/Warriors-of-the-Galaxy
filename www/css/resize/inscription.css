@@ -5,9 +5,25 @@
 @media screen and (max-width:1000px) {
 
 #InscriptForm > form > div:first-child {
-	-moz-column-count:1;
-	-moz-column-rule: 0; 
-	-moz-column-gap : auto;
+
+            column-count: 1; 
+  	-webkit-column-count: 1; 
+       -moz-column-count: 1; 
+        -ms-column-count: 1; 
+         -o-column-count: 1; 
+
+            column-rule: 0; 
+   	-webkit-column-rule: 0; 
+       -moz-column-rule: 0; 
+        -ms-column-rule: 0; 
+         -o-column-rule: 0; 
+
+            column-gap: auto;
+ 	-webkit-column-gap: auto;
+       -moz-column-gap: auto;
+        -ms-column-gap: auto;
+       	 -o-column-gap: auto;
+
 }
 
 
