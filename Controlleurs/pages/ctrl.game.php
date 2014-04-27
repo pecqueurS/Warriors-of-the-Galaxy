@@ -22,9 +22,7 @@ if(!is_int($_SESSION["joueur"]["jou_parties_id"])) {
 
 
 if(isset($_POST["quitGame"])) {
-	var_dump($_POST);
-
-
+	
 					// Destruction des unites
 					$sql = "DELETE FROM total_units
 							WHERE tou_joueurs_id = ? ";

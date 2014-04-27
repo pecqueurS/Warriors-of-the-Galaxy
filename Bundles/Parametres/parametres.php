@@ -6,10 +6,10 @@ session_start();
 // PARAMETRES :
 $href_LOCAL_WIN = "http://win.wotg.dev/";  // Adresse du site sur wamp
 $href_LOCAL_DEB = "http://debian.wotg.dev/";  // Adresse du site sur wamp
-$href_SERVER = "http://wotg.azurdesignsolution.com/";  // Adresse du site sur le serveur distant
+$href_SERVER = "xxx";  // Adresse du site sur le serveur distant
 
 $bdd_Database_LOCAL = "galaxy_warriors";  	// Database 
-$bdd_Database_SERVER = "azurdesiads";  	// Database SERVER
+$bdd_Database_SERVER = "xxx";  	// Database SERVER
 // PENSER A MODIFIER AUSSI server.inc.php pour les infos serveur distant
 
 
