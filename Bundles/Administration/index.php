@@ -148,7 +148,7 @@ if($_SESSION["admin"]==TRUE) {
 		if(PRODUCTION) {
 			$file = (!is_file(ROOT."error.xml"))? FALSE : ROOT."error.xml";
 		} else {
-			$file = (!is_file(ROOT."error.xml"))? FALSE : ROOT.'php_error.log';
+			$file = (!is_file(ROOT."php_error.log"))? FALSE : ROOT.'php_error.log';
 		}
 
 			$erreurs = (!$file) ? "" : file_get_contents($file);
