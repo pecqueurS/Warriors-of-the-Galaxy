@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 22 Avril 2014 à 00:05
+-- Généré le: Lun 28 Avril 2014 à 17:58
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `galaxy_warriors`
 --
-CREATE DATABASE IF NOT EXISTS `galaxy_warriors` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `galaxy_warriors` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `galaxy_warriors`;
 
 -- --------------------------------------------------------
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `batiments` (
   PRIMARY KEY (`bat_id`),
   KEY `fk_batiments_joueurs1_idx` (`bat_joueurs_id`),
   KEY `fk_batiments_type_batiments1_idx` (`bat_type_batiments_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `bonus_batiment` (
   `bob_bonus_percent` int(11) DEFAULT NULL,
   PRIMARY KEY (`bob_id`),
   KEY `fk_bonus_batiment_type_batiments1_idx` (`bob_type_batiments_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `bonus_batiment`
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `carte` (
   PRIMARY KEY (`car_id`),
   KEY `fk_carte_joueurs1_idx` (`car_joueur_id`),
   KEY `fk_carte_parties1_idx` (`car_parties_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=94 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
 --
 -- Contenu de la table `carte`
@@ -167,7 +167,30 @@ INSERT INTO `carte` (`car_id`, `car_joueur_id`, `car_parties_id`, `car_pos_x`, `
 (90, 21, 28, 7, 15, 'base'),
 (91, 22, 28, 9, 3, 'base'),
 (92, 23, 28, 5, 14, 'base'),
-(93, 22, 29, 9, 5, 'base');
+(93, 22, 29, 9, 5, 'base'),
+(94, 21, 32, 12, 15, 'base'),
+(95, 22, 32, 7, 5, 'base'),
+(96, 21, 32, 12, 14, 'conquete'),
+(97, 21, 32, 10, 14, 'conquete'),
+(98, 21, 31, 4, 13, 'base'),
+(99, 22, 31, 4, 5, 'base'),
+(100, 21, 41, 13, 8, 'base'),
+(101, 22, 41, 14, 15, 'base'),
+(102, 22, 42, 10, 15, 'base'),
+(103, 23, 43, 2, 7, 'base'),
+(104, 21, 45, 12, 14, 'base'),
+(105, 21, 46, 15, 15, 'base'),
+(106, 22, 46, 2, 15, 'base'),
+(107, 21, 47, 3, 6, 'base'),
+(108, 22, 47, 14, 2, 'base'),
+(109, 21, 48, 3, 9, 'base'),
+(110, 22, 48, 9, 13, 'base'),
+(111, 21, 49, 6, 10, 'base'),
+(112, 21, 50, 15, 4, 'base'),
+(113, 21, 50, 14, 4, 'conquete'),
+(114, 21, 50, 5, 5, 'conquete'),
+(115, 21, 51, 2, 10, 'base'),
+(116, 22, 51, 10, 15, 'base');
 
 -- --------------------------------------------------------
 
@@ -184,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   PRIMARY KEY (`cha_id`),
   KEY `fk_chat_joueurs1_idx` (`cha_joueurs_id`),
   KEY `fk_chat_parties1_idx` (`cha_parties_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=131 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=134 ;
 
 --
 -- Contenu de la table `chat`
@@ -318,7 +341,10 @@ INSERT INTO `chat` (`cha_id`, `cha_joueurs_id`, `cha_time`, `cha_message`, `cha_
 (127, 22, '2014-04-20 17:21:48', 'fghfghfghfg', 27),
 (128, 22, '2014-04-20 17:21:51', 'dgfdfgdfgdfgdfgd', 27),
 (129, 23, '2014-04-20 17:21:56', 'Enter messagesdfsddfsfsdfsfsfdsfsd', 27),
-(130, 23, '2014-04-20 17:22:01', 'hfghfghfgfgh', 27);
+(130, 23, '2014-04-20 17:22:01', 'hfghfghfgfgh', 27),
+(131, 21, '2014-04-25 16:12:22', 'hgjfhjfhgj', 46),
+(132, 22, '2014-04-25 16:12:26', 'fghjfghjfghjfhjf', 46),
+(133, 22, '2014-04-25 16:12:29', 'fhjfhjfhgjf', 46);
 
 -- --------------------------------------------------------
 
@@ -332,14 +358,15 @@ CREATE TABLE IF NOT EXISTS `connectes` (
   `con_last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`con_id`),
   KEY `fk_connectes_joueurs1_idx` (`con_joueurs_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=111 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `connectes`
 --
 
 INSERT INTO `connectes` (`con_id`, `con_joueurs_id`, `con_last_update`) VALUES
-(109, 21, '2014-04-22 00:05:03');
+(7, 21, '2014-04-27 22:52:41'),
+(8, 22, '2014-04-27 22:52:31');
 
 -- --------------------------------------------------------
 
@@ -357,7 +384,7 @@ CREATE TABLE IF NOT EXISTS `creations_unites` (
   PRIMARY KEY (`cru_id`),
   KEY `fk_creations_unites_joueurs1_idx` (`cru_joueurs_id`),
   KEY `fk_creations_unites_unites1_idx` (`cru_unites_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -374,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `debloque_act` (
   `dea_niv_debloque` int(11) DEFAULT NULL,
   PRIMARY KEY (`dea_id`),
   KEY `fk_sp_debloque_bat_type_batiments1_idx` (`dea_type_batiments_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `debloque_act`
@@ -404,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `deplacements` (
   `dep_id` int(11) NOT NULL AUTO_INCREMENT,
   `dep_deplacement` varchar(45) DEFAULT NULL COMMENT 'type de deplacement : attaque, soutien transport',
   PRIMARY KEY (`dep_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `deplacements`
@@ -436,7 +463,7 @@ CREATE TABLE IF NOT EXISTS `deplacements_unites` (
   KEY `fk_deplacements_unites_deplacements1_idx` (`deu_deplacements_id`),
   KEY `fk_deplacements_unites_teams1_idx` (`deu_teams_id`),
   KEY `fk_deplacements_unites_parties1_idx` (`deu_parties_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='table des attaques' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table des attaques' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -451,7 +478,7 @@ CREATE TABLE IF NOT EXISTS `desc_pages` (
   PRIMARY KEY (`dep_id`),
   KEY `fk_desc_pages_pages1_idx` (`dep_pages_id`),
   KEY `fk_desc_pages_elem_a_trad1_idx` (`dep_elem_a_trad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `desc_pages`
@@ -480,7 +507,7 @@ CREATE TABLE IF NOT EXISTS `dictionnaire` (
   `dic_traduction` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`dic_id`),
   KEY `fk_dictionnaire_langues1_idx` (`dic_langues_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=293 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=293 ;
 
 --
 -- Contenu de la table `dictionnaire`
@@ -773,7 +800,7 @@ INSERT INTO `dictionnaire` (`dic_id`, `dic_langues_id`, `dic_designation`, `dic_
 CREATE TABLE IF NOT EXISTS `elem_a_trad` (
   `eat_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`eat_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Contenu de la table `elem_a_trad`
@@ -838,7 +865,7 @@ CREATE TABLE IF NOT EXISTS `joueurs` (
   KEY `fk_joueurs_parties1_idx` (`jou_parties_id`),
   KEY `fk_joueurs_langues1_idx` (`jou_langues_id`),
   KEY `fk_joueurs_races1_idx` (`jou_races_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Contenu de la table `joueurs`
@@ -860,7 +887,7 @@ CREATE TABLE IF NOT EXISTS `langues` (
   `lan_id` int(11) NOT NULL AUTO_INCREMENT,
   `lan_designation` varchar(12) DEFAULT NULL,
   PRIMARY KEY (`lan_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `langues`
@@ -884,7 +911,7 @@ CREATE TABLE IF NOT EXISTS `messages_admin` (
   `mea_date_bug` timestamp NULL DEFAULT NULL,
   `mea_message` text,
   PRIMARY KEY (`mea_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `messages_admin`
@@ -913,7 +940,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `pag_elem_a_trad_id` int(11) NOT NULL,
   PRIMARY KEY (`pag_id`),
   KEY `fk_pages_elem_a_trad1_idx` (`pag_elem_a_trad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `pages`
@@ -954,7 +981,7 @@ CREATE TABLE IF NOT EXISTS `parties` (
   `par_wait` tinyint(1) DEFAULT NULL,
   `par_creator` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`par_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Contenu de la table `parties`
@@ -970,8 +997,8 @@ INSERT INTO `parties` (`par_id`, `par_nom`, `par_pwd`, `par_nb_joueurs`, `par_ty
 (28, 'hdfhgdhbcnbcvb', '', 16, 'TIME', '2014-04-20 21:18:06', NULL, 'steph'),
 (29, 'dsfgsd fgsd fgsd fgsdf', '', 16, 'TIME', '2014-04-20 23:30:29', NULL, 'steph'),
 (30, 'fdgsfdg sdfg sdfg sdfg sfdg sdf', '', 16, 'TIME', '2014-04-16 09:19:16', NULL, 'steph'),
-(31, 'essai', '', 16, 'TIME', NULL, 0, NULL),
-(32, 'testmag', 'azerty', 16, 'TIME', NULL, 0, 'Joe256'),
+(31, 'essai', '', 16, 'TIME', '2014-04-23 21:55:47', NULL, NULL),
+(32, 'testmag', 'azerty', 16, 'TIME', '2014-04-23 14:29:51', NULL, 'Joe256'),
 (33, 'newGame', '', 4, 'TIME', '2014-04-10 13:06:43', NULL, 'steph'),
 (34, 'testcomplet', '', 4, 'TIME', '2014-04-18 23:37:15', NULL, 'steph'),
 (35, 'abcdef', '', 16, 'TIME', '2014-04-18 23:47:47', NULL, 'steph'),
@@ -979,7 +1006,18 @@ INSERT INTO `parties` (`par_id`, `par_nom`, `par_pwd`, `par_nb_joueurs`, `par_ty
 (37, 'azertyuiop', '', 2, 'TIME', '2014-04-19 12:17:39', NULL, 'Joe256'),
 (38, 'wqaxsz', '', 16, 'TIME', '2014-04-19 12:24:02', NULL, 'Joe256'),
 (39, 'reza', '', 2, 'TIME', '2014-04-19 12:46:39', NULL, 'steph'),
-(40, 'gsdfgsfds', '', 16, 'TIME', '2014-04-19 12:50:45', NULL, 'Joe256');
+(40, 'gsdfgsfds', '', 16, 'TIME', '2014-04-19 12:50:45', NULL, 'Joe256'),
+(41, 'mklfjgmsklfg', '', 16, 'TIME', '2014-04-23 22:02:18', NULL, 'Vladimir'),
+(42, 'mklmjklmjklmj', '', 16, 'TIME', '2014-04-24 23:14:27', NULL, 'Vladimir'),
+(43, 'oyuioyuioyuioy', '', 16, 'TIME', '2014-04-24 23:18:13', NULL, 'Vladimir'),
+(44, 'azertyuio', '', 16, 'TIME', NULL, 0, 'Joe256'),
+(45, 'sfgdfgdf', '', 16, 'TIME', '2014-04-24 23:22:26', NULL, 'Vladimir'),
+(46, 'fsqsfdgsdfgsfdg', '', 16, 'TIME', '2014-04-25 16:12:44', NULL, 'Joe256'),
+(47, 'fghgfhfdgh', '', 16, 'TIME', '2014-04-25 16:18:47', NULL, 'Joe256'),
+(48, 'jfgjfghjfghjfghjf', '', 16, 'TIME', '2014-04-26 14:40:19', NULL, 'Joe256'),
+(49, 'azerty', '', 16, 'TIME', '2014-04-27 09:49:37', NULL, 'Vladimir'),
+(50, 'azerty', '', 16, 'TIME', '2014-04-27 12:55:56', NULL, 'Vladimir'),
+(51, 'qgdsgqfdgdsfg', '', 16, 'TIME', '2014-04-27 18:41:18', NULL, 'Vladimir');
 
 -- --------------------------------------------------------
 
@@ -995,7 +1033,7 @@ CREATE TABLE IF NOT EXISTS `qg_debloque_bat` (
   `qg_deb_Niv_Defense` int(11) DEFAULT NULL,
   `qg_deb_Niv_Entrepot` int(11) DEFAULT NULL,
   PRIMARY KEY (`qg_deb_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `qg_debloque_bat`
@@ -1020,7 +1058,7 @@ CREATE TABLE IF NOT EXISTS `races` (
   `rac_elem_a_trad_id` int(11) NOT NULL,
   PRIMARY KEY (`rac_id`),
   KEY `fk_races_elem_a_trad1_idx` (`rac_elem_a_trad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `races`
@@ -1062,7 +1100,7 @@ CREATE TABLE IF NOT EXISTS `rapports` (
   PRIMARY KEY (`rap_id`),
   KEY `fk_rapports_joueurs1_idx` (`rap_joueurs_id_att`),
   KEY `fk_rapports_joueurs2_idx` (`rap_joueurs_id_def`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1081,7 +1119,7 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   PRIMARY KEY (`res_id`),
   KEY `fk_ressources_types_ressources1_idx` (`res_types_ressources_id`),
   KEY `fk_ressources_joueurs1_idx` (`res_joueurs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1099,7 +1137,7 @@ CREATE TABLE IF NOT EXISTS `resultats_parties` (
   PRIMARY KEY (`rep_id`),
   KEY `fk_resultats_parties_parties1_idx` (`rep_parties_id`),
   KEY `fk_resultats_parties_joueurs1_idx` (`rep_joueurs_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 --
 -- Contenu de la table `resultats_parties`
@@ -1142,7 +1180,22 @@ INSERT INTO `resultats_parties` (`rep_id`, `rep_parties_id`, `rep_joueurs_id`, `
 (34, 27, 23, 1, 0, 0),
 (35, 28, 21, 2, 0, 0),
 (36, 28, 22, 1, 0, 0),
-(37, 28, 23, 1, 0, 0);
+(37, 28, 23, 1, 0, 0),
+(38, 32, 21, 1, 0, 0),
+(39, 32, 22, 2, 0, 0),
+(40, 31, 21, 1, 0, 0),
+(41, 31, 22, 1, 0, 0),
+(42, 41, 21, 2, 0, 0),
+(43, 41, 22, 1, 0, 0),
+(44, 45, 21, 1, 0, 0),
+(45, 46, 21, 3, 0, 0),
+(46, 46, 22, 4, 0, 0),
+(47, 47, 21, 3, 0, 0),
+(48, 47, 22, 1, 0, 0),
+(49, 48, 22, 2, 0, 0),
+(50, 50, 21, 1, 0, 0),
+(51, 51, 21, 1, 0, 0),
+(52, 51, 22, 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1161,7 +1214,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `tea_num` int(11) DEFAULT '0',
   PRIMARY KEY (`tea_id`),
   KEY `fk_teams_joueurs1_idx` (`tea_joueurs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1177,7 +1230,7 @@ CREATE TABLE IF NOT EXISTS `total_units` (
   `tou_units3` int(11) DEFAULT '0',
   PRIMARY KEY (`tou_id`),
   KEY `fk_total_units_joueurs1_idx` (`tou_joueurs_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1193,7 +1246,7 @@ CREATE TABLE IF NOT EXISTS `traductions` (
   PRIMARY KEY (`tra_id`),
   KEY `fk_traductions_langues1_idx` (`tra_langues_id`),
   KEY `fk_traductions_elem_a_trad1_idx` (`tra_elem_a_trad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
 
 --
 -- Contenu de la table `traductions`
@@ -1285,7 +1338,7 @@ CREATE TABLE IF NOT EXISTS `types_ressources` (
   `tyr_cout_res3` int(11) DEFAULT NULL,
   `tyr_tps_nec` int(11) DEFAULT NULL,
   PRIMARY KEY (`tyr_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `types_ressources`
@@ -1314,7 +1367,7 @@ CREATE TABLE IF NOT EXISTS `type_batiments` (
   `tyb_icon` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`tyb_id`),
   KEY `fk_type_batiments_elem_a_trad1_idx` (`tyb_elem_a_trad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `type_batiments`
@@ -1348,7 +1401,7 @@ CREATE TABLE IF NOT EXISTS `unites` (
   `uni_life` int(11) DEFAULT NULL,
   `uni_portee` int(11) DEFAULT NULL COMMENT 'portée : unit1 = 1, unit2 = 2, unit3= 3 veut dire que unit3 attaque 2 fois avant que unit1 attaque',
   PRIMARY KEY (`uni_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `unites`
@@ -1374,7 +1427,7 @@ CREATE TABLE IF NOT EXISTS `verif_connections` (
   `vec_sess_id` varchar(255) DEFAULT '0',
   PRIMARY KEY (`vec_id`),
   KEY `fk_verif_connections_joueurs1_idx` (`vec_joueurs_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=167 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=185 ;
 
 --
 -- Contenu de la table `verif_connections`
@@ -1469,8 +1522,26 @@ INSERT INTO `verif_connections` (`vec_id`, `vec_joueurs_id`, `vec_connexion`, `v
 (162, 21, '2014-04-21 00:46:35', '127.0.0.1', '2014-04-21 00:47:05', '2j4bpfdufvp6i806sg8kd4s8m4'),
 (163, 21, '2014-04-21 00:47:07', '127.0.0.1', '2014-04-21 16:21:02', '2j4bpfdufvp6i806sg8kd4s8m4'),
 (164, 21, '2014-04-21 16:20:44', '127.0.0.1', '2014-04-21 16:21:02', '0h9s8lddfkm4q7vd6ag97tv3g0'),
-(165, 21, '2014-04-21 17:25:36', '127.0.0.1', NULL, '0h9s8lddfkm4q7vd6ag97tv3g0'),
-(166, 22, '2014-04-21 17:32:37', '127.0.0.1', '2014-04-21 17:32:39', '9vapd5ra26bdmt2q9l4dbho0e6');
+(165, 21, '2014-04-21 17:25:36', '127.0.0.1', '2014-04-22 01:31:00', '0h9s8lddfkm4q7vd6ag97tv3g0'),
+(166, 22, '2014-04-21 17:32:37', '127.0.0.1', '2014-04-21 17:32:39', '9vapd5ra26bdmt2q9l4dbho0e6'),
+(167, 21, '2014-04-23 14:20:00', '127.0.0.1', '2014-04-23 16:43:34', '4qjpjr2fje5s11209h50qs4qr3'),
+(168, 22, '2014-04-23 14:29:20', '127.0.0.1', '2014-04-23 18:04:49', '6251f529dt6lgjj8fggv1unm41'),
+(169, 21, '2014-04-23 21:54:43', '127.0.0.1', '2014-04-25 16:10:10', 's4u0kn4c61t6djtnmubk085e22'),
+(170, 22, '2014-04-23 21:55:16', '127.0.0.1', '2014-04-24 22:52:25', 'lqtghlkja0l5n4pdgk0hob00q2'),
+(171, 21, '2014-04-24 22:52:15', '127.0.0.1', '2014-04-25 16:10:10', '20fo07buumh678vr00mqfm7n33'),
+(172, 22, '2014-04-24 22:52:44', '127.0.0.1', '2014-04-24 23:09:13', '7b7iafiptgadh5uoe7p9u4onu3'),
+(173, 22, '2014-04-24 23:09:25', '127.0.0.1', '2014-04-24 23:17:41', 'p31073iqq5ji9rld26fdld7lq4'),
+(174, 23, '2014-04-24 23:17:58', '127.0.0.1', '2014-04-24 23:18:32', 'p31073iqq5ji9rld26fdld7lq4'),
+(175, 21, '2014-04-25 08:55:19', '127.0.0.1', '2014-04-25 16:10:10', 'rb0hjh3l0m4hc6v0n92o7skca6'),
+(176, 22, '2014-04-25 16:07:57', '127.0.0.1', '2014-04-25 16:34:51', 'um6tudcsmer02vern6futclst4'),
+(177, 21, '2014-04-25 16:10:25', '127.0.0.1', '2014-04-26 14:38:30', 'rb0hjh3l0m4hc6v0n92o7skca6'),
+(178, 21, '2014-04-26 14:04:04', '127.0.0.1', '2014-04-26 14:38:30', 'tnanlk0mihcp1n4oru8bjt3u67'),
+(179, 22, '2014-04-26 14:38:12', '127.0.0.1', '2014-04-27 09:50:15', 'fi86es0gpa04jk0eui8njfult2'),
+(180, 21, '2014-04-26 14:40:02', '127.0.0.1', '2014-04-26 15:14:06', 'ae6kkudhl2utk0tmi1gh3qlvp0'),
+(181, 21, '2014-04-26 15:48:41', '127.0.0.1', '2014-04-27 09:49:52', '2v62e8c5o7gouq4sj2spcam3p7'),
+(182, 21, '2014-04-27 09:49:28', '127.0.0.1', '2014-04-27 09:49:52', '52dkb46r9r8llt1f4umoa42ak1'),
+(183, 21, '2014-04-27 09:49:57', '127.0.0.1', NULL, '52dkb46r9r8llt1f4umoa42ak1'),
+(184, 22, '2014-04-27 18:41:01', '127.0.0.1', NULL, '6a0rqlrut36pme0r9dvudo4nq0');
 
 --
 -- Contraintes pour les tables exportées
