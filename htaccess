@@ -45,8 +45,6 @@ RewriteRule ^$  /accueil [L]
 
 
 
-
-
 #ErrorDocument 404 /404
 #ErrorDocument 500 /500
 

@@ -14,16 +14,16 @@ Le but est d'améliorer sa planète et d'attaquer d'autres planètes (Autres jou
 
 INSTALLATION
 
-Sous Windows (Testé avec Apache2.4.4)
+Sous Windows (Testé avec WAMP & Apache2.4.4)
 
 
-		1. Ajouter à "C:\Windows\System32\drivers\etc\hosts" -> 127.0.0.1 win.wotg.dev
+	1. Ajouter à "C:\Windows\System32\drivers\etc\hosts" -> 127.0.0.1 win.wotg.dev
+	
+	2. Remplacer dans "apachexxx\conf\httpd.conf" -> "Listen 80" par "Listen *:80"
 		
-		2. Remplacer dans "apachexxx\conf\httpd.conf" -> "Listen 80" par "Listen *:80"
+	3. Decommenter dans "apachexxx\conf\httpd.conf" -> Include conf/extra/httpd-vhosts.conf
 		
-		3. Decommenter dans "apachexxx\conf\httpd.conf" -> Include conf/extra/httpd-vhosts.conf
-		
-		4. Editer "apachexxx\conf\extra\httpd-vhosts.conf" ->
+	4. Editer "apachexxx\conf\extra\httpd-vhosts.conf" ->
 		
 		NameVirtualHost *:80
 		 
@@ -53,23 +53,23 @@ Sous Windows (Testé avec Apache2.4.4)
 		    </Directory>
 		</VirtualHost>
 		
-		5. Redemarrer WAMP
+	5. Redemarrer WAMP
 		
-		Acces à l'adresse :
-		http://win.wotg.dev
+	Acces à l'adresse :
+	http://win.wotg.dev
 		
 
 
 
 
-Sous Linux (Testé avec Debian7 a jour)
+Sous Linux (Testé avec Debian7 a jour et apache)
 
 
-		1. Ajouter à "/etc/hosts" -> 127.0.0.1	debian.wotg.dev
+	1. Ajouter à "/etc/hosts" -> 127.0.0.1	debian.wotg.dev
+	
+	2. Créer un fichier "debian.wotg.dev" dans "/etc/apache2/sites-available/"
 		
-		2. Créer un fichier "debian.wotg.dev" dans "/etc/apache2/sites-available/"
-		
-		3. Ajouter dans ce fichier ->
+	3. Ajouter dans ce fichier ->
 		
 		<VirtualHost *:80>
 		
@@ -93,7 +93,7 @@ Sous Linux (Testé avec Debian7 a jour)
 		
 		
 		
-		4. Executer dans un terminal à "/etc/apache2/sites-available/" ->
+	4. Executer dans un terminal à "/etc/apache2/sites-available/" ->
 		
 		a2dissite default
 		
@@ -105,15 +105,21 @@ Sous Linux (Testé avec Debian7 a jour)
 		
 		
 		
-		Acces à l'adresse :
-		http://debian.wotg.dev
+	Acces à l'adresse :
+	http://debian.wotg.dev
 		
 		
+SQL : 
+	Creer une base de données "galaxy_warriors".
+	Exporter le contenu de la BDD grace au fichier "galaxy_warriors.sql".
 
-Creer une base de données "galaxy_warriors".
-Exporter le contenu de la BDD grace au fichier "galaxy_warriors.sql".
+URL Rewrite :
+	Creer un .htaccess à la racine de "www" d'apres le fichier "htaccess" à la racine du site.
 
-Creer un .htaccess à la racine de "www" d'apres le fichier "htaccess" à la racine du site.
+ADMIN :
+	L'adresse de la partie administration se trouve à l'adresse :
+	(win|debian).wotg.dev/wotg-admin
 
+* Le dossier du projet doit être déposé dans un endroit accessible pour Apache pour pouvoir executer les fichiers php.
 
 

@@ -146,21 +146,12 @@ if($_SESSION["admin"]==TRUE) {
 	if(isset($onglet) && $onglet=="erreurs") {
 
 		if(PRODUCTION) {
-			$file = ROOT."error.xml";
+			$file = (!is_file(ROOT."error.xml"))? FALSE : ROOT."error.xml";
 		} else {
-			$file = ROOT.'php_error.log';
+			$file = (!is_file(ROOT."error.xml"))? FALSE : ROOT.'php_error.log';
 		}
 
-/*			$fp = fopen(ROOT.'php_error.log',"r"); 
-			$erreurs = "";
-			while (!feof($fp))
-			{
-			  $erreurs = fgets($fp, 4096) . $erreurs;
-			  $erreurs .= "<br>";
-			}
-*/
-
-			$erreurs = file_get_contents($file);
+			$erreurs = (!$file) ? "" : file_get_contents($file);
 
 
 	}
