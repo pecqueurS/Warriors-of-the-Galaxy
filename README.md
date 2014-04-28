@@ -110,15 +110,19 @@ Sous Linux (Testé avec Debian7 a jour et apache)
 		
 		
 SQL : 
+
 	Creer une base de données "galaxy_warriors".
 	Exporter le contenu de la BDD grace au fichier "galaxy_warriors.sql".
 
 URL Rewrite :
+
 	Creer un .htaccess à la racine de "www" d'apres le fichier "htaccess" à la racine du site.
 
 ADMIN :
+
 	L'adresse de la partie administration se trouve à l'adresse :
 	(win|debian).wotg.dev/wotg-admin
+
 
 * Le dossier du projet doit être déposé dans un endroit accessible pour Apache pour pouvoir executer les fichiers php.
 
