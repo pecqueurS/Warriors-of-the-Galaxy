@@ -1,4 +1,4 @@
-projet_tut
+projet tuteuré - Stephane PECQUEUR
 ==========
 
 V1.0.0
