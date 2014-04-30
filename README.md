@@ -141,6 +141,14 @@ ADMIN :
 
 	La partie administration se trouve à l'adresse :
 	(win|debian).wotg.dev/wotg-admin
+	login : admin
+	mdp : admin
+
+	Compte des joueurs :
+		Vladimir : aaa111AAA
+		Joe256 : aaa111AAA
+		francois : aaa111AAA
+
 
 
 * Le dossier du projet doit être déposé dans un endroit accessible pour Apache pour pouvoir executer les fichiers php.
