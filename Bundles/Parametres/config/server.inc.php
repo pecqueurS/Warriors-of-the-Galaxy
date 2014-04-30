@@ -34,19 +34,19 @@ switch ($os) {
 	case 'win':
 		$config['href'] = $href_LOCAL_WIN;
 		$config['bdd'] = array (
-				'username' => 'root',
-				'password' => '',
+				'username' => $bdd_username_LOCAL_WIN,
+				'password' => $bdd_password_LOCAL_WIN,
 				'database' => $bdd_Database_LOCAL,
-				'bddServer' => 'localhost');
+				'bddServer' => $bdd_bddServer_LOCAL_WIN);
 		break;
 	
 	case 'deb':
 		$config['href'] = $href_LOCAL_DEB;
 		$config['bdd'] = array (
-				'username' => 'root',
-				'password' => 'Oscar',
+				'username' => $bdd_username_LOCAL_DEB,
+				'password' => $bdd_password_LOCAL_DEB,
 				'database' => $bdd_Database_LOCAL,
-				'bddServer' => 'localhost');
+				'bddServer' => $bdd_bddServer_LOCAL_DEB);
 		break;
 	
 }

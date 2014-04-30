@@ -10,9 +10,14 @@ $href_SERVER = "xxx";  // Adresse du site sur le serveur distant
 
 $bdd_Database_LOCAL = "galaxy_warriors";  	// Database 
 $bdd_Database_SERVER = "xxx";  	// Database SERVER
-// PENSER A MODIFIER AUSSI server.inc.php pour les infos serveur distant
 
+$bdd_username_LOCAL_WIN = "root"; // Username de mysql (windows)
+$bdd_password_LOCAL_WIN = ""; // Mot de passe de mysql (windows)
+$bdd_bddServer_LOCAL_WIN = "localhost"; // Nom serveur (windows)
 
+$bdd_username_LOCAL_DEB = "root"; // Username de mysql (debian)
+$bdd_password_LOCAL_DEB = "Oscar";  // Mot de passe de mysql (debian)
+$bdd_bddServer_LOCAL_DEB = "localhost"; // Nom serveur (debian)
 
 /**
  * CHOIX DE L'ENVIRONNEMENT (A MODIFIER A LA MAIN)

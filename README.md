@@ -114,13 +114,32 @@ SQL :
 	Creer une base de données "galaxy_warriors".
 	Exporter le contenu de la BDD grace au fichier "galaxy_warriors.sql".
 
+	Modifier le fichier "parametres.php" dans le dossier "/Bundles/Parametres/" avec les paramètres de la BDD
+	// PARAMETRES :
+		$href_LOCAL_WIN = "http://win.wotg.dev/";  // Adresse du site sur wamp
+		$href_LOCAL_DEB = "http://debian.wotg.dev/";  // Adresse du site sur wamp
+		$href_SERVER = "xxx";  // Adresse du site sur le serveur distant
+
+		$bdd_Database_LOCAL = "galaxy_warriors";  	// Database 
+		$bdd_Database_SERVER = "xxx";  	// Database SERVER
+		
+		$bdd_username_LOCAL_WIN = "root"; // Username de mysql (windows)
+		$bdd_password_LOCAL_WIN = ""; // Mot de passe de mysql (windows)
+		$bdd_bddServer_LOCAL_WIN = "localhost"; // Nom serveur (windows)
+
+		$bdd_username_LOCAL_DEB = "root"; // Username de mysql (debian)
+		$bdd_password_LOCAL_DEB = "Oscar";  // Mot de passe de mysql (debian)
+		$bdd_bddServer_LOCAL_DEB = "localhost"; // Nom serveur (debian)
+
+
+
 URL Rewrite :
 
 	Creer un .htaccess à la racine de "www" d'apres le fichier "htaccess" à la racine du site.
 
 ADMIN :
 
-	L'adresse de la partie administration se trouve à l'adresse :
+	La partie administration se trouve à l'adresse :
 	(win|debian).wotg.dev/wotg-admin
 
 
