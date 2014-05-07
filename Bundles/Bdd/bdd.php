@@ -14,6 +14,9 @@ require_once (BDD."class".DS.'BDD.php');
 // Fichier check_data.php
 require_once (BDD."class".DS.'check_data.php');
 
+// Fichier db_object.php
+require_once (BDD."class".DS.'db_object.php');
+
 
 
 

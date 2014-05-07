@@ -3,23 +3,23 @@
 class BDD {
 
 	// Chaîne de caractères contenant des informations utiles
-	private $serveur;
-	private $user;
-	private $base;
-	private $requete;
+	protected $serveur;
+	protected $user;
+	protected $base;
+	protected $requete;
 	
 	// Indicateurs spéciaux
-	private $connexion; // Permet de savoir si la connexion au serveur fonctionne
-	private $base_en_cours; // Permet de savoir si la connexion à la base se passe bien
-	private $requete_en_cours; // Permet d'avoir un indicateur sur la requête en cours d'exécution
-	private $ligne_en_cours; // Le tableau de la ligne de requête en cours de traitement
+	protected $connexion; // Permet de savoir si la connexion au serveur fonctionne
+	protected $base_en_cours; // Permet de savoir si la connexion à la base se passe bien
+	protected $requete_en_cours; // Permet d'avoir un indicateur sur la requête en cours d'exécution
+	protected $ligne_en_cours; // Le tableau de la ligne de requête en cours de traitement
 	
 	// Statement
-	private $stmt; // Charge l'extension "stmt"
-	private $sql;	// Requete du type INSERT INTO pilote VALUES ("",?,?)
-	private $bind; // Parametres : type de données (i = entier, d = décimal, s = chaine, b = BLOB (grand texte))
+	protected $stmt; // Charge l'extension "stmt"
+	protected $sql;	// Requete du type INSERT INTO pilote VALUES ("",?,?)
+	protected $bind; // Parametres : type de données (i = entier, d = décimal, s = chaine, b = BLOB (grand texte))
 
-	private $last_id; // ID dernier insert
+	protected $last_id; // ID dernier insert
 
 	public function __construct($statement=true)
 	{
@@ -111,39 +111,54 @@ class BDD {
 		$explode = explode(" ", $this->sql);
 		$typeSQL = strtoupper($explode[0]);
 
+			// enregistre le dernier id en cas d'insert
 		if($typeSQL == "INSERT") {
 			$this->last_id = $this->stmt->insert_id;
 		}
 
-
+			// Si different de select renvoi le nombre de lignes affectées
 		if($typeSQL != "SELECT") {
 			return $this->stmt->affected_rows;
+			// Sinon C'est un select
 		} else {
-			if (preg_match("/(SELECT)(.*)(FROM)/i", $this->sql, $col) === 1)
+			// Suppression des tabulations, retours a la ligne, ...
+			$search = array(' ', "\t", "\n", "\r");
+  			$this->sql = str_replace($search, ' ', $this->sql);
+			do {
+				$this->sql = str_replace('  ', ' ', $this->sql, $nbRempl);
+			} while ( $nbRempl !=0 ) ;
+  			
+  			if (preg_match("/(SELECT)(.*)(FROM)/i", $this->sql, $col) === 1)
 			{
+
+				// Cherche les colonnes du SELECT
 			    $colonnes = explode(",", $col[2]);
 			    $nbCol = count($colonnes);
+
+			    // Supprime les espaces avant et apres pour toutes les colonnes
+				$colonnes = array_map(	function ($value) {
+			    	$trim = (trim($value));
+				    return $trim;
+				}, $colonnes);
+				
 			} else {
-			    $nbCol = count(0);
+			    $nbCol = 0;
 			}
 
 			// Resultat
 			$bind_result = '$this->stmt->bind_result(';
 			for ($i=0; $i < $nbCol; $i++) { 
 				$bind_result .= ($i==0) ? ' $attr'.$i : ', $attr'.$i ;
-				
 			}
 			$bind_result .= ' );';
 			eval($bind_result);
 
-			$result = array();
-			
-
 			// Mise en tableau du resultat
+			$result = array();
 			while($this->stmt->fetch()) {
 				$result2 = '$result[] = array(';
 				for ($i=0; $i < $nbCol; $i++) { 
-					$result2 .= '"'.str_ireplace(' ', '', $colonnes[$i]).'" => $attr'.$i.', ';
+					$result2 .= '"'.$colonnes[$i].'" => $attr'.$i.', ';
 				}
 				$result2 .= ' );';
 				eval($result2);
