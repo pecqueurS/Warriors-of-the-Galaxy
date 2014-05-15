@@ -2,6 +2,9 @@
 
 namespace Bundles\Bdd;
 
+use Bundles\Parametres\Conf;
+
+
 class BDD {
 
 	// Chaîne de caractères contenant des informations utiles
@@ -26,14 +29,12 @@ class BDD {
 	public function __construct($statement=true)
 	{
 
-
-		global $config;
-
-		$mdp = $config["bdd"]["password"];
+//var_dump(Conf::$server);
+		$mdp = Conf::$server["bdd_password"];
 		// Sauvegarde des informations utiles à afficher
-		$this->serveur = $config["bdd"]["bddServer"];
-		$this->user = $config["bdd"]["username"];
-		$this->base = $config["bdd"]["database"];
+		$this->serveur = Conf::$server["bdd_bddServer"];
+		$this->user = Conf::$server["bdd_username"];
+		$this->base = Conf::$server["bdd_Database"];
 		$this->requete_en_cours = false; // Pour nous protéger d'un appel intempestif à "retourne_ligne"
 		
 
@@ -42,8 +43,8 @@ class BDD {
 		$this->connexion = new \mysqli($this->serveur, $this->user, $mdp, $this->base);
 
 		/* check connection */
-		if (mysqli_connect_errno()) {
-		    printf("Connect failed: %s\n", mysqli_connect_error());
+		if (\mysqli_connect_errno()) {
+		    printf("Connect failed: %s\n", \mysqli_connect_error());
 		    exit();
 		}
 

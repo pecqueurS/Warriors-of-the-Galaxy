@@ -1,34 +1,36 @@
 <?php
-// Inclus la page de parametres
-require_once ("../Bundles/Parametres/parametres.php");
+
+use Bundles\Bdd\Db;
+use Bundles\Parametres\Conf;
+use Controllers\FrontController;
+
+//use Models\PagesModel;
+//use Bundles\Calculs\Calc;
+
+// Inclus l'autoloader
+require_once ("../Bundles/autoloader/autoloader.php");
 
 
-// Appel BDD
-require_once (BDD."bdd.php");
+/* Paramètres */
+$confFiles = array(
+		"app" => "/config/app.json",
+		"routing" => "/config/routing.json",
+);
+Conf::init($confFiles);
 
-/*Initialisation BDD */
-$bdd = new BDD();
+/* Constantes */
+foreach (Conf::$constants as $key => $value) {
+	define ($key, $value);
+}
 
-
-// Appel functions
-require_once (FUNCTIONS."functions.php");
-
-// Appel calculs
-require_once (CALCULS."calculs.php");
-
-
-
-
-// Appel Controleurs
-require_once (CTRL."controlleurs.php");
+FrontController::launch();
 
 
 
+echo "test";
+//var_dump(PagesModel::init());
 
 
-
-// Appel templates
-require_once (TEMPLATES."template.php");
 
 
 
@@ -50,4 +52,5 @@ require_once (TEMPLATES."template.php");
 //var_dump($_SESSION);
 //var_dump($_SERVER);
 //var_dump(get_defined_vars()); 
+//print_r(get_defined_constants()); 
 ?>

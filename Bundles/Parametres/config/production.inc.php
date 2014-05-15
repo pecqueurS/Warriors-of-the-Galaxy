@@ -61,7 +61,7 @@ define ('PRODUCTION',$prod); // Mode d'affichage (Production ou developpement
 			mail("stephane.pecqueur@gmail.com",$errno,$err);
 			//echo "<p>Erreur utilisateur critique !</p>";
 			/*header("Location: ".URL_ERR);*/
-			header("HTTP/1.0 500 Internal Server Error");
+			header("HTTP/1.1 500 Internal Server Error");
 			echo file_get_contents(URL_ERR500); 
 			exit();
 		}

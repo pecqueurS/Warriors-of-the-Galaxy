@@ -1,8 +1,8 @@
 <?php
 
+namespace Bundles\Calculs;
 
-
-class Calculs {
+abstract class Calc {
 
 	public static $niveau_joueur = 1000;
 

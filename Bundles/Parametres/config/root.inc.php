@@ -45,7 +45,7 @@ define('ADMIN',BUNDLES."Administration".DS); // c:\wamp\www\...\php\bdd\
 
 
 // CONTROLEURS
-define ('CTRL', ROOT."Controlleurs".DS); // c:\wamp\www\...\portfolio\
+define ('CTRL', ROOT."Controllers".DS); // c:\wamp\www\...\portfolio\
 
 
 // AVATARS
