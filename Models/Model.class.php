@@ -13,8 +13,9 @@ class Model {
 	protected $table=array();
 
 	public function __construct() {
+		$this->db = Db::init($this->tableName);
 		$this->defineClass();
-		$this->loadTable();	
+		//$this->loadTable();	
 	}
 
 
@@ -30,7 +31,6 @@ class Model {
 
 
 	protected function loadTable() {
-		$this->db = Db::init($this->tableName);
 		$this->table = $this->db->select();
 	}
 
@@ -39,9 +39,10 @@ class Model {
 		return $this->table[$field];
 	}
 
-	public function getValues($fields, $rules=array()) {
+	public function getValues($fields=array(), $rules=array()) {
 		$result = array();
 		$fields = (!is_array($fields)) ? array($fields) : $fields ;
+		if(empty($fields)) return $this->table;
 		$i = 0;
 		foreach ($this->table as $row) {
 			$takeRow = true;

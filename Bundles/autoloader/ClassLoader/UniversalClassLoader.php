@@ -269,7 +269,7 @@ class UniversalClassLoader
             $namespace = substr($class, 0, $pos);
             $className = substr($class, $pos + 1);
             /*$normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $className).'.php';*/
-            $normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $className).'.class.php';
+            $normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.( (substr($className,1)=='_') ? str_replace('_', DIRECTORY_SEPARATOR, $className) : $className).'.class.php';
             foreach ($this->namespaces as $ns => $dirs) {
                 if (0 !== strpos($namespace, $ns)) {
                     continue;

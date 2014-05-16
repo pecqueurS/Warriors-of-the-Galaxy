@@ -6,7 +6,8 @@ namespace Controllers;
 use Bundles\Parametres\Conf;
 
 use Models\PagesModel;
-
+use Models\DictionnaireModel;
+use Models\Desc_pagesModel;
 
 class FrontController {
 
@@ -98,7 +99,18 @@ class FrontController {
 
 		// Dictionnaire
 		// $req4
-		
+		$DICO = DictionnaireModel::init()->getValues();
+
+		// Dictionnaire
+		// $req5
+		 var_dump(Desc_pagesModel::init()->getValues());
+		$description = Desc_pagesModel::init()->getValues(array("tra_nom"), array("pag_name"=>self::$page));
+		$DESC_PAGE = array();
+		foreach ($description as $desc) {
+		  	$DESC_PAGE[] = $desc["tra_nom"];
+		}
+
+		var_dump($DESC_PAGE);
 
 	}
 

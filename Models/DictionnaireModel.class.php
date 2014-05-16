@@ -12,6 +12,7 @@ class DictionnaireModel extends Model {
 	
 	public function __construct() {
 		parent::__construct();
+		$this->getDico();
 	}
 
 	public static function init() {
@@ -19,13 +20,18 @@ class DictionnaireModel extends Model {
 		return $mod;
 	}
 
-	public function getPagesInformations(){
-		$this->table = $this->db->addJoin("elem_a_trad", array("eat_id", "pag_elem_a_trad_id"))
-								->addJoin("traductions", array("eat_id", "tra_elem_a_trad_id"))
-								->addJoin("langues", array("lan_id", "tra_langues_id"))
+
+
+	protected function getDico(){
+		$result = $this->db->addJoin("langues", array("lan_id", "dic_langues_id"))
 								->addRule("lan_designation", $_SESSION["lang"])
-								->select();
-		return $this;
+								->select(array("dic_designation","dic_traduction"));
+
+		$this->table = array();
+		foreach ($result as $dico) {
+		  $this->table[$dico["dic_designation"]] = $dico["dic_traduction"];
+		}
+
 	}
 
 
