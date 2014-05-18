@@ -4,14 +4,17 @@
 namespace Controllers;
 
 use Bundles\Parametres\Conf;
+use Bundles\Templates\Tpl;
 
 use Models\PagesModel;
 use Models\DictionnaireModel;
-use Models\Desc_pagesModel;
+use Models\DescPagesModel;
 
 class FrontController {
 
 	protected static $page;
+
+	protected $response;
 
 	protected $controller;
 
@@ -27,6 +30,7 @@ class FrontController {
 		$this->launchController();
 			
 		// Affiche la vue
+		echo Tpl::display($this->response);
 		
 
 	}
@@ -61,9 +65,13 @@ class FrontController {
 			$method = $routeArr[1];
 
 			require ROOT.$access;
-			eval("\$this->controller = new $class();\$this->controller->$method();");
+			eval(
+				"\$this->controller = new $class();
+				 \$response = \$this->controller->$method();"
+			);
+			$this->response = array_merge($this->response, $response);
 
-			var_dump(ROOT.$access);
+			
 		} else {
 			$this->notFound();
 		}
@@ -80,37 +88,34 @@ class FrontController {
 		// Information sur les pages
 		// $req1
 		$pagesInfos = PagesModel::init()->getPagesInformations();
-		$PAGES_NOJS = $pagesInfos->getValues("pag_name", array("pag_template"=>"styleAccueil")); 
+		$this->response['PAGES_NOJS'] = $pagesInfos->getValues("pag_name", array("pag_template"=>"styleAccueil")); 
 
 		// Informations sur la page
 		// $req2
 		$pageHeadInfos = $pagesInfos->getValues(array("tra_nom","pag_name","pag_template"), array("pag_name"=>self::$page));
-		$PAGE_HEAD_INFO["traduction"] = $pageHeadInfos["tra_nom"];
-		$PAGE_HEAD_INFO["page"] = $pageHeadInfos["pag_name"];
-		$PAGE_HEAD_INFO["template"] = $pageHeadInfos["pag_template"];
+		$this->response['PAGE_HEAD_INFO']["traduction"] = $pageHeadInfos["tra_nom"];
+		$this->response['PAGE_HEAD_INFO']["page"] = $pageHeadInfos["pag_name"];
+		$this->response['PAGE_HEAD_INFO']["template"] = $pageHeadInfos["pag_template"];
 
 		// Traduction des liens des pages
 		// $req3
 		$tradLiensPages = $pagesInfos->getValues(array("pag_name","tra_nom"));
-		$LINKS = array();
+		$this->response['LINKS'] = array();
 		foreach ($tradLiensPages as $lien) {
-			$LINKS[$lien["pag_name"]] = $lien["tra_nom"];
+			$this->response['LINKS'][$lien["pag_name"]] = $lien["tra_nom"];
 		}
 
 		// Dictionnaire
 		// $req4
-		$DICO = DictionnaireModel::init()->getValues();
+		$this->response['DICO'] = DictionnaireModel::init()->getValues();
 
 		// Dictionnaire
 		// $req5
-		 var_dump(Desc_pagesModel::init()->getValues());
-		$description = Desc_pagesModel::init()->getValues(array("tra_nom"), array("pag_name"=>self::$page));
-		$DESC_PAGE = array();
+		$description = DescPagesModel::init()->getValues(array("tra_nom"), array("pag_name"=>self::$page));
+		$this->response['DESC_PAGE'] = array();
 		foreach ($description as $desc) {
-		  	$DESC_PAGE[] = $desc["tra_nom"];
+		  	$this->response['DESC_PAGE'][] = $desc["tra_nom"];
 		}
-
-		var_dump($DESC_PAGE);
 
 	}
 
@@ -123,10 +128,6 @@ class FrontController {
 
 
 
-
-
-// Appel Controleurs
-require_once (CTRL."controlleurs.php");
 
 
 

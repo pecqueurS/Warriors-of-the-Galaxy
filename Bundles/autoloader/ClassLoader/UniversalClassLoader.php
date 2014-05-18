@@ -269,7 +269,8 @@ class UniversalClassLoader
             $namespace = substr($class, 0, $pos);
             $className = substr($class, $pos + 1);
             /*$normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $className).'.php';*/
-            $normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.( (substr($className,1)=='_') ? str_replace('_', DIRECTORY_SEPARATOR, $className) : $className).'.class.php';
+            $normalizedClass = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $className).'.class.php';
+            $normalizedClass2 = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $className).'.php';
             foreach ($this->namespaces as $ns => $dirs) {
                 if (0 !== strpos($namespace, $ns)) {
                     continue;
@@ -277,22 +278,29 @@ class UniversalClassLoader
 
                 foreach ($dirs as $dir) {
                     $file = $dir.DIRECTORY_SEPARATOR.$normalizedClass;
-                        if (is_file($file)) {
+                    $file2 = $dir.DIRECTORY_SEPARATOR.$normalizedClass2;
+                    if (is_file($file)) {
                         return $file;
+                    } elseif(is_file($file2)) {
+                        return $file2;
                     }
                 }
             }
 
             foreach ($this->namespaceFallbacks as $dir) {
                 $file = $dir.DIRECTORY_SEPARATOR.$normalizedClass;
+                $file2 = $dir.DIRECTORY_SEPARATOR.$normalizedClass2;
                 if (is_file($file)) {
                     return $file;
+                } elseif(is_file($file2)) {
+                    return $file2;
                 }
             }
 
         } else {
             // PEAR-like class name
             $normalizedClass = str_replace('_', DIRECTORY_SEPARATOR, $class).'.class.php';
+            $normalizedClass2 = str_replace('_', DIRECTORY_SEPARATOR, $class).'.php';
             foreach ($this->prefixes as $prefix => $dirs) {
                 if (0 !== strpos($class, $prefix)) {
                     continue;
@@ -300,22 +308,30 @@ class UniversalClassLoader
 
                 foreach ($dirs as $dir) {
                     $file = $dir.DIRECTORY_SEPARATOR.$normalizedClass;
+                    $file2 = $dir.DIRECTORY_SEPARATOR.$normalizedClass2;
                     if (is_file($file)) {
                         return $file;
+                    } elseif(is_file($file2)) {
+                        return $file2;
                     }
                 }
             }
 
             foreach ($this->prefixFallbacks as $dir) {
                 $file = $dir.DIRECTORY_SEPARATOR.$normalizedClass;
+                $file2 = $dir.DIRECTORY_SEPARATOR.$normalizedClass2;
                 if (is_file($file)) {
-                    return $file;
+                   return $file;
+                } elseif(is_file($file2)) {
+                    return $file2;
                 }
             }
         }
 
         if ($this->useIncludePath && $file = stream_resolve_include_path($normalizedClass)) {
             return $file;
+        } elseif($this->useIncludePath && $file2 = stream_resolve_include_path($normalizedClass2)) {
+            return $file2;
         }
     }
 }

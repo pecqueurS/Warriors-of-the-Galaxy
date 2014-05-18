@@ -13,7 +13,15 @@ class Home {
 	}
 
 	public function showHome() {
-		echo "test";
+		$response = array();
+
+
+
+
+
+
+
+		return $response;
 	}
 
 }

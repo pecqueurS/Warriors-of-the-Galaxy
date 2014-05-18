@@ -25,28 +25,6 @@ foreach (Conf::$constants as $key => $value) {
 
 FrontController::launch();
 
-
-
-echo "test";
-//var_dump(PagesModel::init());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //var_dump($_POST);
 //var_dump($_FILES);
 //var_dump($_SESSION);

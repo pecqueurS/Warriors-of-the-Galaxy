@@ -26,7 +26,11 @@ class Model {
 
 
 	protected function defineClass() {
-		$this->className = ucfirst($this->tableName)."Model";
+		$table = explode("_",$this->tableName);
+		for ($i=0; $i < count($table); $i++) { 
+			$table[$i] = ucfirst($this->tableName);
+		}
+		$this->className = implode("", $table)."Model";
 	}
 
 

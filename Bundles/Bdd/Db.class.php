@@ -388,9 +388,7 @@ class Db extends BDD {
 	}
 
 	protected function exec($sql){
-		var_dump($this->values, $this->bind, $this->construct_request);
-
-			if($this->bind != "") {
+		if($this->bind != "") {
 			$this->prepare($sql,$this->bind);
 			return $this->execute($this->values);
 		} else {

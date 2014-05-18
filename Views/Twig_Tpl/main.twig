@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WotG | {{ PAGE_HEAD_INFO.page }}</title>
+    {% block stylesheet %}
+    	<link rel="stylesheet" type="text/css" href="css/style.css">
+	{% endblock %}
+	
+<!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/{JS}"></script>
+<!-- END scripts --> 
+
+	<link id="page_favicon" href="/favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body>
+<header>
+	<h1>Warriors Of The Galaxy</h1>
+	{ERROR}
+	<div id="flag">
+		<form method="POST" action="{ACT_FLAG}">
+			<div class="{SELECTED_FR}"><input type="submit" name="lang_fr" value="fr"></div>
+			<div class="{SELECTED_EN}"><input type="submit" name="lang_en" value="us"></div>
+		</form>
+	</div>
+</header>
+<noscript>
+{NOSCRIPT}
+</noscript> 
+
+
+
+<h1>Hello World !</h1>
+
+
+
+
+<footer>
+	<img src="../../images/logo.png" alt="Logo de Stephane Pecqueur">
+	<div id="liens">
+		<span id="btn_liens" class="minB history">{TRAD_TITRE_LIEN}</span>
+		<ul id="infos_liens">
+<!-- BEGIN liens -->
+    		<li><a href="{LIEN}">{TRAD_LIEN}</a></li>
+<!-- END liens -->    
+		</ul>
+	</div>
+	
+	
+	<ul id="signal">
+<!-- BEGIN signal -->
+    	<li><a href="{LIEN}">{TRAD_LIEN}</a></li>
+<!-- END signal -->    
+	</ul>
+	
+	
+</footer>
+
+  </body>
+</html>

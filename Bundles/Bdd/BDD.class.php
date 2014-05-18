@@ -29,7 +29,6 @@ class BDD {
 	public function __construct($statement=true)
 	{
 
-//var_dump(Conf::$server);
 		$mdp = Conf::$server["bdd_password"];
 		// Sauvegarde des informations utiles à afficher
 		$this->serveur = Conf::$server["bdd_bddServer"];
