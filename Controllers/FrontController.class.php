@@ -85,6 +85,9 @@ class FrontController {
 	}
 
 	private function prepare() {
+		$this->response["session"] =& $_SESSION;
+		$this->response["url"] = Conf::$links;
+		$this->response["href"] = Conf::$server["href"].substr(Conf::$route["url"],1); 
 		// Information sur les pages
 		// $req1
 		$pagesInfos = PagesModel::init()->getPagesInformations();
@@ -109,14 +112,13 @@ class FrontController {
 		// $req4
 		$this->response['DICO'] = DictionnaireModel::init()->getValues();
 
-		// Dictionnaire
+		// Tradutions
 		// $req5
 		$description = DescPagesModel::init()->getValues(array("tra_nom"), array("pag_name"=>self::$page));
 		$this->response['DESC_PAGE'] = array();
 		foreach ($description as $desc) {
 		  	$this->response['DESC_PAGE'][] = $desc["tra_nom"];
 		}
-
 	}
 
 

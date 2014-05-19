@@ -30,7 +30,7 @@ class DescPagesModel extends Model {
 						   ->addRule("lan_designation", $_SESSION["lang"])
 						   ->select(array("tra_nom","pag_name"));
 
-		$this->table = array();
+		$this->table = $result;
 
 
 	}

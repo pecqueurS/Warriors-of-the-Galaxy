@@ -1,1 +1,60 @@
 {% extends "main.twig" %}
+
+{% block stylesheetBase %}
+	{{ parent() }}
+   	<link rel="stylesheet" type="text/css" href="css/styleAccueil.css">
+{% endblock %}
+
+{% block contenu %} 
+	<section>	
+
+		<article id="loginForm" class="cadre">
+			<header>
+				<h2>{{ DICO.title_login }} :</h2>
+			</header>
+		<div>
+			<form method="POST" action="{{ href }}">
+				<div id="blockServer">
+					<label for="server">{{ DICO.server }} :</label><br/>
+					<select id="server" name="server">
+						<option selected>Andromede</option>
+					</select>
+				</div>
+				<div id="blockLogin">
+					<label for="login" class="{CLASS_LOGIN}">{{ DICO.user_name }} :</label>
+					<input type="text" class="input" id="login" name="login" value="" placeholder="Enter your Login" required><br/>
+					<label for="pwd" class="{CLASS_MDP}">{{ DICO.pwd }} :</label>
+					<input type="password" class="input" id="pwd" name="pwd" value="" placeholder="Enter your Password" required>
+				</div>
+				<div id="blockBtn">
+					<input type="submit" class="btn signIn" name="signIn" value="{{ DICO.sign_in }}" >
+					<a href="{LIEN_SIGN_UP}" class="btn signUp">{{ DICO.sign_up }}</a>
+					<a href="{LIEN_FORGOT_PWD}" class="btn">{{ DICO.forgot_pwd }} ?</a>
+				</div>
+			</form>
+		</div>
+
+		</article>
+
+
+
+
+
+
+
+
+
+		<article id="explications">
+    {% for desc in DESC_PAGE %}
+        	<p>{{ desc }}</p>
+    {% endfor %}
+
+		 
+
+		</article>
+	</section>
+
+
+
+
+{% endblock %}

@@ -17,6 +17,8 @@ class Conf {
 
 	static $emails = array();
 
+	static $links = array();
+
 	
 
 	public function __construct($files) {
@@ -88,7 +90,9 @@ class Conf {
 		// Créé le tableau permettant la creation des CONSTANTES
 		$constants = array();
 		foreach ($this->config["routing"] as $page => $route) {
-			if(isset($route["constant"])) $constants[$route["constant"]] = self::$server["href"].$page;
+			$url = self::$server["href"].substr($route["url"],1); 
+			if(isset($route["constant"])) $constants[$route["constant"]] = $url;
+			self::$links[$page] = $url;
 		}
 		self::$constants = array_merge($constants, self::$constants);
 
