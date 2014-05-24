@@ -5,6 +5,7 @@ namespace Controllers;
 
 use Bundles\Parametres\Conf;
 use Bundles\Templates\Tpl;
+use Bundles\Formulaires\Forms;
 
 use Models\PagesModel;
 use Models\DictionnaireModel;
@@ -65,10 +66,9 @@ class FrontController {
 			$method = $routeArr[1];
 
 			require ROOT.$access;
-			eval(
-				"\$this->controller = new $class();
-				 \$response = \$this->controller->$method();"
-			);
+			$this->controller = new $class();
+			$response = $this->controller->$method();
+			
 			$this->response = array_merge($this->response, $response);
 
 			
@@ -119,6 +119,20 @@ class FrontController {
 		foreach ($description as $desc) {
 		  	$this->response['DESC_PAGE'][] = $desc["tra_nom"];
 		}
+
+		$formulaire1 = Forms::make();
+
+		$formulaire1->add('name', array(
+					"type" => "text",
+					"required" => TRUE,
+					"placeholder" => "test"
+		));
+
+		if(!$formulaire1->isValid()) {
+			$form1 = $formulaire1->render();
+			var_dump($form1);
+		}
+		
 	}
 
 

@@ -24,8 +24,8 @@ $loader->registerNamespaces(array(
     'Controllers'       		=> dirname(dirname(__DIR__)),
     'Models'					=> dirname(dirname(__DIR__)),
     'Bundles\\Calculs'			=> dirname(dirname(__DIR__)),
-    //'Twig'						=> dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR."Bundles".DIRECTORY_SEPARATOR."Templates".DIRECTORY_SEPARATOR."Twig-1.15.1".DIRECTORY_SEPARATOR."lib".DIRECTORY_SEPARATOR,
     'Bundles\\Templates'		=> dirname(dirname(__DIR__)),
+    'Bundles\\Formulaires'		=> dirname(dirname(__DIR__)),
     
  
        
