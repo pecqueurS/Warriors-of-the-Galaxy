@@ -5,7 +5,7 @@ namespace Bundles\Formulaires;
 use Bundles\Parametres\Conf;
 
 use Bundles\Formulaires\Utils\Inputs;
-
+use Bundles\Formulaires\Utils\Inspector;
 
 
 
@@ -92,10 +92,12 @@ Autres Contraintes¶
 */
 class Forms {
 
+	public $type;
 	public $inputs;
+	public $errors;
 
 	public function __construct($type="POST") {
-		
+		$this->type = $type;
 	}
 
 	public static function make() {
@@ -141,7 +143,14 @@ class Forms {
 
 
 	public function isValid(){
-		return false;
+		$result = true;
+		foreach ($this->input as $input) {
+			if(!$this->verifBlock($input['name'], $input['options'])) {
+				$result = false;
+			}
+		}
+		return $result;
+		
 	}
 
 
@@ -188,6 +197,34 @@ class Forms {
 	}
 
 	
+
+	private function verifBlock($name, $options) {
+		if isset($options['constraints']) {
+			$response = true;
+			$type = "_".$this->type;
+			$value = $$type[$name];
+			foreach ($options['constraints'] as $type => $constraint) {
+				if(!Inspector::checkData($value, $type, $constraint) || !(isset($options['disabled']) && $options['disabled'] === true)) {
+					if(isset($this->errors[$name])) {
+						$this->errors[$name]) .= Inspector::getMsg();
+					} else {
+						$this->errors[$name]) = Inspector::getMsg();
+					}
+					$response = false;
+				}
+			}
+			return $response;
+		} else {
+			return true;
+		}
+	}
+
+	
+
+
+
+
+
 
 }
 
