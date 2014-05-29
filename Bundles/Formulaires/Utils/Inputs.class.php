@@ -247,7 +247,7 @@ class Inputs {
 	}
 
 	private function moneyHTML($name, $options) {
-		$option['type'] = 'number';
+		$options['type'] = 'number';
 		$import = '';
 		$after = '';
 		// step (float)
@@ -315,10 +315,10 @@ class Inputs {
 
 	private function choiceHTML($name, $options) {
 		// Choix entre un select, un checkbox ou un radio
-		if(isset($option['list'])) {
+		if(isset($options['list']) && $options['list'] === true) {
 			$result = $this->select($name, $options);
 		} else {
-			$result = (isset($option['multiple']) && $option['multiple'] === FALSE) ? $this->radio($name, $options) : $this->checkbox($name, $options);
+			$result = (isset($options['multiple']) && $options['multiple'] === FALSE) ? $this->radio($name, $options) : $this->checkbox($name, $options);
 		}
 		
 		return $result;

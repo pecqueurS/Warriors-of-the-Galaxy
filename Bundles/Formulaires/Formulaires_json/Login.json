@@ -1,0 +1,54 @@
+{
+	"Server": {
+		"name": "server",
+		"options": {
+			"type": "choice",
+			"list": true,
+			"choices":{
+				"1":"Andromede"
+	        },
+	        "selected":["1"]
+		}
+	},
+	"Username": {
+		"name": "login",
+		"options": {
+			"type": "text",
+			"label": "Username",
+			"class": "input",
+			"placeholder": "Enter your login",
+			"required": true,
+			"value": true,
+			"constraints":{
+				"NotBlank": true,
+				"Type": "string",
+				"Regex": "/^([0-9A-Za-z]+$)/",
+				"Length":{
+					"min": 5,
+					"max": 16
+				}
+			}
+		}
+	},
+	"Password": {
+		"name": "pwd",
+		"options": {
+			"type": "password",
+			"label": "Password",
+			"class": "input",
+			"placeholder": "Enter your password",
+			"required": true,
+			"value": true,
+			"constraints":{
+				"NotBlank": true,
+				"Type": "string",
+				"Regex": "/([0-9]+[a-z]+[A-Z]+)|([0-9]+[A-Z]+[a-z]+)|([A-Z]+[0-9]+[a-z]+)|([A-Z]+[a-z]+[0-9]+)|([a-z]+[A-Z]+[0-9]+)|([a-z]+[0-9]+[A-Z]+)/",
+				"Length":{
+					"min": 6,
+					"max": 16
+				}
+			}
+		}
+	}
+}
+

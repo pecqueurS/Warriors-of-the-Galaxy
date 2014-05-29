@@ -100,8 +100,8 @@ class Forms {
 		$this->type = $type;
 	}
 
-	public static function make() {
-		$form = new Forms();
+	public static function make($type="POST") {
+		$form = new Forms($type);
 		return $form;
 	}
 
@@ -163,7 +163,7 @@ class Forms {
 		// Label option
 		if(isset($options['label'])) {
 			if($options['label']!==FALSE) {
-				$result .= "<label id='$name-label' class='label-form' for='$name'>{$options['label']}$required</label>";
+				$result .= "<label id='$name-label' class='label-form' for='$name'>".ucfirst($options['label']).$required."</label>";
 			} else {
 				$result .= $required;
 			}
@@ -199,16 +199,16 @@ class Forms {
 	
 
 	private function verifBlock($name, $options) {
-		if isset($options['constraints']) {
+		if (isset($options['constraints'])) {
 			$response = true;
-			$type = "_".$this->type;
+			$type = "_".(($option['type'] == 'file')? 'FILES' : $this->type);
 			$value = $$type[$name];
 			foreach ($options['constraints'] as $type => $constraint) {
 				if(!Inspector::checkData($value, $type, $constraint) || !(isset($options['disabled']) && $options['disabled'] === true)) {
 					if(isset($this->errors[$name])) {
-						$this->errors[$name]) .= Inspector::getMsg();
+						$this->errors[$name] .= Inspector::getMsg();
 					} else {
-						$this->errors[$name]) = Inspector::getMsg();
+						$this->errors[$name] = Inspector::getMsg();
 					}
 					$response = false;
 				}
