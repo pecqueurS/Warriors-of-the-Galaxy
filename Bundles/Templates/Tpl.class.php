@@ -17,20 +17,23 @@ class Tpl {
 			"cache" => false,
 			"auto_reload" => true, // "auto_reload" => false,
 			"strict_variables" => false,
-			"autoescape" => true, 
+			"autoescape" => true, // "autoescape" => true, 
 			"optimizations" => -1
 
 		);
+
+	private $dirTwigTpl = '/Views/Twig_Tpl';
 	 
 	private $vars = array();
 
 	private $twig;
 
-	public function __construct() {
+	public function __construct($dirTwigTpl=null) {
+		if(!$dirTwigTpl) $dirTwigTpl = $this->dirTwigTpl;
 		require_once("twig-1.15.1/lib/Twig/Autoloader.php");
 		\Twig_Autoloader::register();
 		$dirRoot = dirname(dirname(__DIR__));
-		$loader = new \Twig_Loader_Filesystem($dirRoot."/Views/Twig_Tpl");
+		$loader = new \Twig_Loader_Filesystem($dirRoot.$dirTwigTpl);
 		$this->twig = new \Twig_Environment($loader, $this->environnement);
 		$this->twig->addExtension(new \Twig_Extension_Debug());
 	}

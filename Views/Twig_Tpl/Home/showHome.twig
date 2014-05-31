@@ -12,27 +12,22 @@
 			<header>
 				<h2>{{ DICO.title_login }} :</h2>
 			</header>
-		<div>
-			<form method="POST" action="{{ href }}">
-				<div id="blockServer">
-					<label for="server">{{ DICO.server }} :</label><br/>
-					<select id="server" name="server">
-						<option selected>Andromede</option>
-					</select>
-				</div>
-				<div id="blockLogin">
-					<label for="login" class="{CLASS_LOGIN}">{{ DICO.user_name }} :</label>
-					<input type="text" class="input" id="login" name="login" value="" placeholder="Enter your Login" required><br/>
-					<label for="pwd" class="{CLASS_MDP}">{{ DICO.pwd }} :</label>
-					<input type="password" class="input" id="pwd" name="pwd" value="" placeholder="Enter your Password" required>
-				</div>
-				<div id="blockBtn">
-					<input type="submit" class="btn signIn" name="signIn" value="{{ DICO.sign_in }}" >
-					<a href="{{ url.inscription }}" class="btn signUp">{{ DICO.sign_up }}</a>
-					<a href="{{ url.forgot_pwd }}" class="btn">{{ DICO.forgot_pwd }} ?</a>
-				</div>
-			</form>
-		</div>
+			<div>
+				<form method="POST" action="{{ href }}">
+					<div id="blockServer">
+						{{ formLogin.server }}
+					</div>
+					<div id="blockLogin">
+						{{ formLogin.login }}
+						{{ formLogin.pwd }}
+					</div>
+					<div id="blockBtn">
+						<input type="submit" class="btn signIn" name="signIn" value="{{ DICO.sign_in }}" >
+						<a href="{{ url.inscription }}" class="btn signUp">{{ DICO.sign_up }}</a>
+						<a href="{{ url.forgot_pwd }}" class="btn">{{ DICO.forgot_pwd }} ?</a>
+					</div>
+				</form>
+			</div>
 
 		</article>
 
@@ -49,12 +44,10 @@
         	<p>{{ desc }}</p>
     {% endfor %}
 
-		 
-
 		</article>
 	</section>
 
 
-
+{{ dump() }}
 
 {% endblock %}

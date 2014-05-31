@@ -107,8 +107,8 @@ class Inspector {
 	            return true;
 	        }
 
-	        $type = strtolower($constraint['type']);
-	        $type = $type == 'boolean' ? 'bool' : $constraint['type'];
+	        $type = strtolower($constraint);
+	        $type = $type == 'boolean' ? 'bool' : $constraint;
 	        $isFunction = 'is_'.$type;
 	        $ctypeFunction = 'ctype_'.$type;
 
@@ -194,7 +194,6 @@ class Inspector {
         }
 
         $value = (string) $value;
-
         if ($constraint['match']) {
         	if(!preg_match($constraint['pattern'], $value)) {
 	            self::$error = 'This value is not valid';

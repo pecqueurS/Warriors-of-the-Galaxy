@@ -69,6 +69,8 @@
             "PROFIL": "BUNDLES.'Profil'.DS",
             "TEMPLATES": "BUNDLES.'Templates'.DS",
             "CONTENU": "TEMPLATES.'contenu'.DS",
+            "FORMS": "BUNDLES.'Formulaires'.DS.'Formulaires_json'.DS",
+            
             "AJAX": "BUNDLES.'Ajax'.DS",
             "ADMIN": "BUNDLES.'Administration'.DS",
 

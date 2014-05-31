@@ -56,8 +56,8 @@ class Inputs {
 
 		// Options supplementaires
 		$result .= $import;
-		// Finde balise
-		$result .= ">";
+		// Fin de balise
+		$result .= ">\n";
 
 		// Apres balise
 		$result .= $after;
@@ -88,7 +88,7 @@ class Inputs {
 				$result .= "$attr='$value' ";
 			}
 		}
-		$result .= ">";
+		$result .= ">\n";
 		if(isset($options['choices'])) {
 			// choices (array)
 			foreach ($options['choices'] as $value => $display) {
@@ -97,11 +97,11 @@ class Inputs {
 				if(isset($options['selected']) && in_array($value, $options['selected'])) {
 					$result .= 'selected ';
 				}
-				$result .= "value='$value'>$display</option>";
+				$result .= "value='$value'>$display</option>\n";
 			}
 		}
 
-		return $result.'</select>';
+		return "$result</select>\n";
 		
 	}
 
@@ -109,10 +109,10 @@ class Inputs {
 		$result ='';
 		// choices (array)
 		if(isset($options['choices'])) {
-			$result .= "<div id='$name-choice' class='choice-form' >";
+			$result .= "<div id='$name-choice' class='choice-form' >\n";
 			$i=0;
 			foreach ($options['choices'] as $value => $display) {
-				$result .= "<div><input type='radio' name='$name' ";
+				$result .= "<div>\n<input type='radio' name='$name' ";
 				// Id (string)
 				$result .= (isset($options['id'])) ? "id='{$options['id']}$i' " : "id='$name$i' ";
 				// class (string)
@@ -131,11 +131,11 @@ class Inputs {
 						$result .= "$attr='$value' ";
 					}
 				}
-				$result .= "> <span>$display</span></div>";
+				$result .= "> <span>$display</span>\n</div>\n";
 		
 				$i++;
 			}
-			$result .= '</div>';
+			$result .= "</div>\n";
 			
 		}
 
@@ -147,11 +147,11 @@ class Inputs {
 		$result ='';
 		// choices (array)
 		if(isset($options['choices'])) {
-			$result .= "<div id='$name-choice' class='choice-form' >";
+			$result .= "<div id='$name-choice' class='choice-form' >\n";
 			$i=0;
 			foreach ($options['choices'] as $value => $display) {
 				$arr = (isset($options['multiple']) && $options['multiple'] === true)? '[]' : '';
-				$result .= "<div><input type='checkbox' name='$name$arr' ";
+				$result .= "<div>\n<input type='checkbox' name='$name$arr' ";
 				// Id (string)
 				$result .= (isset($options['id'])) ? "id='{$options['id']}$i' " : "id='$name$i' ";
 				// class (string)
@@ -170,11 +170,11 @@ class Inputs {
 						$result .= "$attr='$value' ";
 					}
 				}
-				$result .= "> <span>$display</span></div>";
+				$result .= "> <span>$display</span>\n</div>\n";
 		
 				$i++;
 			}
-			$result .= '</div>';
+			$result .= "</div>\n";
 			
 		}
 
@@ -206,12 +206,12 @@ class Inputs {
 				$result .= "$attr='$value' ";
 			}
 		}
-		$result .= ">";
+		$result .= ">\n";
 		// Value si elle existe (array) ou (true) pour recuperer les valeurs 
 		if(isset($options['value']) && is_array($options['value'])) $result .= "{$options['value'][0]}";
 		
 
-		return $result .= "</{$options['type']}>";
+		return $result .= "</{$options['type']}>\n";
 	}
 
 	private function textHTML($name, $options) {
@@ -258,7 +258,7 @@ class Inputs {
 		if(isset($options['max'])) $import .= "max='{$options['max']}' ";
 
 		// Devise (string)
-		if(isset($options['devise'])) $after .= "<span class='devise-form'>{$options['devise']}</span>";
+		if(isset($options['devise'])) $after .= "<span class='devise-form'>{$options['devise']}</span>\n";
 
 		return $this->input($name, $options, $import, $after);
 	}
@@ -299,7 +299,7 @@ class Inputs {
 		}
 
 		// Finde balise
-		$result .= ">";
+		$result .= ">\n";
 
 		
 		return $result;
@@ -325,7 +325,7 @@ class Inputs {
 	}
 
 	private function fileHTML($name,$options) {
-		$result = "<div id='$name-file' class='file-form' >";
+		$result = "<div id='$name-file' class='file-form' >\n";
 		$import = '';
 		// accept (string)
 		if(isset($options['accept'])) $import .= "accept='{$options['accept']}' ";
@@ -333,9 +333,9 @@ class Inputs {
 		$result .= $this->input($name, $options, $import);
 		// maxsize (int)
 		$maxSize = (isset($options['maxsize'])) ? $options['maxsize'] : "8000000" ;
-		$result .= "<input type='hidden' name='MAX_FILE_SIZE' value='$maxSize'>";
+		$result .= "<input type='hidden' name='MAX_FILE_SIZE' value='$maxSize'>\n";
 		
-		$result .= '</div>';
+		$result .= "</div>\n";
 		return $result;
 	}
 

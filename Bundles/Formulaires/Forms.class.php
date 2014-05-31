@@ -91,18 +91,30 @@ Autres Contraintes¶
 * 
 */
 class Forms {
+	public $dirForm = FORMS;
 
+	public $nameForm;
 	public $type;
 	public $inputs;
 	public $errors;
 
-	public function __construct($type="POST") {
+	public function __construct($nameForm=null, $type="POST", $dirForm=null) {
+		if($nameForm) $this->nameForm = $nameForm;
+		if($dirForm) $this->dirForm = ROOT.$dirForm;
 		$this->type = $type;
+		$this->loadForm();
 	}
 
-	public static function make($type="POST") {
-		$form = new Forms($type);
+	public static function make($nameForm=null, $type="POST", $dirForm=null) {
+		$form = new Forms($nameForm, $type, $dirForm);
 		return $form;
+	}
+
+	public function loadForm(){
+		$form = json_decode(file_get_contents($this->dirForm.$this->nameForm.'.json'), true);
+		foreach ($form as $input) {
+			$this->add($input['name'], $input['options']);
+		}
 	}
 
 
@@ -155,20 +167,20 @@ class Forms {
 
 
 	private function constructBlock($name, $options) {
-		$result  = '<div id="$name-form" class="container-form">';
+		$result  = "<div id='$name-form' class='container-form'>\n";
 
 		// required
-		$required = (isset($options['required']) && $options['required'] === TRUE) ? '<span class="required-form"> *</span>' : '' ;
+		$required = (isset($options['required']) && $options['required'] === TRUE) ? "<span class='required-form'> *</span>" : '' ;
 
 		// Label option
 		if(isset($options['label'])) {
 			if($options['label']!==FALSE) {
-				$result .= "<label id='$name-label' class='label-form' for='$name'>".ucfirst($options['label']).$required."</label>";
+				$result .= "<label id='$name-label' class='label-form' for='$name'>".ucfirst($options['label']).$required."</label>\n";
 			} else {
 				$result .= $required;
 			}
 		} else {
-			$result .= "<label id='$name-label' class='label-form' for='$name'>$name$required</label>";
+			$result .= "<label id='$name-label' class='label-form' for='$name'>$name$required</label>\n";
 		}
 
 		// Input
@@ -177,17 +189,17 @@ class Forms {
 		// Error
 		if(isset($this->errors[$name])) {
 			$result .= (isset($options['errorMsg']))?
-				"<span id='$name-error' class='error-form'>{$options['errorMsg']}</span>" :
-				"<span id='$name-error' class='error-form'>{$this->errors[$name]}</span>" ;
+				"<span id='$name-error' class='error-form'>{$options['errorMsg']}</span>\n" :
+				"<span id='$name-error' class='error-form'>{$this->errors[$name]}</span>\n" ;
 		}
 
 		// Description
 		if(isset($options['desc'])) {
-			$result .= "<p id='$name-desc' class='desc-form'>{$options['desc']}</p>";
+			$result .= "<p id='$name-desc' class='desc-form'>{$options['desc']}</p>\n";
 		}
 
 
-		$result .= '</div>';
+		$result .= "</div>\n";
 		return $result;
 	}
 
@@ -199,24 +211,41 @@ class Forms {
 	
 
 	private function verifBlock($name, $options) {
-		if (isset($options['constraints'])) {
-			$response = true;
-			$type = "_".(($option['type'] == 'file')? 'FILES' : $this->type);
-			$value = $$type[$name];
-			foreach ($options['constraints'] as $type => $constraint) {
-				if(!Inspector::checkData($value, $type, $constraint) || !(isset($options['disabled']) && $options['disabled'] === true)) {
-					if(isset($this->errors[$name])) {
-						$this->errors[$name] .= Inspector::getMsg();
-					} else {
-						$this->errors[$name] = Inspector::getMsg();
-					}
-					$response = false;
-				}
-			}
-			return $response;
-		} else {
-			return true;
+		switch ($this->type) {
+			case 'GET':
+				$vars = $_GET;
+				break;
+			
+			default:
+				$vars = $_POST;
+				break;
 		}
+		if(isset($vars[$name])) {
+			if (isset($options['constraints'])) {
+				$response = true;
+				$vars = (($options['type'] == 'file')? $_FILES : $vars);
+				$value = $vars[$name];
+				foreach ($options['constraints'] as $type => $constraint) {
+					if(!Inspector::checkData($value, $type, $constraint) || !(isset($options['disabled']) && $options['disabled'] === true)) {
+						if(isset($this->errors[$name])) {
+							$this->errors[$name] .= Inspector::getMsg();
+						} else {
+							$this->errors[$name] = Inspector::getMsg();
+						}
+						$response = false;
+					}
+					if(isset($options['value'])){
+						$options['value'] = (is_array($vars[$name])) ? $vars[$name] : array($vars[$name]);
+					}
+				}
+				return $response;
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
+		
 	}
 
 	
