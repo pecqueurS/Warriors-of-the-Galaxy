@@ -4,6 +4,7 @@ namespace Bundles\Templates;
 
 use Bundles\Parametres\Conf;
 use Bundles\Templates\ExtentionsTwig\FormExtTwig;
+use Bundles\Templates\ExtentionsTwig\TranslateExtTwig;
 
 /**
 * 
@@ -36,7 +37,10 @@ class Tpl {
 		$loader = new \Twig_Loader_Filesystem($dirRoot.$dirTwigTpl);
 		$this->twig = new \Twig_Environment($loader, $this->environnement);
 		$this->twig->addExtension(new \Twig_Extension_Debug());
+		// Bundle Formulaire affichage par form(nomForm, nomInput)
 		$this->twig->addExtension(new FormExtTwig());
+		// Bundle Translate affichage par dico(cle)
+		$this->twig->addExtension(new TranslateExtTwig());
 	}
 
 	public static function display($vars = array(), $tpl = null) {

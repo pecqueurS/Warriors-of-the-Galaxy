@@ -10,7 +10,7 @@
 
 		<article id="loginForm" class="cadre">
 			<header>
-				<h2>{{ DICO.title_login }} :</h2>
+				<h2>{{ dico('title_login') }} :</h2>
 			</header>
 			<div>
 				<form method="POST" action="{{ href }}">
@@ -22,9 +22,9 @@
 						{{ form('Login', 'pwd') }}
 					</div>
 					<div id="blockBtn">
-						<input type="submit" class="btn signIn" name="signIn" value="{{ DICO.sign_in }}" >
-						<a href="{{ url.inscription }}" class="btn signUp">{{ DICO.sign_up }}</a>
-						<a href="{{ url.forgot_pwd }}" class="btn">{{ DICO.forgot_pwd }} ?</a>
+						<input type="submit" class="btn signIn" name="signIn" value="{{ dico('sign_in') }}" >
+						<a href="{{ url.inscription }}" class="btn signUp">{{ dico('sign_up') }}</a>
+						<a href="{{ url.forgot_pwd }}" class="btn">{{ dico('forgot_pwd') }} ?</a>
 					</div>
 				</form>
 			</div>
@@ -47,7 +47,5 @@
 		</article>
 	</section>
 
-
-{{ dump(formLogin) }}
 
 {% endblock %}

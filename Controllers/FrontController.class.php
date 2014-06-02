@@ -5,9 +5,10 @@ namespace Controllers;
 
 use Bundles\Parametres\Conf;
 use Bundles\Templates\Tpl;
+use Bundles\Translate\Dico;
 
 use Models\PagesModel;
-use Models\DictionnaireModel;
+//use Models\DictionnaireModel;
 use Models\DescPagesModel;
 
 class FrontController {
@@ -87,6 +88,11 @@ class FrontController {
 		$this->response["session"] =& $_SESSION;
 		$this->response["url"] = Conf::$links;
 		$this->response["href"] = Conf::$server["href"].substr(Conf::$route["url"],1); 
+
+		// Initialisation du Dictionnaire
+		Dico::init('bdd');
+
+
 		// Information sur les pages
 		// $req1
 		$pagesInfos = PagesModel::init()->getPagesInformations();
@@ -107,9 +113,7 @@ class FrontController {
 			$this->response['LINKS'][$lien["pag_name"]] = $lien["tra_nom"];
 		}
 
-		// Dictionnaire
-		// $req4
-		$this->response['DICO'] = DictionnaireModel::init()->getValues();
+		
 
 		// Tradutions
 		// $req5

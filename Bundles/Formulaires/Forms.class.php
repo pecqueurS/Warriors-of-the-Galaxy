@@ -9,7 +9,7 @@ use Bundles\Formulaires\Utils\Inspector;
 
 use Bundles\Formulaires\Tpl\FormTpl;
 
-
+use Bundles\Translate\Dico;
 
 
 
@@ -109,7 +109,7 @@ class Forms {
 		// Label option
 		if(isset($options['label'])) {
 			if($options['label']!==FALSE) {
-				$response['label'] = $options['label'];
+				$response['label'] = (isset($options['translate']) && $options['translate'] === TRUE) ? Dico::trad($options['label']) : $options['label'] ;
 			} 
 		} else {
 			$response['label'] = $name;

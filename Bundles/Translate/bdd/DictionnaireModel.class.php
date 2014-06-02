@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Models;
+namespace Bundles\Translate\bdd;
 
 use Bundles\Bdd\Db;
-
+use Models\Model;
 
 class DictionnaireModel extends Model {
 

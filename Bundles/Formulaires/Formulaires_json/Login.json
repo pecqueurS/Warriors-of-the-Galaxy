@@ -1,6 +1,8 @@
 {
 	"Server": {
 		"name": "server",
+		"label": "server",
+		"translate": true,
 		"options": {
 			"type": "choice",
 			"list": true,
@@ -14,7 +16,8 @@
 		"name": "login",
 		"options": {
 			"type": "text",
-			"label": "Username",
+			"label": "user_name",
+			"translate": true,
 			"class": "input",
 			"placeholder": "Enter your login",
 			"required": true,
@@ -37,7 +40,8 @@
 		"name": "pwd",
 		"options": {
 			"type": "password",
-			"label": "Password",
+			"label": "pwd",
+			"translate": true,
 			"class": "input",
 			"placeholder": "Enter your password",
 			"required": true,
