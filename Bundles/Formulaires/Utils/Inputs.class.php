@@ -35,8 +35,6 @@ class Inputs {
 		$result .= (isset($options['id'])) ? "id='{$options['id']}' " : "id='$name' ";
 		// class (string)
 		if(isset($options['class'])) $result .= "class='{$options['class']}' ";
-		// Value si elle existe (array) ou (true) pour recuperer les valeurs 
-		if(isset($options['value']) && is_array($options['value'])) $result .= "value='{$options['value'][0]}' ";
 		// placeholder (string)
 		if(isset($options['placeholder'])) $result .= "placeholder='{$options['placeholder']}' ";
 		//  maxlength (int)
@@ -56,13 +54,25 @@ class Inputs {
 
 		// Options supplementaires
 		$result .= $import;
+
+		$result .= "value='";
+		$response['preInput'] = $result;
+
+		// Value si elle existe (array) ou (true) pour recuperer les valeurs 
+		if(isset($options['value']) && is_array($options['value'])) {
+			$response['valInput'] = $options['value'][0];
+		} else {
+			$response['valInput'] = '';
+		}
 		// Fin de balise
-		$result .= ">\n";
+		$result = "'>\n";
 
 		// Apres balise
 		$result .= $after;
 
-		return $result;
+		$response['postInput'] = $result;
+
+		return $response;
 	}
 
 	private function select($name, $options) {
@@ -100,8 +110,11 @@ class Inputs {
 				$result .= "value='$value'>$display</option>\n";
 			}
 		}
+		$response['preInput'] = $result;
+		$response['valInput'] = '';
+		$response['postInput'] = "</select>\n";
 
-		return "$result</select>\n";
+		return $response;
 		
 	}
 
@@ -138,8 +151,10 @@ class Inputs {
 			$result .= "</div>\n";
 			
 		}
-
-		return $result;
+		$response['preInput'] = $result;
+		$response['valInput'] = '';
+		$response['postInput'] = '';
+		return $response;
 		
 	}
 
@@ -178,7 +193,10 @@ class Inputs {
 			
 		}
 
-		return $result;
+		$response['preInput'] = $result;
+		$response['valInput'] = '';
+		$response['postInput'] = '';
+		return $response;
 		
 	}
 
@@ -207,11 +225,13 @@ class Inputs {
 			}
 		}
 		$result .= ">\n";
+		$response['preInput'] = $result;
 		// Value si elle existe (array) ou (true) pour recuperer les valeurs 
-		if(isset($options['value']) && is_array($options['value'])) $result .= "{$options['value'][0]}";
+		$response['valInput'] = (isset($options['value']) && is_array($options['value'])) ? $options['value'][0] : '';
 		
+		$response['postInput'] = "</{$options['type']}>\n";
 
-		return $result .= "</{$options['type']}>\n";
+		return $response;
 	}
 
 	private function textHTML($name, $options) {
@@ -277,10 +297,6 @@ class Inputs {
 		$result .= (isset($options['id'])) ? "id='{$options['id']}' " : "id='$name' ";
 		// class (string)
 		if(isset($options['class'])) $result .= "class='{$options['class']}' ";
-		// Value si elle existe (array) ou (true) pour recuperer les valeurs & protocol (string)
-		$result .= "value='".(isset($options['protocol']) ? $options['protocol'] : "http://");
-		if(isset($options['value']) && is_array($options['value'])) $result .= $options['value'][0];
-		$result .= "' ";
 		// placeholder (string)
 		if(isset($options['placeholder'])) $result .= "placeholder='{$options['placeholder']}' ";
 		//  maxlength (int)
@@ -297,12 +313,24 @@ class Inputs {
 				$result .= "$attr='$value' ";
 			}
 		}
+		// Value si elle existe (array) ou (true) pour recuperer les valeurs & protocol (string)
+		$result .= "value='";
 
+		$response['preInput'] = $result;
+		// Value si elle existe (array) ou (true) pour recuperer les valeurs 
+		$response['valInput'] = ((isset($options['protocol']) ? $options['protocol'] : "http://")).((isset($options['value']) && is_array($options['value'])) ? $options['value'][0] : '');
+		
+		$result = "' ";
+		
 		// Finde balise
 		$result .= ">\n";
 
 		
-		return $result;
+		$response['postInput'] = $result;
+
+		return $response;
+
+		
 	}
 
 	private function hiddenHTML($name, $options) {
@@ -336,7 +364,10 @@ class Inputs {
 		$result .= "<input type='hidden' name='MAX_FILE_SIZE' value='$maxSize'>\n";
 		
 		$result .= "</div>\n";
-		return $result;
+		$response['preInput'] = $result;
+		$response['valInput'] = '';
+		$response['postInput'] = '';
+		return $response;
 	}
 
 	

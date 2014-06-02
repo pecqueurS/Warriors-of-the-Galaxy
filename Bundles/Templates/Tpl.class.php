@@ -3,14 +3,14 @@
 namespace Bundles\Templates;
 
 use Bundles\Parametres\Conf;
-
+use Bundles\Templates\ExtentionsTwig\FormExtTwig;
 
 /**
 * 
 */
 class Tpl {
 	
-	private $environnement = array(
+	protected $environnement = array(
 			"debug" => true, //"debug" => false,
 			"charset" => "utf-8",
 			"base_template_class" => "Twig_Template",
@@ -22,11 +22,11 @@ class Tpl {
 
 		);
 
-	private $dirTwigTpl = '/Views/Twig_Tpl';
+	public $dirTwigTpl = '/Views/Twig_Tpl';
 	 
-	private $vars = array();
+	protected $vars = array();
 
-	private $twig;
+	protected $twig;
 
 	public function __construct($dirTwigTpl=null) {
 		if(!$dirTwigTpl) $dirTwigTpl = $this->dirTwigTpl;
@@ -36,11 +36,12 @@ class Tpl {
 		$loader = new \Twig_Loader_Filesystem($dirRoot.$dirTwigTpl);
 		$this->twig = new \Twig_Environment($loader, $this->environnement);
 		$this->twig->addExtension(new \Twig_Extension_Debug());
+		$this->twig->addExtension(new FormExtTwig());
 	}
 
-	public static function display($vars = array()) {
-		$tpl = new Tpl();
-		return $tpl->addVars($vars)->getTpl();
+	public static function display($vars = array(), $tpl = null) {
+		$tplObj = new Tpl();
+		return $tplObj->addVars($vars)->getTpl($tpl);
 	}
 
 	public function getTpl($tpl = null) {
@@ -55,7 +56,7 @@ class Tpl {
 		return $this;
 	}
 
-	private function selectTpl() {
+	protected function selectTpl() {
 		$controller = explode("\\",Conf::$route["controller"]);
 		return str_replace("::", DIRECTORY_SEPARATOR, $controller[count($controller)-1]).".twig";
 	}

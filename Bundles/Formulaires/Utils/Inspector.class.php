@@ -12,7 +12,7 @@ class Inspector {
 	private static $error;
 
 	public function __construct () {
-		
+		self::$error = '';
 	}
 
 	public static function checkData($value, $type, $constraint) {
@@ -43,7 +43,7 @@ class Inspector {
 	private function NotBlank_Check($value, $constraint) {
 		if($constraint) {
 			if (false === $value || (empty($value) && '0' != $value)) {
-	            self::$error = 'This value should not be blank';
+	            self::$error = '<span>This value should not be blank. </span>';
 	            return false;
 	        }
 		} 
@@ -53,7 +53,7 @@ class Inspector {
 	private function Blank_Check($value, $constraint) {
 		if($constraint) {
 			if ('' !== $value && null !== $value) {
-	            self::$error = 'This value should be blank';
+	            self::$error = '<span>This value should be blank. </span>';
 	            return false;
 	        }
 		} 
@@ -63,7 +63,7 @@ class Inspector {
 	private function NotNull_Check($value, $constraint) {
 		if($constraint) {
 			if (null === $value) {
-	            self::$error = 'This value should not be null';
+	            self::$error = '<span>This value should not be null. </span>';
 	            return false;
 	        }
 		} 
@@ -73,7 +73,7 @@ class Inspector {
 	private function Null_Check($value, $constraint) {
 		if($constraint) {
 			if (null !== $value) {
-	            self::$error = 'This value should be null';
+	            self::$error = '<span>This value should be null. </span>';
 	            return false;
 	        }
 		} 
@@ -83,7 +83,7 @@ class Inspector {
 	private function True_Check($value, $constraint) {
 		if($constraint) {
 			if (true !== $value && 1 !== $value && '1' !== $value) {
-	            self::$error = 'This value should be true';
+	            self::$error = '<span>This value should be true. </span>';
 	            return false;
 	        }
 		} 
@@ -95,7 +95,7 @@ class Inspector {
 			if (null === $value || false === $value || 0 === $value || '0' === $value) {
 	            return true;
 	        } else {
-	            self::$error = 'This value should be false';
+	            self::$error = '<span>This value should be false. </span>';
 	            return false;
 	        }
 		} 
@@ -120,7 +120,7 @@ class Inspector {
 	            return true;
 	        }
 
-	        self::$error = "This value should be of type $constraint";
+	        self::$error = "<span>This value should be of type $constraint. </span>";
 	        return false;
 	}
 
@@ -135,7 +135,7 @@ class Inspector {
 	        $valid = filter_var($value, FILTER_VALIDATE_EMAIL);
 
 	        if (!$valid) {
-	            self::$error = 'This value is not a valid email address';
+	            self::$error = '<span>This value is not a valid email address. </span>';
 		        return false;
 	        }
 	    } 
@@ -152,18 +152,18 @@ class Inspector {
         $length = strlen($stringValue);
         
         if ($constraint['min'] == $constraint['max'] && $length != $constraint['min']) {
-            self::$error = "This value should have exactly {$constraint['min']} characters..";
+            self::$error = "<span>This value should have exactly {$constraint['min']} characters... </span>";
 	        return false;
         }
         
 
         if (null !== $constraint['max'] && $length > $constraint['max']) {
-            self::$error = "This value is too long. It should have {$constraint['max']} characters or less..";
+            self::$error = "<span>This value is too long. It should have {$constraint['max']} characters or less... </span>";
 	        return false;
         }
 
         if (null !== $constraint['min'] && $length < $constraint['min']) {
-           self::$error = "This value is too short. It should have {$constraint['min']} characters or more..";
+           self::$error = "<span>This value is too short. It should have {$constraint['min']} characters or more... </span>";
 	        return false;
         }
 
@@ -181,7 +181,7 @@ class Inspector {
 	        $valid = filter_var($value, FILTER_VALIDATE_URL);
 
 	        if (!$valid) {
-	            self::$error = 'This value is not a valid url';
+	            self::$error = '<span>This value is not a valid url. </span>';
 		        return false;
 	        }
 	    } 
@@ -196,12 +196,12 @@ class Inspector {
         $value = (string) $value;
         if ($constraint['match']) {
         	if(!preg_match($constraint['pattern'], $value)) {
-	            self::$error = 'This value is not valid';
+	            self::$error = '<span>This value is not valid. </span>';
 			    return false;
 			}
         } else{
 			if(preg_match($constraint['pattern'], $value)) {
-	            self::$error = 'This value is not valid';
+	            self::$error = '<span>This value is not valid. </span>';
 			    return false;
 			}
         } 
@@ -266,7 +266,7 @@ class Inspector {
         }
 
         if (!filter_var($value, FILTER_VALIDATE_IP, $flag)) {
-            self::$error = 'This is not a valid IP address';
+            self::$error = '<span>This is not a valid IP address. </span>';
 			return false;
         } else {
         	return true;
@@ -280,17 +280,17 @@ class Inspector {
         }
 
         if (!is_numeric($value)) {
-            self::$error = "This value should be a valid number.";
+            self::$error = "<span>This value should be a valid number. </span>";
 	        return false;
         }
 
         if (null !== $constraint['max'] && $value > $constraint['max']) {
-            self::$error = "This value should be {$constraint['max']} or less.";
+            self::$error = "<span>This value should be {$constraint['max']} or less. </span>";
 	        return false;
         }
 
         if (null !== $constraint->min && $value < $constraint->min) {
-            self::$error = "This value should be {$constraint['min']} or more.";
+            self::$error = "<span>This value should be {$constraint['min']} or more. </span>";
 	        return false;
         }
         return true;
@@ -302,7 +302,7 @@ class Inspector {
         	if($compare == $value) return true;
         }
         $constraintStr = implode(' or ', $constraint);
-        self::$error = "This value should be equal to $constraintStr";
+        self::$error = "<span>This value should be equal to $constraintStr. </span>";
         return false;
     }
 
@@ -310,7 +310,7 @@ class Inspector {
 		foreach ($constraint as $compare) {
         	if($compare == $value) {
 				$constraintStr = implode(' or ', $constraint);
-		        self::$error = "This value should not be equal to $constraintStr";
+		        self::$error = "<span>This value should not be equal to $constraintStr. </span>";
 		        return false;
         	} 
         }
@@ -322,7 +322,7 @@ class Inspector {
         	if($compare === $value) return true;
         }
         $constraintStr = implode(' or ', $constraint);
-        self::$error = "This value should be identical to $constraintStr";
+        self::$error = "<span>This value should be identical to $constraintStr. </span>";
         return false;
     }
 
@@ -330,7 +330,7 @@ class Inspector {
 		foreach ($constraint as $compare) {
         	if($compare === $value) {
 				$constraintStr = implode(' or ', $constraint);
-		        self::$error = "This value should not be identical to $constraintStr";
+		        self::$error = "<span>This value should not be identical to $constraintStr. </span>";
 		        return false;
         	} 
         }
@@ -340,7 +340,7 @@ class Inspector {
 	private function LessThan_Check($value, $constraint) {
 		if($constraint > $value) return true;
         else {
-        	self::$error = "This value should be less than to $constraint";
+        	self::$error = "<span>This value should be less than to $constraint. </span>";
         	return false;
         }
     }
@@ -348,7 +348,7 @@ class Inspector {
 	private function LessThanOrEqual_Check($value, $constraint) {
 		if($constraint >= $value) return true;
         else {
-        	self::$error = "This value should be less than or equal to $constraint";
+        	self::$error = "<span>This value should be less than or equal to $constraint. </span>";
         	return false;
         }
     }
@@ -356,7 +356,7 @@ class Inspector {
 	private function GreaterThan_Check($value, $constraint) {
 		if($constraint < $value) return true;
         else {
-        	self::$error = "This value should be greater than to $constraint";
+        	self::$error = "<span>This value should be greater than to $constraint. </span>";
         	return false;
         }
     }
@@ -364,7 +364,7 @@ class Inspector {
 	private function GreaterThanOrEqual_Check($value, $constraint) {
 		if($constraint <= $value) return true;
         else {
-        	self::$error = "This value should be greater than or equal to $constraint";
+        	self::$error = "<span>This value should be greater than or equal to $constraint. </span>";
         	return false;
         }
     }
@@ -396,7 +396,7 @@ class Inspector {
 	        	}
 
 	        if (!preg_match($pattern, $value, $matches) || !checkdate($matches[2], $matches[3], $matches[1])) {
-	            self::$error = 'This value is not a valid date';
+	            self::$error = '<span>This value is not a valid date. </span>';
         		return false;
 	        }
 	    }
@@ -412,7 +412,7 @@ class Inspector {
 		        !isset($value['upfile']['error']) ||
 		        is_array($value['upfile']['error'])
 		    ) {
-		    	self::$error = 'Invalid parameters.';
+		    	self::$error = '<span>Invalid parameters. </span>';
         		return false;
 		    }
 
@@ -421,20 +421,20 @@ class Inspector {
 		        case UPLOAD_ERR_OK:
 		            break;
 		        case UPLOAD_ERR_NO_FILE:
-			        self::$error = 'No file sent.';
+			        self::$error = '<span>No file sent. </span>';
 	        		return false;
 		        case UPLOAD_ERR_INI_SIZE:
 		        case UPLOAD_ERR_FORM_SIZE:
-			        self::$error = 'Exceeded filesize limit.';
+			        self::$error = '<span>Exceeded filesize limit. </span>';
 	        		return false;
 		        default:
-			        self::$error = 'Unknown errors.';
+			        self::$error = '<span>Unknown errors. </span>';
 	        		return false;
 		    }
 
 		    // You should also check filesize here.
 		    if ($value['upfile']['size'] > $constraint['maxSize']) {
-		        self::$error = 'Exceeded filesize limit.';
+		        self::$error = '<span>Exceeded filesize limit. </span>';
 	        	return false;
 		    }
 
@@ -443,7 +443,7 @@ class Inspector {
 		    $finfo = new \finfo(FILEINFO_MIME_TYPE);
 		    if (false === $ext = array_search(
 		        $finfo->file($value['upfile']['tmp_name']),$constraint['mimeTypes'], true)) {
-		        self::$error = 'Invalid file format.';
+		        self::$error = '<span>Invalid file format. </span>';
 	        	return false;
 		    }
 

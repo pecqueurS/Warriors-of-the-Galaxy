@@ -7,93 +7,19 @@ use Bundles\Parametres\Conf;
 use Bundles\Formulaires\Utils\Inputs;
 use Bundles\Formulaires\Utils\Inspector;
 
+use Bundles\Formulaires\Tpl\FormTpl;
 
 
 
 
-/*
-
-Contraintes supportées¶
-
-Voici les contraintes de base : utilisez les afin de vérifier des données basiques à propos de la valeur d'une propriété ou de la valeur retournée par une méthode de votre objet.
-
-    NotBlank
-    Blank
-    NotNull
-    Null
-    True
-    False
-    Type
-
-Contraintes sur les chaînes de caractères¶
-
-    Email
-    Length
-    Url
-    Regex
-    Ip
-
-Contraintes sur les nombres¶
-
-    Range
-
-Contraintes comparatives¶
-
-    EqualTo
-    NotEqualTo
-    IdenticalTo
-    NotIdenticalTo
-    LessThan
-    LessThanOrEqual
-    GreaterThan
-    GreaterThanOrEqual
-
-Contraintes sur les dates¶
-
-    Date
-    DateTime
-    Time
-
-Contraintes sur les collections¶
-
-    Choice
-    Collection
-    Count
-    UniqueEntity
-    Language
-    Locale
-    Country
-
-Contraintes sur les fichiers¶
-
-    File
-    Image
-
-Contraintes sur la finance et autres numéros¶
-
-    CardScheme
-    Luhn
-    Iban
-    Isbn
-    Issn
-
-Autres Contraintes¶
-
-    Callback
-    All
-    UserPassword
-    Valid
 
 
- */
-
-/**
-* 
-*/
 class Forms {
 	public $dirForm = FORMS;
 
-	public $nameForm;
+	public static $renderHTML = array();
+
+	public $nameForm = 'form1';
 	public $type;
 	public $inputs;
 	public $errors;
@@ -143,13 +69,19 @@ class Forms {
 		$this->input[$name] = array("name" => (string)$name, "options" =>(array)$options);
 	}
 
+	public function changeOption($name, $option, $value) {
+		$this->input[$name][$option] = $value;
+	}
+
 
 
 	public function render(){
 		$inputsHTML = array();
 		foreach ($this->input as $input) {
 			$inputsHTML[$input['name']] = $this->constructBlock($input['name'], $input['options']);
+			self::$renderHTML[$this->nameForm][$input['name']] = $inputsHTML[$input['name']];
 		}
+		
 		return $inputsHTML;
 	}
 
@@ -158,6 +90,7 @@ class Forms {
 		$result = true;
 		foreach ($this->input as $input) {
 			if(!$this->verifBlock($input['name'], $input['options'])) {
+				//var_dump($input);
 				$result = false;
 			}
 		}
@@ -167,40 +100,41 @@ class Forms {
 
 
 	private function constructBlock($name, $options) {
-		$result  = "<div id='$name-form' class='container-form'>\n";
 
+		$response['name'] = $name;
+		
 		// required
-		$required = (isset($options['required']) && $options['required'] === TRUE) ? "<span class='required-form'> *</span>" : '' ;
+		$response['required'] = (isset($options['required']) && $options['required'] === TRUE) ? "<span class='required-form'> *</span>" : '' ;
 
 		// Label option
 		if(isset($options['label'])) {
 			if($options['label']!==FALSE) {
-				$result .= "<label id='$name-label' class='label-form' for='$name'>".ucfirst($options['label']).$required."</label>\n";
-			} else {
-				$result .= $required;
-			}
+				$response['label'] = $options['label'];
+			} 
 		} else {
-			$result .= "<label id='$name-label' class='label-form' for='$name'>$name$required</label>\n";
+			$response['label'] = $name;
 		}
 
 		// Input
-		$result .= $this->constructInput($name, $options);
+		$response['input'] = $this->constructInput($name, $options);
 
 		// Error
 		if(isset($this->errors[$name])) {
-			$result .= (isset($options['errorMsg']))?
-				"<span id='$name-error' class='error-form'>{$options['errorMsg']}</span>\n" :
-				"<span id='$name-error' class='error-form'>{$this->errors[$name]}</span>\n" ;
+			$response['errors'] = (isset($options['errorMsg']))? $options['errorMsg'] : $this->errors[$name] ;
 		}
 
 		// Description
 		if(isset($options['desc'])) {
-			$result .= "<p id='$name-desc' class='desc-form'>{$options['desc']}</p>\n";
+			$response['description'] = $options['desc'];
 		}
 
 
-		$result .= "</div>\n";
-		return $result;
+		//Tpl::$dirTwigTpl = '/Bundles/Formulaires/Tpl';
+		return FormTpl::display($response, 'form.twig');
+
+
+
+
 	}
 
 	private function constructInput($name, $options) {
@@ -226,16 +160,19 @@ class Forms {
 				$vars = (($options['type'] == 'file')? $_FILES : $vars);
 				$value = $vars[$name];
 				foreach ($options['constraints'] as $type => $constraint) {
-					if(!Inspector::checkData($value, $type, $constraint) || !(isset($options['disabled']) && $options['disabled'] === true)) {
-						if(isset($this->errors[$name])) {
-							$this->errors[$name] .= Inspector::getMsg();
-						} else {
-							$this->errors[$name] = Inspector::getMsg();
+					if(!(isset($options['disabled']) && $options['disabled'] === true)) {
+						if(!Inspector::checkData($value, $type, $constraint)) {
+							if(isset($this->errors[$name])) {
+								$this->errors[$name] .= Inspector::getMsg();
+							} else {
+								$this->errors[$name] = Inspector::getMsg();
+							}
+							$response = false;
 						}
-						$response = false;
 					}
+					
 					if(isset($options['value'])){
-						$options['value'] = (is_array($vars[$name])) ? $vars[$name] : array($vars[$name]);
+						$this->input[$name]['options']['value'] = (is_array($vars[$name])) ? $vars[$name] : array($vars[$name]);
 					}
 				}
 				return $response;
@@ -257,17 +194,6 @@ class Forms {
 
 }
 
-
-
-
-/*
-<div id="id-form" class="container-form">
-	<label id="id-label" class="label-form" for="id"></label>
-	<input type="text" id="id" name="id" value="">
-	<span id="id-error" class="error-form"></span>
-	<p id="id-desc" class="desc-form">Description du champs ou explication si besoin</p>
-</div>
- */
 
 
 ?>

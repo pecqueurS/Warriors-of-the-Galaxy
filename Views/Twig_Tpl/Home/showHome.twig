@@ -15,11 +15,11 @@
 			<div>
 				<form method="POST" action="{{ href }}">
 					<div id="blockServer">
-						{{ formLogin.server }}
+						{{ form('Login', 'server') }}
 					</div>
 					<div id="blockLogin">
-						{{ formLogin.login }}
-						{{ formLogin.pwd }}
+						{{ form('Login', 'login') }}
+						{{ form('Login', 'pwd') }}
 					</div>
 					<div id="blockBtn">
 						<input type="submit" class="btn signIn" name="signIn" value="{{ DICO.sign_in }}" >
@@ -48,6 +48,6 @@
 	</section>
 
 
-{{ dump() }}
+{{ dump(formLogin) }}
 
 {% endblock %}
