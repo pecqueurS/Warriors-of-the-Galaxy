@@ -19,7 +19,7 @@ class Conf {
 
 	static $links = array();
 
-	
+	static $appName = 'Exemple';
 
 	public function __construct($files) {
 		session_start();
@@ -34,6 +34,9 @@ class Conf {
 
 			// Verifie le la route
 			$this->checkRoute();
+
+			// recupere le nom de l'app
+			$this->setAppName();
 
 			// Verifie les emails
 			$this->checkEmails();
@@ -104,6 +107,11 @@ class Conf {
 			}
 		}
 	}
+
+	private function setAppName() {
+		self::$appName = $this->config["app"]["appName"];
+	}
+
 
 	private function checkEmails() {
 		self::$emails = array_merge($this->config["app"]["emails"], self::$emails);

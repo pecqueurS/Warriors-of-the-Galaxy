@@ -1,4 +1,5 @@
 {
+    "appName": "WOTG",
     "serveurs" : {
         "windows": {
             "protocole": "http",
@@ -61,6 +62,8 @@
 
             "ROOT": "dirname (BUNDLES).DS",
             "WEBROOT": "ROOT.'www'.DS",
+            
+            "APP": "ROOT.'App'.DS",
 
             "BDD": "BUNDLES.'Bdd'.DS",
             "CALCULS": "BUNDLES.'Calculs'.DS",

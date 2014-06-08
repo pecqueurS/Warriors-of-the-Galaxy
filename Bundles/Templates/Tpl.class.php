@@ -23,7 +23,7 @@ class Tpl {
 
 		);
 
-	public $dirTwigTpl = '/Views/Twig_Tpl';
+	public $dirTwigTpl = 'App/Exemple/Views/Twig_Tpl';
 	 
 	protected $vars = array();
 
@@ -43,9 +43,9 @@ class Tpl {
 		$this->twig->addExtension(new TranslateExtTwig());
 	}
 
-	public static function display($vars = array(), $tpl = null) {
-		$tplObj = new Tpl();
-		return $tplObj->addVars($vars)->getTpl($tpl);
+	public static function display($vars = array(), $dirTpl = null) {
+		$tplObj = new Tpl($dirTpl);
+		return $tplObj->addVars($vars)->getTpl();
 	}
 
 	public function getTpl($tpl = null) {

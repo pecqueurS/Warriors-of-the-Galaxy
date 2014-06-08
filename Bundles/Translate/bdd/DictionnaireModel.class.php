@@ -4,7 +4,7 @@
 namespace Bundles\Translate\bdd;
 
 use Bundles\Bdd\Db;
-use Models\Model;
+use Bundles\Bdd\Model;
 
 class DictionnaireModel extends Model {
 

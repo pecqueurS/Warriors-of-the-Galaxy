@@ -19,16 +19,19 @@ $loader = new UniversalClassLoader();
 
 
 $loader->registerNamespaces(array(
+    'Bundles\\FrontController'  => dirname(dirname(__DIR__)),
     'Bundles\\Bdd'           	=> dirname(dirname(__DIR__)),
     'Bundles\\Parametres'       => dirname(dirname(__DIR__)),
-    'Controllers'       		=> dirname(dirname(__DIR__)),
-    'Models'					=> dirname(dirname(__DIR__)),
     'Bundles\\Calculs'			=> dirname(dirname(__DIR__)),
     'Bundles\\Templates'		=> dirname(dirname(__DIR__)),
     'Bundles\\Formulaires'      => dirname(dirname(__DIR__)),
-    'Bundles\\Translate'      => dirname(dirname(__DIR__)),
+    'Bundles\\Translate'        => dirname(dirname(__DIR__)),
     
- 
+    //'Controllers'               => dirname(dirname(__DIR__)),
+    'Models'                    => dirname(dirname(__DIR__)),
+
+    'WOTG'                      => dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.'App',
+    
        
 ));
 

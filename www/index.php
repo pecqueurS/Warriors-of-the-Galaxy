@@ -2,10 +2,8 @@
 
 use Bundles\Bdd\Db;
 use Bundles\Parametres\Conf;
-use Controllers\FrontController;
+use Bundles\FrontController\FrontController;
 
-//use Models\PagesModel;
-//use Bundles\Calculs\Calc;
 
 // Inclus l'autoloader
 require_once ("../Bundles/autoloader/autoloader.php");
